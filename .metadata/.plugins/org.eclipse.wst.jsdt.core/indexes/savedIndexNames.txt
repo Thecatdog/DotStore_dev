@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2398630621.index
+314160377.index
+4021012785.index
+4244794088.index
+411593294.index

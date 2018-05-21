@@ -1,0 +1,17 @@
+INDEX VERSION 1.130
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2398630621.index
+/dotstore_mysql/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/206376505.index
+/jpetstore/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3085145087.index
+/mybatis-spring-example/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/187731012.index
+/jpetstore/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/411593294.index
+/dotstore_mysql/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1182862310.index
+/jpetstore/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3376739283.index
+/mybatis-spring-example/src/main/java
+/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4021012785.index
+/dotstore_mysql/src/main/java
