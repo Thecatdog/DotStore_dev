@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="febeb357-590a-4fa7-a587-81f3fae20536" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dotstore_mysql_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dotstore_mysql_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/LIMAH.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_api_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_autotag_core_runtime_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_core_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_jsp_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_api_1_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_jsp_1_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_servlet_1_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_servlet_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_template_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hsqldb_hsqldb_2_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_14_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_tuckey_urlrewritefilter_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/dotstore_mysql/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/dotstore_mysql/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/dotstore_mysql/.syncinfo.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/dotstore_mysql/.syncinfo.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/2.snap" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/2.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.core/.launches/New_configuration.launch" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.core/.launches/New_configuration.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/314160377.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/314160377.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/participantsIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/participantsIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jst.jsp.core/translators/4236892417.translator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/dotstore_mysql/2018/5/21/refactorings.history" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/dotstore_mysql/2018/5/21/refactorings.history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/dotstore_mysql/2018/5/21/refactorings.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/dotstore_mysql/2018/5/21/refactorings.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments.gen" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments_e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/996163b1688886428361fb374f479381/segments.gen" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/996163b1688886428361fb374f479381/segments.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/996163b1688886428361fb374f479381/segments_7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/externalLibsTimeStamps" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/externalLibsTimeStamps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/1275639177.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/2414678317.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/3144050417.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/3920747503.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/4177202673.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes/savedIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/publish/publish0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/publish/publish0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/publish.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/publish.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Category_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Category_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Category_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Category_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/SignonForm_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/SignonForm_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/SignonForm_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/SignonForm_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Top_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Top_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Top_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/Top_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/index_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/template/layout_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/template/layout_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/template/layout_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/dotstore_mysql/org/apache/jsp/WEB_002dINF/jsp/tiles/template/layout_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/META-INF/maven/com.example/jpetstore/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/META-INF/maven/com.example/jpetstore/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AccountForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AccountForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AccountFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AccountFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AddItemToCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/AddItemToCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ListOrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ListOrdersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/OrderForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/OrderForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/RemoveItemFromCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/RemoveItemFromCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SearchProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SearchProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignoffController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignoffController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignonInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/SignonInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/UpdateCartQuantitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/UpdateCartQuantitiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/UserSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/controller/ViewProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/AccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/CategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/CategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/ItemDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/ItemDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/OrderDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/ProductDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/SequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/SequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisAccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisAccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisCategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisOrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisOrderDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao$ProductSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao$ProductSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisSequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/MybatisSequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/OracleSequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/OracleSequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/CategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/ItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/ItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/LineItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/LineItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/OrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/ProductMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/SequenceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/dao/mybatis/mapper/SequenceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/LineItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/LineItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/domain/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/AccountFormValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/AccountFormValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderServiceEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderServiceEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/OrderValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/PetStoreFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/PetStoreFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/PetStoreImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/PetStoreImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/SendOrderConfirmationEmailAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/SendOrderConfirmationEmailAdvice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_httpInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_httpInvoker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_jaxws.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_jaxws.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_rmi.class" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql/WEB-INF/classes/com/example/jpetstore/service/client/OrderServiceClient_rmi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.validation/dep.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.validation/dep.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/dashboard.feeds.blogs/-549550714.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/dashboard.feeds.blogs/-549550714.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/version.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/Users/Gyeshin Park/Documents/workspace-2018-1/jpetstore/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/Users/Gyeshin Park/Documents/workspace-2018-1/jpetstore/target/m2e-wtp/web-resources/META-INF/maven/com.example/jpetstore/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/Users/Gyeshin Park/Documents/workspace-2018-1/jpetstore/target/m2e-wtp/web-resources/META-INF/maven/com.example/jpetstore/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/src/main/java/com/example/jpetstore/controller/ViewCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/src/main/java/com/example/jpetstore/controller/ViewCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AccountForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AccountForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AccountFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AccountFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AddItemToCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/AddItemToCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ListOrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ListOrdersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/OrderForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/OrderForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/RemoveItemFromCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/RemoveItemFromCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SearchProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SearchProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignoffController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignoffController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignonInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/SignonInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/UpdateCartQuantitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/UpdateCartQuantitiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/UserSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/controller/ViewProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/AccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/CategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/CategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/ItemDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/ItemDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/OrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/OrderDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/ProductDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/SequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/SequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisAccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisAccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisCategoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisCategoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisOrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisOrderDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao$ProductSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao$ProductSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisProductDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisSequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/MybatisSequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/OracleSequenceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/OracleSequenceDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/CategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/ItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/ItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/LineItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/LineItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/OrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/ProductMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/SequenceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/dao/mybatis/mapper/SequenceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/LineItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/LineItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/domain/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/AccountFormValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/AccountFormValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderServiceEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderServiceEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/OrderValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/PetStoreFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/PetStoreFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/PetStoreImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/PetStoreImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/SendOrderConfirmationEmailAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/SendOrderConfirmationEmailAdvice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_httpInvoker.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_httpInvoker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_jaxws.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_jaxws.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_rmi.class" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/classes/com/example/jpetstore/service/client/OrderServiceClient_rmi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotstore_mysql/target/m2e-wtp/web-resources/META-INF/maven/com.example/jpetstore/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dotstore_mysql/target/m2e-wtp/web-resources/META-INF/maven/com.example/jpetstore/pom.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/RemoteSystemsTempFiles/bin/" />
+    <ignored path="$PROJECT_DIR$/Servers/bin/" />
+    <ignored path="$PROJECT_DIR$/dotstore_mysql/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dotstore_mysql.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotstore_mysql/dotstore_mysql.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dotstore_mysql/src/main/java/com/example/jpetstore/domain/Cart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dotstore_mysql/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jpetstore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jpetstore" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jpetstore" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotstore_mysql" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DotStore_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RemoteSystemsTempFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.47" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_DotStore_dev" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64315" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="febeb357-590a-4fa7-a587-81f3fae20536" name="Default" comment="" />
+      <created>1527062423230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527062423230</updated>
+      <workItem from="1527062430200" duration="380000" />
+      <workItem from="1527064739218" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="387000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32965517" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21655172" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9034483" visible="true" weight="0.2536349" />
+      <window_info id="Web" order="2" sideWeight="0.096551724" side_tool="true" visible="true" weight="0.2536349" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32965517" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/dotstore_mysql.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/src/main/java/com/example/jpetstore/domain/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/dotstore_mysql.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/src/main/java/com/example/jpetstore/domain/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dotstore_mysql/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>dotstore_mysql</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -30,7 +30,7 @@ public class ViewCategoryController {
 	
 	@RequestMapping("/shop/viewCategory.do")
 	public String handleRequest(
-			@RequestParam("categoryId") String categoryId,
+			@RequestParam(value="categoryId", required = false, defaultValue = "DOGS") String categoryId,
 			ModelMap model
 			) throws Exception {
 		Category category = this.petStore.getCategory(categoryId);

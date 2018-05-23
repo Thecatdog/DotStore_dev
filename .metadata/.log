@@ -508,3 +508,342 @@ java.net.ConnectException: Connection refused (Connection refused)
 
 !ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-05-21 17:29:33.753
 !MESSAGE Several ports (8080, 8009) required by Tomcat v8.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+!SESSION 2018-05-23 16:57:08.031 -----------------------------------------------
+eclipse.buildId=3.9.3.201803200915-RELEASE-e47
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ko_KR
+Framework arguments:  -product org.springsource.sts.ide -keyring /Users/LIMAH/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springsource.sts.ide -keyring /Users/LIMAH/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-05-23 16:58:02.872
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2018-05-23 16:58:04.228
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2018-05-23 16:58:04.228
+!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.lsp4e', id='org.eclipse.lsp4e.togglehighlight'
+
+!ENTRY org.eclipse.core.net 1 0 2018-05-23 16:58:04.690
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2018-05-23 16:58:07.019
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-05-23 16:58:07.019
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23d0f6be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@48cebb78,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2018-05-23 16:58:25.689
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:07:11.194
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:07:11.257
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:07:11.627
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:07:11.631
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:43.714
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:45.091
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:45.174
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:45.175
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:45.823
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:47.562
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:47.593
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:10:47.594
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:07.820
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:07.848
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:07.873
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:07.874
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:13.236
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:13.598
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:13.611
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:13.612
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-05-23 17:13:21.811
+!MESSAGE Port 8080 required by Tomcat v8.0 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:25.113
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Inspector.detached
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:25.123
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Inspector.detached
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:25.124
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.websocket.Hybi00WsConnection: Remote side silently closed connection without 'close' message
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:52.490
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:52.739
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:52.785
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:52.787
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:53.876
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:56.502
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:56.504
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:13:56.505
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:12.061
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Inspector.detached
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:12.068
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.websocket.Hybi00WsConnection: Remote side silently closed connection without 'close' message
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:12.069
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Inspector.detached
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-05-23 17:14:16.229
+!MESSAGE Port 8080 required by Tomcat v8.0 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:51.137
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:51.393
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:51.403
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:51.404
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:51.588
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:53.368
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:53.376
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:53.378
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:54.337
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:54.361
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:54.367
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:14:54.372
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:19:43.266
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:19:45.106
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:19:45.137
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:19:45.138
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:22:37.739
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:22:37.768
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:22:37.834
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:22:37.835
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:17.911
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:17.999
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:18.015
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:18.017
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:31.666
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:32.316
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:32.343
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:32.344
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.074
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.077
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.078
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameClearedScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.607
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.613
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:36.614
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:42.704
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:42.726
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:42.727
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:42.728
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:44.942
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:45.701
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:45.706
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:23:45.709
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:18.578
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:18.581
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:18.582
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameClearedScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:19.561
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:19.576
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:24:19.577
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:07.283
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:07.322
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:07.359
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:07.360
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:20.888
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:20.896
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:20.897
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameClearedScheduledNavigation
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:21.187
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:21.189
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:21.190
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:25.365
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStartedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:25.381
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.domContentEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:25.383
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.loadEventFired
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:25.384
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameStoppedLoading
+
+!ENTRY org.eclipse.wst.jsdt.chromium.debug.core 1 0 2018-05-23 17:35:27.751
+!MESSAGE SDK:org.eclipse.wst.jsdt.chromium.internal.wip.WipCommandProcessor: Unsupported event: Page.frameResized

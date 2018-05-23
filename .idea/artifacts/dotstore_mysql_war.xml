@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dotstore_mysql:war">
+    <output-path>$PROJECT_DIR$/dotstore_mysql/target</output-path>
+    <root id="archive" name="jpetstore-1.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="dotstore_mysql:war exploded" />
+    </root>
+  </artifact>
+</component>

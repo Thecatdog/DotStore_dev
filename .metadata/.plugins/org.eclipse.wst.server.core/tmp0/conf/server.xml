@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql" path="/dotstore_mysql" reloadable="true" source="org.eclipse.jst.jee.server:dotstore_mysql"/></Host>
+      <Context docBase="/Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/dotstore_mysql" path="/dotstore_mysql" reloadable="true" source="org.eclipse.jst.jee.server:dotstore_mysql"/></Host>
     </Engine>
   </Service>
 </Server>
