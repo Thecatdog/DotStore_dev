@@ -1,26 +1,36 @@
 
 package com.example.jpetstore.domain;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-public class Message {
+public class Message implements Serializable{
 	
 	/* Private Fields */
-	private int senderId;
-	private int receiverId;
+	private long id;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	private String senderId;
+	private String receiverId;
 	private String title;
 	private String context;
-	private String date;
+	private Timestamp createAt;
 	
 	/* Getter & Setter */
-	public int getSender() {
+	public String getSenderId() {
 		return senderId;
 	}
-	public void setSender(int senderId) {
+	public void setSenderId(String senderId) {
 		this.senderId = senderId;
 	}
-	public int getReceiver() {
+	public String getReceiverId() {
 		return receiverId;
 	}
-	public void setReceiver(int receiverId) {
+	public void setReceiverId(String receiverId) {
 		this.receiverId = receiverId;
 	}
 	public String getTitle() {
@@ -35,11 +45,11 @@ public class Message {
 	public void setContext(String context) {
 		this.context = context;
 	}
-	public String getDate() {
-		return date;
+	public Timestamp getcreateAt() {
+		return createAt;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setcreateAt(Timestamp createAt) {
+		this.createAt = (Timestamp) createAt;
 	}
 	
 	/* Methods */
@@ -49,7 +59,7 @@ public class Message {
 			+ " receiver : " + receiverId
 			+ " title : " + title
 			+ "context : " + context
-			+ "date : " + date;
+			+ "createAt : " + createAt;
 		return rslt;
 	}
 

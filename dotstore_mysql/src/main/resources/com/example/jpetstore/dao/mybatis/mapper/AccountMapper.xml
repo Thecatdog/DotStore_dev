@@ -30,7 +30,7 @@
   </select>
 
   <select id="getAccountByUsernameAndPassword" resultType="Account">
-    SELECT SIGNON.USERNAME,
+   <!--  SELECT SIGNON.USERNAME,
       ACCOUNT.EMAIL,
       ACCOUNT.FIRSTNAME,
       ACCOUNT.LASTNAME,
@@ -48,11 +48,16 @@
       PROFILE.BANNEROPT AS bannerOption,
       BANNERDATA.BANNERNAME
     FROM ACCOUNT, PROFILE, SIGNON, BANNERDATA
-    WHERE ACCOUNT.USERID = #{param1}
-      AND SIGNON.PASSWORD = #{param2}
+    WHERE ACCOUNT.USERID = #{username}
+      AND SIGNON.PASSWORD = #{password}
       AND SIGNON.USERNAME = ACCOUNT.USERID
       AND PROFILE.USERID = ACCOUNT.USERID
-      AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY
+      AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY -->
+       SELECT *
+	    FROM ACCOUNT, SIGNON
+	    WHERE ACCOUNT.USERID = #{param1}
+      AND SIGNON.PASSWORD = #{param2}
+      AND SIGNON.USERNAME = ACCOUNT.USERID
   </select>
 
   <select id="getUsernameList" resultType="java.lang.String">

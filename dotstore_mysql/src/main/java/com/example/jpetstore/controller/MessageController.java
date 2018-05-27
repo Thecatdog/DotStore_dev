@@ -1,27 +1,50 @@
 package com.example.jpetstore.controller;
 
+import com.example.jpetstore.dao.mybatis.mapper.MessageMapper;
 import com.example.jpetstore.domain.Message;
+import com.example.jpetstore.service.MessageService;
+
 import java.io.Serializable;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 @Controller
 public class MessageController implements Serializable{
+	@Autowired MessageMapper messageMapper;
+	@Autowired MessageService messageService;
 	
-	// form_msg
-	@RequestMapping("/msg/form.do") 
-	public String form() {
-		// GET으로 들어오면 일반 form으로 보여준다. 
-		// POST으로 들어오면 답장 form으로 보여준다. (답장직msg내용필요)
-		return "/msg/form";
+	@RequestMapping("/msg/detail.do") 
+	public ModelAndView detail(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("MsgDetail");
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		userSession.getAccount().getUsername();
+		// user 정보 가지고 메시지 정보 가져오기 -> 매퍼 
+		System.out.println(messageMapper.getMessage());
+		return mv;
 	}
-	
+
 	// send_msg
 	@RequestMapping("/msg/send.do") 
-	public String send(Message msg) {
-		// Command 객체를 파라미터로 지정(Message)
-		return "/msg/listReceived.do";
+	public String send(@ModelAttribute Message msg) {
+		System.out.println(msg.toString());
+		messageService.insert(msg);
+		return "redirect:/msg/detail.do";
+	}
+	
+	//delete_msg
+	@RequestMapping(value="/msg.do", method=RequestMethod.DELETE)
+	public String delete(@ModelAttribute Message msg) {
+		messageService.delete(msg);
+		return "redirect:/msg/detail.do";
 	}
 	
 	// list_received_msg
@@ -31,7 +54,7 @@ public class MessageController implements Serializable{
 		return mv;
 	}
 	
-	// list_sent_msg : retun
+	// list_sent_msg : return
 	@RequestMapping("/msg/listSent.do") 
 	public ModelAndView listSentMsg() {
 		ModelAndView mv = new ModelAndView();

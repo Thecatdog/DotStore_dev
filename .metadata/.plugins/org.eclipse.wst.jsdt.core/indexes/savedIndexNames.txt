@@ -1,9 +1,8 @@
 INDEX VERSION 1.4+/Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3849408009.index
-4105060972.index
-4021012785.index
-2210757196.index
 2900062198.index
 2748193200.index
-314160377.index
 936823851.index
+314160377.index
+2210757196.index
+411593294.index
+4105060972.index
