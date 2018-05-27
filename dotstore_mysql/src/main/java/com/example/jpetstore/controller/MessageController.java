@@ -5,6 +5,7 @@ import com.example.jpetstore.domain.Message;
 import com.example.jpetstore.service.MessageService;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,14 +22,22 @@ public class MessageController implements Serializable{
 	@Autowired MessageMapper messageMapper;
 	@Autowired MessageService messageService;
 	
-	@RequestMapping("/msg/detail.do") 
-	public ModelAndView detail(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("MsgDetail");
+	@RequestMapping("/msg/list.do") 
+	public ModelAndView list(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("MsgList");
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		userSession.getAccount().getUsername();
+		String username = userSession.getAccount().getUsername();
+		
 		// user 정보 가지고 메시지 정보 가져오기 -> 매퍼 
-		System.out.println(messageMapper.getMessage());
+		List<Message> messageList;
+		messageList = messageMapper.getMessages(username);
+		
+		mv.addObject("messageList", messageList);
+		
+		for(Message msg : messageList) {
+			System.out.println(msg.toString());
+		}
 		return mv;
 	}
 

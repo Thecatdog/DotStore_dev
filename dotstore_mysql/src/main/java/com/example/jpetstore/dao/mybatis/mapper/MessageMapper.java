@@ -9,7 +9,7 @@ import com.example.jpetstore.domain.Message;
 
 @Mapper
 public interface MessageMapper {
-	List<Message> getMessage() throws DataAccessException;
+	List<Message> getMessages(String username);
 	Message getReceivedMsg(String username) throws DataAccessException; // 받은 메시지 리스트
 	Message getSentMsg(String username) throws DataAccessException;		// 보낸 메시지 리스트
 	void sendMessage(Message message) throws DataAccessException;			// 메시지 전송

@@ -20,5 +20,5 @@ public class MessageService {
 	public void delete(Message message) {
 		messageMapper.deleteMessage(message);
 	}
-	
+
 }

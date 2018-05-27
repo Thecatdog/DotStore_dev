@@ -58,8 +58,8 @@ public class Message implements Serializable{
 		rslt += "sender : " + senderId
 			+ " receiver : " + receiverId
 			+ " title : " + title
-			+ "context : " + context
-			+ "createAt : " + createAt;
+			+ " context : " + context
+			+ " createAt : " + createAt;
 		return rslt;
 	}
 

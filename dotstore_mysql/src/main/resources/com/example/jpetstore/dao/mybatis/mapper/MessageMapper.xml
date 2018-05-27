@@ -5,7 +5,7 @@
 
   <cache />
 
-  <select id="getMessage" resultType="Message">
+  <select id="getMessages" resultType="Message">
     SELECT
       id AS id
       ,sender_id AS senderId
@@ -14,6 +14,7 @@
       ,context
       ,create_at AS createAt
     FROM MESSAGE
+    WHERE receiver_id=#{username}
   </select>
   
   <insert id="sendMessage" parameterType="Message">

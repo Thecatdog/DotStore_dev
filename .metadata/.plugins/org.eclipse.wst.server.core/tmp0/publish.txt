@@ -1,3 +1,6 @@
 #Tomcat publish data
-#Sun May 27 22:30:18 KST 2018
+#Mon May 28 01:19:48 KST 2018
 org.eclipse.jst.jee.server\:/binary\:/Users/LIMAH/.m2/repository/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE.jar=WEB-INF/lib/spring-web-4.3.14.RELEASE.jar
+>>>>>>>=Stashed changes
+=\=\=\=\=\=\=
+<<<<<<<=Updated upstream
