@@ -1,7 +1,10 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <title>경매 상품 목록 보기</title>
 
 <body id="">
-    <div id="">
+    <div align="center">
         <span>
             경매 상품 검색
             <input type="text" id="" name="" class="" placeholder="검색어를 입력하세요." value="">
@@ -39,7 +42,9 @@
 
         <br>
         <div class="">
-            <button type="button">경매 상품 등록하기</button>
+            <button type="button">
+            	<a href='<c:url value="/shop/auctionForm.do"/>'>경매 상품 등록하기</a>
+            </button>
         </div>
     </div>
 </body>

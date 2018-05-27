@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <table style="border:none;border-collapse:collapse;width:100%">
@@ -45,6 +45,11 @@
                   <a href="<c:url value="/shop/viewCategory.do?categoryId=BIRDS"/>">
                     <img border="0" src="../images/birds_icon.gif" /></a>
                 </td>
+              </tr>
+              <tr>
+              	<td>
+              		<a href="<c:url value="/shop/auctionList.do"/>">경매</a>
+              	</td>
               </tr>
             </table>
           </td>

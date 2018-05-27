@@ -44,6 +44,13 @@
 		
 	<mvc:view-controller path="/shop/index.do" view-name="tiles/index"/>
 	<mvc:view-controller path="/shop/signonForm.do" view-name="tiles/SignonForm"/> 
+
+	<mvc:view-controller path="/shop/auctionList.do" view-name="tiles/auctionList"/>
+	<mvc:view-controller path="/shop/auctionDetail.do" view-name="tiles/auctionDetail"/>
+	
+	<!-- 로그인 필요 -->
+	<mvc:view-controller path="/shop/auctionForm.do" view-name="tiles/auctionForm"/>
+	<mvc:view-controller path="/shop/auctionUpdate.do" view-name="tiles/auctionUpdate"/>
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
@@ -51,6 +58,12 @@
         	<mvc:mapping path="/shop/listOrders.do"/>
         	<mvc:mapping path="/shop/viewOrder.do"/>
         	<mvc:mapping path="/shop/newOrder.do"/>
+        	
+<!--         	<mvc:mapping path="/shop/auctionForm.do"/> -->
+<!--         	<mvc:mapping path="/shop/auctionUpdate.do"/> -->
+<!--         	<mvc:mapping path="/shop/myAuctionList.do"/> -->
+<!--         	<mvc:mapping path="/shop/reviewForm.do"/> -->
+<!--         	<mvc:mapping path="/shop/viewPoint.do"/> -->
         	<bean class="com.example.jpetstore.controller.SignonInterceptor" />
     	</mvc:interceptor>
 	</mvc:interceptors>

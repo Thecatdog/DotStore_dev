@@ -1,7 +1,11 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <title>경매 수정 폼</title>
 
 <body id="">
-    <div id="">
+    <div align="center">
         <p>경매 상품 수정을 위한 폼입니다.</p>
 
         <form method="post" name="" action="">
@@ -22,7 +26,9 @@
                     <button type="submit" id="">수정</button>
                 </span>
                 <span class="">
-                    <button type="button" id="">취소</button>
+                    <button type="button" id="">
+                    	<a href='<c:url value="/shop/auctionList.do"/>'>취소</a>
+                    </button>
                 </span>
             </div>
         </form>
