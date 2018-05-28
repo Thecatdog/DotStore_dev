@@ -17,8 +17,8 @@ public class MessageService {
 	}
 	
 	@Transactional
-	public void delete(Message message) {
-		messageMapper.deleteMessage(message);
+	public void delete(int messageId) {
+		messageMapper.deleteMessage(messageId);
 	}
 
 }

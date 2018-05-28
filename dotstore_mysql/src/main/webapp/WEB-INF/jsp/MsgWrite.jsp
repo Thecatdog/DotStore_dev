@@ -10,9 +10,9 @@
 					<div class="">
 						<div id="">
 							<ul>
-								<li><span class="">쪽지쓰기</span></li>
-								<li><span><a class="" href="">받은쪽지</a></span></li>
-								<li><span><a class="" href="">보낸쪽지</a></span></li>
+								<li><span class="" >쪽지쓰기</span></li>
+								<li><span><a class="" href="<c:url value="/msg/list.do" />">받은쪽지</a></span></li>
+								<li><span><a class="" href="<c:url value="/msg/list.do" />" >보낸쪽지</a></span></li>
 							</ul>
 						</div>
 					</div>
@@ -20,7 +20,7 @@
 
 				<div class="">
 					<table class="" border="1">
-						<caption>쪽지쓰기 게시판 내용 작성하기</caption>
+					
 						<tbody>
 							<tr>
 								<th scope="row"><label for="wrtTitle">제목</label></th>

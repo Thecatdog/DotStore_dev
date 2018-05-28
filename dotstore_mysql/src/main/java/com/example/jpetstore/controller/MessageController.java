@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
@@ -29,8 +30,7 @@ public class MessageController implements Serializable{
 		ModelAndView mv = new ModelAndView("MsgList");
 
 		String username = getUserName(request);
-		List<Message> messageList;
-		messageList = messageMapper.getMessages(username);
+		List<Message> messageList = messageMapper.getMessages(username);
 		mv.addObject("messageList", messageList);
 		
 //		for(Message msg : messageList) {
@@ -57,10 +57,20 @@ public class MessageController implements Serializable{
 		return "redirect:/msg/list.do";
 	}
 	
+	// Message Detail
+	@RequestMapping("/msg/detail.do")
+	public ModelAndView detail(@RequestParam("id") int messageId) {
+		ModelAndView mv = new ModelAndView("MsgDetail");
+		Message msg = messageMapper.getMessageById(messageId);
+		mv.addObject("message", msg);
+		return mv;
+	}
+	
 	// Message Delete
-	@RequestMapping(value="/msg.do", method=RequestMethod.DELETE)
-	public String delete(@ModelAttribute Message msg) {
-		messageService.delete(msg);
+//	@RequestMapping(value="/msg.do", method=RequestMethod.DELETE)
+	@RequestMapping(value="/msg.do")
+	public String delete(@RequestParam("id") int messageId) {
+		messageService.delete(messageId);
 		return "redirect:/msg/list.do";
 	}
 	
