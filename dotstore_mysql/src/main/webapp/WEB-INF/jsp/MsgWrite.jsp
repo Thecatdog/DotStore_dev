@@ -1,7 +1,9 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
+<%@ include file="IncludeTop.jsp"%>
 <body id="">
 	<div id="">
-
-		<form method="post" name="" action="">
+		<form method="POST" name="" action="send.do">
 			<div class="">
 				<div id="">
 					<!-- 탭부분 -->
@@ -19,37 +21,28 @@
 				<div class="">
 					<table class="" border="1">
 						<caption>쪽지쓰기 게시판 내용 작성하기</caption>
-
 						<tbody>
 							<tr>
 								<th scope="row"><label for="wrtTitle">제목</label></th>
-								<td><input id="" type="text" class="" name=""
+								<td><input id="" type="text" class="" name="title"
 									maxlength="256" value=""></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="recevPerson">받는사람</label></th>
-								<td><input id="" type="text" class="" name=""
+								<td><input id="" type="text" class="" name="receiverId"
 									maxlength="256" value=""></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="wrtContent">내용</label></th>
-								<td class=""><textarea id="" name="" class=""></textarea></td>
+								<td class=""><textarea id="" name="context" class=""></textarea></td>
 							</tr>
 						</tbody>
 					</table>
-
-					<!-- Button(전송, 닫기) 시작 -->
-					<div class="">
-						<span class="">
-							<button type="button" id="">전송</button>
-						</span> <span class="">
-							<button type="button" id="">닫기</button>
-						</span>
-					</div>
-					<!-- Button 끝 -->
-
+					<button type="submit">전송</button>
 				</div>
 			</div>
 		</form>
 	</div>
 </body>
+
+<%@ include file="IncludeBottom.jsp"%>

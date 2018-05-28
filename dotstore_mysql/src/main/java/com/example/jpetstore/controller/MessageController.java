@@ -3,6 +3,7 @@ package com.example.jpetstore.controller;
 import com.example.jpetstore.dao.mybatis.mapper.MessageMapper;
 import com.example.jpetstore.domain.Message;
 import com.example.jpetstore.service.MessageService;
+import com.example.jpetstore.vo.MessageVo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,68 +23,52 @@ public class MessageController implements Serializable{
 	@Autowired MessageMapper messageMapper;
 	@Autowired MessageService messageService;
 	
+	// Message List
 	@RequestMapping("/msg/list.do") 
 	public ModelAndView list(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("MsgList");
-		UserSession userSession = 
-				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		String username = userSession.getAccount().getUsername();
-		
-		// user 정보 가지고 메시지 정보 가져오기 -> 매퍼 
+
+		String username = getUserName(request);
 		List<Message> messageList;
 		messageList = messageMapper.getMessages(username);
-		
 		mv.addObject("messageList", messageList);
 		
-		for(Message msg : messageList) {
-			System.out.println(msg.toString());
-		}
+//		for(Message msg : messageList) {
+//			System.out.println(msg.toString());
+//		}
 		return mv;
 	}
-
-	// send_msg
-	@RequestMapping("/msg/send.do") 
-	public String send(@ModelAttribute Message msg) {
-		System.out.println(msg.toString());
+	
+	// Message send
+	@RequestMapping(value="/msg/send.do", method=RequestMethod.GET)
+	public ModelAndView send() {
+		ModelAndView mv = new ModelAndView("MsgWrite");
+		return mv;
+	}
+	@RequestMapping(value="/msg/send.do", method=RequestMethod.POST) 
+	public String send(@ModelAttribute MessageVo msgvo, HttpServletRequest request) {
+		Message msg = new Message();
+		msg.setReceiverId(msgvo.getReceiverId());
+		msg.setTitle(msgvo.getTitle());
+		msg.setContext(msgvo.getContext());
+		msg.setSenderId(getUserName(request));
+		
 		messageService.insert(msg);
-		return "redirect:/msg/detail.do";
+		return "redirect:/msg/list.do";
 	}
 	
-	//delete_msg
+	// Message Delete
 	@RequestMapping(value="/msg.do", method=RequestMethod.DELETE)
 	public String delete(@ModelAttribute Message msg) {
 		messageService.delete(msg);
-		return "redirect:/msg/detail.do";
+		return "redirect:/msg/list.do";
 	}
 	
-	// list_received_msg
-	@RequestMapping("/msg/listReceived.do") 
-	public ModelAndView listReceivedMsg() {
-		ModelAndView mv = new ModelAndView();
-		return mv;
+	// Username 가져오는 함수 : return 값 : UserId<String>
+	public String getUserName(HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		String username = userSession.getAccount().getUsername();
+		return username;
 	}
-	
-	// list_sent_msg : return
-	@RequestMapping("/msg/listSent.do") 
-	public ModelAndView listSentMsg() {
-		ModelAndView mv = new ModelAndView();
-		return mv;
-	}
-	
-	// detail_recived_msg 
-	@RequestMapping("/msg/detailReceivedMsg.do") 
-	public ModelAndView detailRecivedMsg() {
-		ModelAndView mv = new ModelAndView();
-		return mv;
-	}
-	
-	// detail_sent_msg
-	@RequestMapping("/msg/detailSentMsg.do") 
-	public ModelAndView detailSentMsg() {
-		ModelAndView mv = new ModelAndView();
-		return mv;
-	}
-	
-
-
 }
