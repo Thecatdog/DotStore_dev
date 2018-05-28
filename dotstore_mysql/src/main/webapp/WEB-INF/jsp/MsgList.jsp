@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="IncludeTop.jsp"%>
+
 <body>
 	<div id="" ></div>
 	<form method="post" name="" action="">
@@ -11,10 +12,12 @@
 						<ul>
 							<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
 							<li><span class="">받은쪽지</span></li>
-							<li><span><a class="" href="<c:url value="/msg/list.do" />" >보낸쪽지</a></span></li>
-							<li><span> 검색 <input type="text" id="" name="" class="" title="검색어를 입력하세요." value="">
+							<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸쪽지</a></span></li>
+
+							<!-- <li><span> 검색 <input type="text" id="" name="" class="" title="검색어를 입력하세요." value="">
 									<input type="image" id="" src="" class="" alt="검색" title="검색" />
-							</span></li>
+							</span></li> -->
+
 						</ul>
 					</div>
 				</div>
@@ -22,7 +25,7 @@
 
 			<div class="pop-">
 				<table class="" border="1" summary="받은쪽지 목록(아이디,이름,제목,날짜 항목)">
-					<caption>받은쪽지 목록</caption>
+					<caption>쪽지 목록</caption>
 
 					<thead>
 						<tr>

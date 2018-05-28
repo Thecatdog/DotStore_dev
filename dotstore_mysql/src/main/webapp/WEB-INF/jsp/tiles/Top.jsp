@@ -21,8 +21,9 @@
         <img border="0" src="../images/separator.gif" />
         <a href="<c:url value="/shop/editAccount.do"/>">
           <img border="0" name="img_myaccount" src="../images/my_account.gif" /></a>
-          
-        <a href="<c:url value="/msg/list.do"/>">쪽지</a>
+        <!-- <a href="/msg/recv/list.do">쪽지</a> -->
+        <a href="<c:url value="/msg/recv/list.do" />" >쪽 지</a>
+        
       </c:if>
       <img border="0" src="../images/separator.gif" />&nbsp;
       <a href="../help.html"><img border="0" name="img_help" src="../images/help.gif" /></a>

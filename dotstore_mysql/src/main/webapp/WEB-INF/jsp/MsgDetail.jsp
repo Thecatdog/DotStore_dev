@@ -11,8 +11,8 @@
 					<div id="" class="">
 						<ul>
 							<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
-							<li><span><a class="" href="<c:url value="/msg/list.do" />" >받은쪽지</a></span></li>
-							<li><span class="" href="<c:url value="/msg/list.do" />" >보낸쪽지</span></li>
+							<li><span><a class="" href="<c:url value="/msg/recv/list.do" />" >받은 쪽지</a></span></li>
+							<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸 쪽지</a></span></li>
 						</ul>
 					</div>
 				</div>
@@ -39,10 +39,10 @@
 					</tbody>
 				</table>
 
-				<!-- Button(삭제, 목록, 닫기) 시작 -->
+				<!-- Button(삭제, 목록) 시작 -->
 				<div class="bbs-rbutton02">
 					<span class="button large icon">
-						<button type="button" id="" ><a href="<c:url value="/msg.do?id=${message.id}" />">삭제</a></button>
+						<button type="button" onclick="location.href='<c:url value="/msg.do?id=${message.id}"/>' " >삭제</button>
 						<button onclick="goBack()">목록</button>
 					</span>
 				</div>

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,12 +26,11 @@ public class MessageController implements Serializable{
 	@Autowired MessageService messageService;
 	
 	// Message List
-	@RequestMapping("/msg/list.do") 
-	public ModelAndView list(HttpServletRequest request) {
+	@RequestMapping(value = "/msg/{type}/list.do", method = RequestMethod.GET)
+	public ModelAndView list(@PathVariable("type") String type, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("MsgList");
-
 		String username = getUserName(request);
-		List<Message> messageList = messageMapper.getMessages(username);
+		List<Message> messageList = messageMapper.getMessages(username, type);
 		mv.addObject("messageList", messageList);
 		
 //		for(Message msg : messageList) {
@@ -67,7 +67,6 @@ public class MessageController implements Serializable{
 	}
 	
 	// Message Delete
-//	@RequestMapping(value="/msg.do", method=RequestMethod.DELETE)
 	@RequestMapping(value="/msg.do")
 	public String delete(@RequestParam("id") int messageId) {
 		messageService.delete(messageId);
