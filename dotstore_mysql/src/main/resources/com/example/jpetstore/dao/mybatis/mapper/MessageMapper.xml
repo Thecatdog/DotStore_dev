@@ -51,7 +51,7 @@
     VALUES(#{senderId}, #{receiverId}, #{title}, #{context}, NOW())
   </insert>
   
-  <delete id="deleteMessage" parameterType="Message">
+  <delete id="deleteById" parameterType="Message">
   	DELETE 
   	FROM MESSAGE
   	WHERE ID=#{messageId}

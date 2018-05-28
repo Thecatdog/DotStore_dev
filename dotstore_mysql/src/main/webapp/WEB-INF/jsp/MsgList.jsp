@@ -3,15 +3,14 @@
 <%@ include file="IncludeTop.jsp"%>
 
 <body>
-	<div id="" ></div>
-	<form method="post" name="" action="">
+	<form method="POST" name="" action="<c:url value="/msg.do"/>">
 		<div id="">
 			<div id="pop_container" class="">
 				<div class="">
 					<div id="tab1" class="">
 						<ul>
 							<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
-							<li><span class="" href="<c:url value="/msg/recv/list.do" />">받은쪽지</span></li>
+							<li><span><a class="" href="<c:url value="/msg/recv/list.do" />">받은쪽지</span></li>
 							<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸쪽지</a></span></li>
 
 							<!-- <li><span> 검색 <input type="text" id="" name="" class="" title="검색어를 입력하세요." value="">
@@ -42,7 +41,7 @@
 					<tbody>
 						<c:forEach var="m" items="${messageList}">
 							<tr>
-							<td class="chk"><input type="checkbox" id="" name="wrtInform" value="208290" class="chktype01"></td>
+							<td class="chk"><input name="delList" type="checkbox" value="${m.id}" /></td>
 							<td>${m.senderId}</td>
 							<td class=""><a href="<c:url value="/msg/detail.do?id=${m.id}"/>"class="">${m.title}</a></td>
 							<td><fmt:formatDate value="${m.createAt}" pattern="yyyy-MM-dd" /></td>
@@ -65,11 +64,11 @@
 				</c:choose>			
 			</c:forEach>
 			<!-- Paging Numbering End -->
-
 			</div>
-			<button type="button" id="">삭제</button>
+			<button type="submit">삭제</button>
 		</div>
 	</form>
+	
 </body>
 
 <%@ include file="IncludeBottom.jsp"%>

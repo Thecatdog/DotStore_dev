@@ -33,7 +33,7 @@ public class MessageController implements Serializable{
 		ModelAndView mv = new ModelAndView("MsgList");
 		String username = getUserName(request);
 		List<Message> messageList = messageMapper.getMessages(username, type);
-		
+	
 		// Paging(5개 단위로 보여주기)
 		int divNum = 5;
 		double msgSize = messageList.size();
@@ -44,17 +44,9 @@ public class MessageController implements Serializable{
 		 * if문으로 분리한 이유는, 5개씩 리스트를 쪼개다보니, 마지막 페이지에서는 null exception이 발생
 		 */
 		List<Message> subMessageList = null;
-		if(lastMsgIndex > currPage*divNum)
-			subMessageList = messageList.subList((currPage-1)*divNum, currPage*divNum);
+		if(lastMsgIndex > currPage*divNum) subMessageList = messageList.subList((currPage-1)*divNum, currPage*divNum);
 		else subMessageList = messageList.subList((currPage-1)*divNum, lastMsgIndex+1);
-		
-		System.out.println("msgSize: " + msgSize + " page: " + currPage + " pageLen: " + pageLen);
-		System.out.println("자른 메시지 리스트");
-		for(Message msg : subMessageList) {
-			System.out.print(msg.getId() + "\t");
-		}
-		System.out.println();
-		
+
 		mv.addObject("pageLen", pageLen);
 		mv.addObject("currPage", currPage);
 		mv.addObject("messageList", subMessageList);
@@ -77,7 +69,7 @@ public class MessageController implements Serializable{
 		msg.setSenderId(getUserName(request));
 		
 		messageService.insert(msg);
-		return "redirect:/msg/list.do";
+		return "redirect:/msg/recv/list.do";
 	}
 	
 	// Message Detail
@@ -88,13 +80,23 @@ public class MessageController implements Serializable{
 		mv.addObject("message", msg);
 		return mv;
 	}
+
 	
 	// Message Delete
-	@RequestMapping(value="/msg.do")
+	@RequestMapping(value="/msg.do", method=RequestMethod.GET)
 	public String delete(@RequestParam("id") int messageId) {
-		messageService.delete(messageId);
-		return "redirect:/msg/list.do";
+		messageService.deleteById(messageId);
+		return "redirect:/msg/recv/list.do";
 	}
+	@RequestMapping(value="/msg.do", method=RequestMethod.POST)
+	public String delete(@RequestParam("delList") List<Integer> ids) {
+//		System.out.println(ids);
+		for(Integer id : ids) {
+			messageService.deleteById(id);
+		}
+		return "redirect:/msg/recv/list.do";
+	}
+		
 	
 	// Username 가져오는 함수 : return 값 : UserId<String>
 	public String getUserName(HttpServletRequest request) {
