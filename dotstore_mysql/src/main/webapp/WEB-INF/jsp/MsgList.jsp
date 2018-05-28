@@ -11,7 +11,7 @@
 					<div id="tab1" class="">
 						<ul>
 							<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
-							<li><span class="">받은쪽지</span></li>
+							<li><span class="" href="<c:url value="/msg/recv/list.do" />">받은쪽지</span></li>
 							<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸쪽지</a></span></li>
 
 							<!-- <li><span> 검색 <input type="text" id="" name="" class="" title="검색어를 입력하세요." value="">
@@ -29,11 +29,14 @@
 
 					<thead>
 						<tr>
-							<th scope="col" class=""><label style="display: inline;"><input
-									type="checkbox" id="" name="" value="" class=""></label></th>
+							<th scope="col" class="">
+								<label style="display: inline;">
+									<input type="checkbox" id="" name="" value="" class="">
+								</label>
+							</th>
 							<th scope="col">보낸사람</th>
 							<th scope="col">제목</th>
-							<th scope="col" class="">날짜</th>
+							<th scope="col">날짜</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -49,10 +52,20 @@
 				</table>
 			</div>
 
-			<!-- Paging -->
+			<!-- Paging Numbering Start -->
 			<div class="">
-				<em title="현재 선택 목록"> <strong class="">1</strong>
-				</em> &nbsp;<a class="" href="">2</a>&nbsp;
+			<c:forEach var="page" begin="1" end="${pageLen}">
+				<c:choose>
+					<c:when test="${currPage eq page}">
+						<em title="현재 선택 목록"><strong class="">${page}</strong>
+					</c:when>
+					<c:otherwise>
+						</em> &nbsp;<a class="" href="<c:url value="?page=${page}"/>" >${page}</a>&nbsp;
+					</c:otherwise>
+				</c:choose>			
+			</c:forEach>
+			<!-- Paging Numbering End -->
+
 			</div>
 			<button type="button" id="">삭제</button>
 		</div>
