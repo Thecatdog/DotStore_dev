@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +29,13 @@ public class MessageController implements Serializable{
 	// Message List
 	@RequestMapping(value = "/msg/{type}/list.do", method = RequestMethod.GET)
 	public ModelAndView list(@PathVariable("type") String type, 
-							 @RequestParam(value="page", defaultValue="1") int currPage, HttpServletRequest request) {
+							 @RequestParam(value="page", defaultValue="1") int currPage, 
+							 @RequestParam(value="searchKey", required=false) String searchKey,
+							 HttpServletRequest request) {
 		
 		ModelAndView mv = new ModelAndView("MsgList");
 		String username = getUserName(request);
-		List<Message> messageList = messageMapper.getMessages(username, type);
+		List<Message> messageList = messageMapper.getMessages(username, type, searchKey);
 	
 		// Paging(5개 단위로 보여주기)
 		int divNum = 5;
@@ -40,9 +43,8 @@ public class MessageController implements Serializable{
 		int pageLen = (int)(Math.ceil(msgSize/divNum));
 		int lastMsgIndex = messageList.size()-1;
 		
-		/*
-		 * if문으로 분리한 이유는, 5개씩 리스트를 쪼개다보니, 마지막 페이지에서는 null exception이 발생
-		 */
+
+		// 5개씩 리스트를 쪼개다보니, 마지막 페이지에서는 null exception이 발생 -> if로 예외 처리
 		List<Message> subMessageList = null;
 		if(lastMsgIndex > currPage*divNum) subMessageList = messageList.subList((currPage-1)*divNum, currPage*divNum);
 		else subMessageList = messageList.subList((currPage-1)*divNum, lastMsgIndex+1);
@@ -53,7 +55,7 @@ public class MessageController implements Serializable{
 		
 		return mv;
 	}
-	
+		
 	// Message send
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.GET)
 	public ModelAndView send() {
@@ -81,7 +83,6 @@ public class MessageController implements Serializable{
 		return mv;
 	}
 
-	
 	// Message Delete
 	@RequestMapping(value="/msg.do", method=RequestMethod.GET)
 	public String delete(@RequestParam("id") int messageId) {
@@ -90,15 +91,12 @@ public class MessageController implements Serializable{
 	}
 	@RequestMapping(value="/msg.do", method=RequestMethod.POST)
 	public String delete(@RequestParam("delList") List<Integer> ids) {
-//		System.out.println(ids);
-		for(Integer id : ids) {
+		for(Integer id : ids) 
 			messageService.deleteById(id);
-		}
 		return "redirect:/msg/recv/list.do";
 	}
-		
-	
-	// Username 가져오는 함수 : return 값 : UserId<String>
+
+	// Request로 Username 가져오는 함수 : return 값 : UserId<String>
 	public String getUserName(HttpServletRequest request) {
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");

@@ -3,25 +3,26 @@
 <%@ include file="IncludeTop.jsp"%>
 
 <body>
-	<form method="POST" name="" action="<c:url value="/msg.do"/>">
-		<div id="">
-			<div id="pop_container" class="">
-				<div class="">
-					<div id="tab1" class="">
-						<ul>
-							<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
-							<li><span><a class="" href="<c:url value="/msg/recv/list.do" />">받은쪽지</span></li>
-							<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸쪽지</a></span></li>
-
-							<!-- <li><span> 검색 <input type="text" id="" name="" class="" title="검색어를 입력하세요." value="">
-									<input type="image" id="" src="" class="" alt="검색" title="검색" />
-							</span></li> -->
-
-						</ul>
-					</div>
+	<div id="">
+		<div id="pop_container" class="">
+			<div class="">
+				<div id="tab1" class="">
+					<ul>
+						<li><span><a class="" href="<c:url value="/msg/send.do" />" >쪽지쓰기</a></span></li>
+						<li><span><a class="" href="<c:url value="/msg/recv/list.do" />">받은쪽지</span></li>
+						<li><span><a class="" href="<c:url value="/msg/sent/list.do" />" >보낸쪽지</a></span></li>
+						<form method="GET" action="<c:url value="/msg/search/list.do" /> ">
+							<li><span> 검색 
+								<input type="text" id="searchKey" name="searchKey" title="검색어를 입력하세요."/>
+								<button type="submit" name="search">검색</button>
+							</span></li>
+						</form>
+					</ul>
 				</div>
 			</div>
-
+		</div>
+			
+		<form method="POST" action="<c:url value="/msg.do"/>">
 			<div class="pop-">
 				<table class="" border="1" summary="받은쪽지 목록(아이디,이름,제목,날짜 항목)">
 					<caption>쪽지 목록</caption>
@@ -68,6 +69,21 @@
 			<button type="submit">삭제</button>
 		</div>
 	</form>
+	
+	<!-- <script type="text/javascript">
+		$(document).ready(function(){
+			$('#search').click(function(){
+				$.ajax({
+					type: "post",
+					url: "/msg/search",
+					data: "key=" + $('#searchKey').val(),
+					success: function(){
+						// 모르겟
+					}
+				});
+			});
+		});
+	</script> -->
 	
 </body>
 
