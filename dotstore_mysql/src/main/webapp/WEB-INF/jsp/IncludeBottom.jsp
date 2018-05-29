@@ -1,3 +1,5 @@
+<!-- 이거 쓰지말고 타일즈에 있는 Bottom.jsp로 쓸것 -->
+
 <p>&nbsp;</p>
 <div align="center">
   <table>

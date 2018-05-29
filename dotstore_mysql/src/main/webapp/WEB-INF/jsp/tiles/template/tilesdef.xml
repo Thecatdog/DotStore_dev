@@ -6,9 +6,9 @@
 <tiles-definitions>
 	<definition name="base_layout"
 		template="/WEB-INF/jsp/tiles/template/layout.jsp">
-		<put-attribute name="title" value="JPetStore Demo" type="string"/>
+		<put-attribute name="title" value="DOT STORE" type="string"/>
 		<put-attribute name="header"
-			value="/WEB-INF/jsp/tiles/Top.jsp" />
+			value="" />
 		<put-attribute name="footer"
 			value="/WEB-INF/jsp/tiles/Bottom.jsp" />
 		<put-attribute name="banner" value="" />
@@ -29,14 +29,20 @@
 			value="/WEB-INF/jsp/tiles/{1}.jsp" />
 	</definition> 
  
+ 	<definition name="tiles/SignonForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/SignonForm.jsp" />			
+	</definition>
+	
+ 	<definition name="tiles/EditAccountForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/EditAccountForm.jsp" />			
+	</definition>
+ 
+ 
  	<!-- <definition name="tiles/Category" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/Category.jsp" />
-	</definition>
-
-	<definition name="tiles/SignonForm" extends="base_layout">
-		<put-attribute name="body"
-			value="/WEB-INF/jsp/tiles/SignonForm.jsp" />			
 	</definition>
 	
 	<definition name="tiles/EditAccountForm" extends="base_layout">

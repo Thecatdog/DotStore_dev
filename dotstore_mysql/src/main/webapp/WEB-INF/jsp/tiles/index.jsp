@@ -1,14 +1,28 @@
 <%@ page contentType="text/html" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<table style="border:none;border-collapse:collapse;width:100%">
+<link type="text/css" rel="stylesheet" href="../style/index.css?ver=3"/>
+<div class="main-background">
+	<%@ include file="Top.jsp"%>
+	<div class="container body-container">
+		<div class="best-seller">
+			<h1>BEST SELLER</h1>
+		</div>
+		<div class="latest-seller">
+			<h1>LATEST SELLER</h1>
+		</div>
+		<div class="latest-see-seller">
+			<h1>LATEST SEE SELLER</h1>
+		</div>
+	</div>
+</div>
+<%-- <table style="border:none;border-collapse:collapse;width:100%">
   <tr>
     <td style="text-align:left;vertical-align:top;width:100%">
       <table style="border:none;border-collapse:collapse;width:80%">
         <tr>
           <td valign="top">                    
             <!-- SIDEBAR -->
-            <table id="index">
+            <table id="index">            
               <tr>
                 <td>
                 <c:if test="${!empty userSession.account}">
@@ -65,3 +79,4 @@
     </td>
   </tr>
 </table>
+ --%>

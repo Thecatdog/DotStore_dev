@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+	background : linear-gradient(to right, #346cbf , #b941ae);
+}
+.main-background {
+	background-image : url("../images/main-background.png");
+	background-repeat : no-repeat;
+	background-position : center top;
+	width:100vw;
+	height:100vh;
+	text-align:center;
+}
+.body-container {
+	background-color : #ffffff;
+}

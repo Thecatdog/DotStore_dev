@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+	background : linear-gradient(to right, #346cbf , #b941ae);
+}
+.login-form {
+	margin-top:20vh;
+	background-color : rgb(0,0,0,40%);
+	width:30vw;
+	height:60vh;
+	padding-top:4rem;
+}
+label {
+	color : #ffffff;
+	font-family: "Noto Sans KR";
+}
+.dot-logo {
+	width:6vw;
+}
+.form-control {
+	width:80%;
+}
+
+.btn-gradient {
+	margin-left:1rem;
+	margin-right:1rem;
+	border: 2px solid #ffffff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	font-size: 14px;
+	font-family: arial, helvetica, sans-serif;
+	padding: 6px 13px 6px 13px;
+	text-decoration: none;
+	display: inline-block;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #346CBF;
+	background-image: -webkit-gradient(linear, left, right, from(#346CBF),
+		to(#B941AE));
+	background-image: -webkit-linear-gradient(right, #346CBF, #B941AE);
+	background-image: -moz-linear-gradient(right, #346CBF, #B941AE);
+	background-image: -ms-linear-gradient(right, #346CBF, #B941AE);
+	background-image: -o-linear-gradient(right, #346CBF, #B941AE);
+	background-image: linear-gradient(to right, #346CBF, #B941AE);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr=#346CBF, endColorstr=#B941AE);
+}
+
+.btn-gradient:hover {
+	border: 2px solid #1e3f6f;
+	background-color: #295597;
+	background-image: -webkit-gradient(linear, left, right, from(#295597),
+		to(#93348b));
+	background-image: -webkit-linear-gradient(right, #295597, #93348b);
+	background-image: -moz-linear-gradient(right, #295597, #93348b);
+	background-image: -ms-linear-gradient(right, #295597, #93348b);
+	background-image: -o-linear-gradient(right, #295597, #93348b);
+	background-image: linear-gradient(to right, #295597, #93348b);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr=#295597, endColorstr=#93348b);
+}
+
+.btn-sign-up{
+	margin-top:0.5rem;
+}
+}
