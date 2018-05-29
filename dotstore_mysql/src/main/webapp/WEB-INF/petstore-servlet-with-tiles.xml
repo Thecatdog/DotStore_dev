@@ -44,6 +44,8 @@
 		
 	<mvc:view-controller path="/shop/index.do" view-name="tiles/index"/>
 	<mvc:view-controller path="/shop/signonForm.do" view-name="tiles/SignonForm"/> 
+	
+	<mvc:view-controller path="/shop/categoryList.do" view-name="tiles/categoryList"/>
 
 	<mvc:view-controller path="/shop/auctionList.do" view-name="tiles/auctionList"/>
 	<mvc:view-controller path="/shop/auctionDetail.do" view-name="tiles/auctionDetail"/>

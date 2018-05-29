@@ -49,6 +49,7 @@ label {
 
 .btn-gradient:hover {
 	border: 2px solid #1e3f6f;
+	color:#dad9db;
 	background-color: #295597;
 	background-image: -webkit-gradient(linear, left, right, from(#295597),
 		to(#93348b));
@@ -60,7 +61,6 @@ label {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
 		startColorstr=#295597, endColorstr=#93348b);
 }
-
 .btn-sign-up{
 	margin-top:0.5rem;
 }

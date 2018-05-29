@@ -67,6 +67,7 @@ td, th {
 
 .btn-gradient:hover {
 	border: 2px solid #1e3f6f;
+	color:#dad9db;
 	background-color: #295597;
 	background-image: -webkit-gradient(linear, left, right, from(#295597),
 		to(#93348b));

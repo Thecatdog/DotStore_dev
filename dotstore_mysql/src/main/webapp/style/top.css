@@ -2,12 +2,20 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.icon {
+	color : #fff;
+}
+.icon:hover {
+	color : #bcbbbd;
+	text-decoration: none;
+}
 
 .welcome-msg {
 	color : #fff;
 	font-size : 0.8rem;
 	font-family: 'Nanum Gothic';
 	padding-left : 2rem;
+	padding-right: 1rem;
 }
 
 .category-item {
@@ -120,6 +128,7 @@
 
 .btn-gradient:hover {
 	border: 2px solid #1e3f6f;
+	color:#dad9db;
 	background-color: #295597;
 	background-image: -webkit-gradient(linear, left, right, from(#295597),
 		to(#93348b));
