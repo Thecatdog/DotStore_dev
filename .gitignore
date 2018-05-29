@@ -1,0 +1,6 @@
+
+*.properties
+*.class
+*.class
+*.properties
+dotstore_mysql/src/main/webapp/WEB-INF/jsp/tiles/Top.jsp

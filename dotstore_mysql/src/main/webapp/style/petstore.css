@@ -38,7 +38,7 @@ table#cart {
 table#cart tr td {
     padding: 5px;
 }
-table#account {
+/* table#account {
 	background-color: #DDDDDD;
     border: 2px solid;
     border-spacing: 2px;
@@ -46,7 +46,7 @@ table#account {
 table#account tr td {
     padding: 5px;
 }
-
+ */
 table.top {
     background-image: url('../images/bkg-topbar.gif');
     width: 100%;

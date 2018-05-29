@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!-- 이거 쓰지말고 타일즈에 있는 TOP.jsp로 쓸것 -->
+
 <html>
 <head>
   <title>JPetStore</title>
