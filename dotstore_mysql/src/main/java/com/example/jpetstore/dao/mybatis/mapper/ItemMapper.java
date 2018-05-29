@@ -21,20 +21,12 @@ import java.util.Map;
 
 import com.example.jpetstore.domain.Item;
 
-/**
- * @author Eduardo Macarron
- *
- */
 public interface ItemMapper {
 
   void updateInventoryQuantity(Map<String, Object> param);
-
   int getInventoryQuantity(String itemId);
-
   List<Item> getItemListByProduct(String productId);
-
   Item getItem(String itemId);
-  
   boolean isItemInStock(String itemId);
 
 }

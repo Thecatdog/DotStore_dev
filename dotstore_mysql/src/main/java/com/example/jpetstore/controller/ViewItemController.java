@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.jpetstore.domain.Item;
+import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.service.PetStoreFacade;
 
 /**
@@ -28,9 +29,17 @@ public class ViewItemController {
 	public String handleRequest(
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
+		
+		System.out.println("ddd");
 		Item item = this.petStore.getItem(itemId);
+		System.out.println("item: " + item);
+		
+		Product product = item.getProduct();
+		
+		System.out.println("item: " + item);
+		System.out.println("product: "+ product);
 		model.put("item", item);
-		model.put("product", item.getProduct());
+		model.put("product", product);
 		return "Item";
 	}
 

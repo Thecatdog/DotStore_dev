@@ -25,7 +25,7 @@ import org.springframework.web.util.WebUtils;
 public class MessageController implements Serializable{
 	@Autowired MessageMapper messageMapper;
 	@Autowired MessageService messageService;
-	
+
 	// Message List
 	@RequestMapping(value = "/msg/{type}/list.do", method = RequestMethod.GET)
 	public ModelAndView list(@PathVariable("type") String type, 
