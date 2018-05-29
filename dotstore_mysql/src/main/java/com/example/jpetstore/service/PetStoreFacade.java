@@ -3,6 +3,7 @@ package com.example.jpetstore.service;
 import java.util.List;
 
 import com.example.jpetstore.domain.Account;
+import com.example.jpetstore.domain.Auction;
 import com.example.jpetstore.domain.Category;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Order;
@@ -26,7 +27,15 @@ public interface PetStoreFacade {
 
 	List<String> getUsernameList();
 
-
+	//°æ¸Å
+	Auction getAuctionItem(String itemId);
+	void createAuctionItem(Auction auction);
+	void readAuctionItem(Auction auction);
+	void updateAuctionItem(Auction auction);
+	void deleteAuctionItem(Auction auction);
+	void changeAuctionItem(Auction auction, int price);
+	List<Auction> getAuctionItemList();
+	
 	List<Category> getCategoryList();
 
 	Category getCategory(String categoryId);

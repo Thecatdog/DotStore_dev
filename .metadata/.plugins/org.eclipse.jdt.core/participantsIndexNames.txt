@@ -9,6 +9,8 @@ INDEX VERSION 1.130
 /dotstore_mysql/src/main/java
 /Users/LIMAH/dev/DBP_dotstore/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/206376505.index
 /jpetstore/src/main/java
+/Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3849408009.index
+/dotstore_mysql/src/main/java
 /Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/411593294.index
 /dotstore_mysql/src/main/java
 /Users/LIMAH/dev/DotStore_dev/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2786437951.index

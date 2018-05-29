@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Account implements Serializable {
 
   /* Private Fields */
-
+	
   private String username;
   private String password;
   private String email;

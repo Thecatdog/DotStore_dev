@@ -1,0 +1,17 @@
+package com.example.jpetstore.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.jpetstore.dao.mybatis.mapper.MessageMapper;
+import com.example.jpetstore.domain.Message;
+
+@Service
+public class MessageService {
+	private MessageMapper messageMapper;
+	
+	@Transactional
+	public void insert(Message message) {
+		messageMapper.sendMessage(message);
+	}
+}
