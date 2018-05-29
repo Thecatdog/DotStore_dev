@@ -13,5 +13,4 @@ public interface MessageMapper {
 	Message getMessageById(int messageId) throws DataAccessException; 	// 메시지 1개
 	void sendMessage(Message message) throws DataAccessException;		// 메시지 전송
 	void deleteById(int messageId) throws DataAccessException;			// 메시지 삭제
-	
 }

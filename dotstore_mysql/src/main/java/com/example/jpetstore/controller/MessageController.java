@@ -43,7 +43,6 @@ public class MessageController implements Serializable{
 		int pageLen = (int)(Math.ceil(msgSize/divNum));
 		int lastMsgIndex = messageList.size()-1;
 		
-
 		// 5개씩 리스트를 쪼개다보니, 마지막 페이지에서는 null exception이 발생 -> if로 예외 처리
 		List<Message> subMessageList = null;
 		if(lastMsgIndex > currPage*divNum) subMessageList = messageList.subList((currPage-1)*divNum, currPage*divNum);
