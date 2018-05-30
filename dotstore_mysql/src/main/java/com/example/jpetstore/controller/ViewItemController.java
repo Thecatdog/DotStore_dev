@@ -29,15 +29,10 @@ public class ViewItemController {
 	public String handleRequest(
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
-		
-		System.out.println("ddd");
+
 		Item item = this.petStore.getItem(itemId);
-		System.out.println("item: " + item);
-		
 		Product product = item.getProduct();
-		
-		System.out.println("item: " + item);
-		System.out.println("product: "+ product);
+	
 		model.put("item", item);
 		model.put("product", product);
 		return "Item";

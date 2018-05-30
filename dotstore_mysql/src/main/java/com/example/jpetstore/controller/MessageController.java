@@ -32,8 +32,9 @@ public class MessageController implements Serializable{
 							 @RequestParam(value="page", defaultValue="1") int currPage, 
 							 @RequestParam(value="searchKey", required=false) String searchKey,
 							 HttpServletRequest request) {
-		
+
 		ModelAndView mv = new ModelAndView("tiles/MsgList");
+
 		String username = getUserName(request);
 		List<Message> messageList = messageMapper.getMessages(username, type, searchKey);
 	
@@ -58,7 +59,9 @@ public class MessageController implements Serializable{
 	// Message send
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.GET)
 	public ModelAndView send() {
+
 		ModelAndView mv = new ModelAndView("tiles/MsgWrite");
+
 		return mv;
 	}
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.POST) 
