@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.jpetstore.dao.mybatis.mapper.AuctionMapper">
+  <cache />
+
+<!-- 여기서부터 추가 -->
+
+  <insert id="insertAuction" parameterType="Auction">
+    INSERT INTO AUCTION
+      (IDAUCTION, NAME, DESCRIPTION, STARTPRICE, DEADLINE)
+    VALUES
+      (#{idAUCTION}, #{name}, #{description}, #{startPrice}, #{deadline})
+  </insert>
+  
+  <select id="getAuctionList" resultType="java.lang.String">
+    SELECT idAUCTION,
+    		name,
+    		description,
+    		startPrice,
+    		deadline
+    FROM AUCTION
+  </select>
+
+</mapper>

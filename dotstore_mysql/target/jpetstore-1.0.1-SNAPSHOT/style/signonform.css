@@ -1,98 +1,24 @@
 @charset "UTF-8";
-
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-.icon {
-	color : #fff;
-	transition:0.3s;
+body {
+	background : linear-gradient(to right, #346cbf , #b941ae);
 }
-.icon:hover {
-	color : #bcbbbd;
-	text-decoration: none;
+.login-form {
+	margin-top:20vh;
+	background-color : rgb(0,0,0,40%);
+	width:30vw;
+	height:60vh;
+	padding-top:4rem;
 }
-
-.welcome-msg {
-	color : #fff;
-	font-size : 0.8rem;
-	font-family: 'Nanum Gothic';
-	padding-left : 2rem;
-	padding-right: 1rem;
+label {
+	color : #ffffff;
+	font-family: "Noto Sans KR";
 }
-
-.category-item {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 15px 20px;
-  position: relative;
-}
-.category-item:after {    
-  background: none repeat scroll 0 0 transparent;
-  bottom: 5;
-  content: "";
-  display: block;
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-.category-item:hover:after { 
-  width: 100%; 
-  left: 0; 
-}
-
-
 .dot-logo {
-	width: 8vw;
-	padding-right: 2rem;
+	width:6vw;
 }
-
-.top-nav-color {
-	background: linear-gradient(to right, #346cbf, #b941ae, 100%);
-	margin-top: -0.5rem;
-}
-
-
-.top-category {
-	width: 65vw;
-}
-
-.category-item {
-	color: white;
-	font-family: 'Nanum Gothic';
-	font-size: 1rem;
-}
-
-.category-item:hover {
-	color: #d4d4d7;
-	-webkit-transition: 0.1s;
-	display: inline-block;
-}
-
-.navbar-expand-lg .navbar-nav .nav-link {
-	padding-right: 3rem;
-	padding-left: 3rem;
-}
-
-.sign-form {
-	background-color: #fafaf8;
-	width: 94vw;
-	height: 3rem;
-	display: inline-block;
-}
-
-.go-sign-form {
-	vertical-align: middle;
-	padding-top: 1rem;
-}
-
-.login-input:focus {
-	outline: none !important;
-	box-shadow: 0 0 10px #c7c9be;
+.form-control {
+	width:80%;
 }
 
 .btn-gradient {
@@ -134,4 +60,8 @@
 	background-image: linear-gradient(to right, #295597, #93348b);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
 		startColorstr=#295597, endColorstr=#93348b);
+}
+.btn-sign-up{
+	margin-top:0.5rem;
+}
 }

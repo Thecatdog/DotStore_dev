@@ -4,7 +4,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 .icon {
 	color : #fff;
-	transition:0.3s;
 }
 .icon:hover {
 	color : #bcbbbd;

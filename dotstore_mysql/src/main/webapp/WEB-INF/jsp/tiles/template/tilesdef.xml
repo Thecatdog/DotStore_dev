@@ -39,6 +39,15 @@
 			value="/WEB-INF/jsp/tiles/EditAccountForm.jsp" />			
 	</definition>
  
+	 <definition name="tiles/categoryList" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/categoryList.jsp" />
+	</definition> 
+	
+	<definition name="msgList" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/MsgList.jsp" />
+	</definition> 
  
  	<!-- <definition name="tiles/Category" extends="base_layout">
 		<put-attribute name="body"

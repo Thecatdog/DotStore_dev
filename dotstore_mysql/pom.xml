@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.example</groupId>
 	<artifactId>jpetstore</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
 	<name>jpetstore.tiles</name>
 	<description>Sample project for Spring and Mybatis</description>
-	
+
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.3.14.RELEASE</spring.version>
@@ -24,27 +25,34 @@
 		<org.slf4j-version>1.7.6</org.slf4j-version>
 		<log4j.version>1.2.15</log4j.version>
 		<aspectj.version>1.6.10</aspectj.version>
-		<hsqldb.version>2.3.5</hsqldb.version>	
+		<hsqldb.version>2.3.5</hsqldb.version>
 		<junit.version>4.12</junit.version>
 		<commons-fileupload.version>1.3</commons-fileupload.version>
 		<urlrewrite.version>3.1.0</urlrewrite.version>
 	</properties>
-	
+
 	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.8</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Apache Tiles -->
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>
 			<version>${tiles.version}</version>
 		</dependency>
-	
+
 		<!-- Clean URLs with JSPs -->
 		<dependency>
 			<groupId>org.tuckey</groupId>
 			<artifactId>urlrewritefilter</artifactId>
 			<version>${urlrewrite.version}</version>
 		</dependency>
-		
+
 		<!-- Spring Framework Project libraries -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -68,7 +76,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		            
+
 		<!-- Runtime dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -80,8 +88,8 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
-		
-		<!-- Container-provided dependencies-->
+
+		<!-- Container-provided dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -94,19 +102,19 @@
 			<version>${jsp.version}</version>
 			<scope>provided</scope>
 		</dependency>
-			
+
 		<!-- MyBatis -->
 		<dependency>
-     		<groupId>org.mybatis</groupId>
-      		<artifactId>mybatis</artifactId>
-      		<version>${mybatis.version}</version>
-    	</dependency>
-    	<dependency>
-      		<groupId>org.mybatis</groupId>
-      		<artifactId>mybatis-spring</artifactId>
-      		<version>${mybatis-spring.version}</version>
-    	</dependency>
-    
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring.version}</version>
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -146,7 +154,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Test dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -160,7 +168,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Compile dependencies -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -168,12 +176,12 @@
 			<version>${commons-fileupload.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-dbcp2</artifactId>
-		    <version>${dbcp.version}</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${dbcp.version}</version>
 		</dependency>
-		
-                                 
+
+
 		<!-- Embedded database -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
@@ -181,48 +189,38 @@
 			<version>${hsqldb.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- mysql database -->
 		<dependency>
-	 		<groupId>mysql</groupId>
-	 		<artifactId>mysql-connector-java</artifactId>
-	 		<version>5.1.27</version>
-	 		<scope>compile</scope>
- 		</dependency> 
-            
-		<!-- for oracle jdbc driver -->
-		<!-- 
-		<dependency>
-     		<groupId>com.oracle</groupId>
-     		<artifactId>ojdbc6</artifactId>
-     		<version>11.1.0.7.0</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.27</version>
+			<scope>compile</scope>
 		</dependency>
-		 -->
+
+		<!-- for oracle jdbc driver -->
+		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+			<version>11.1.0.7.0</version> </dependency> -->
 	</dependencies>
-	
+
 	<!-- for oracle jdbc driver -->
-	<!-- <repositories>
-		<repository>
-		    <id>oracle</id>
-     		<name>ORACLE JDBC Repository</name>
-     		<url>http://maven.jahia.org/maven2</url>
-		</repository>
-	</repositories> -->
-	
+	<!-- <repositories> <repository> <id>oracle</id> <name>ORACLE JDBC Repository</name> 
+		<url>http://maven.jahia.org/maven2</url> </repository> </repositories> -->
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>2.5.1</version>
-			    <configuration>
-			        <source>${java.version}</source>
-			        <target>${java.version}</target>
-			        <compilerArgument>-Xlint:all</compilerArgument>
-			        <showWarnings>true</showWarnings>
-			        <showDeprecation>true</showDeprecation>
-			    </configuration>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
 			</plugin>
 		</plugins>
-	</build> 
+	</build>
 </project>

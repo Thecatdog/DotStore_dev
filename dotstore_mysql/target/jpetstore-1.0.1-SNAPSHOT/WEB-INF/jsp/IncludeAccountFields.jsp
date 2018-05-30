@@ -1,8 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<h3>
-  <font color="darkgreen">Account Information</font>
-</h3>
-
+<hr />
 <table class="n13">
   <tr>
     <td>First name:</td>

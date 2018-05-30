@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link type="text/css" rel="stylesheet"
-	href="../style/signonform.css?ver=4" />
+	href="/dotstore_mysql/style/signonform.css?ver=4" />
 
 <c:if test="${!empty message}">
 	<b><font color="red"><c:url value="${message}" /></font></b>
