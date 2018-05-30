@@ -1,7 +1,5 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body {
 	background : linear-gradient(to right, #346cbf , #b941ae);
 }

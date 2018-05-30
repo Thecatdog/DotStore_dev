@@ -33,7 +33,7 @@ public class MessageController implements Serializable{
 							 @RequestParam(value="searchKey", required=false) String searchKey,
 							 HttpServletRequest request) {
 		
-		ModelAndView mv = new ModelAndView("MsgList");
+		ModelAndView mv = new ModelAndView("tiles/MsgList");
 		String username = getUserName(request);
 		List<Message> messageList = messageMapper.getMessages(username, type, searchKey);
 	

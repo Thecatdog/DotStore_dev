@@ -27,7 +27,6 @@ public interface PetStoreFacade {
 
 	List<String> getUsernameList();
 
-	//°æ¸Å
 	Auction getAuctionItem(String itemId);
 	void createAuctionItem(Auction auction);
 	void readAuctionItem(Auction auction);

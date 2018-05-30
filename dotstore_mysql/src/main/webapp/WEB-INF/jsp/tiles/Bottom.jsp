@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="../style/bottom.css?ver=2" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/bottom.css?ver=2" />
 <br/>
 <br />
 <hr/>

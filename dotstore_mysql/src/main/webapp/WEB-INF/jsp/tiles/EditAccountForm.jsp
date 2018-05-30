@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <link type="text/css" rel="stylesheet"
-	href="../style/accountform.css?ver=9" />
+	href="/dotstore_mysql/style/accountform.css?ver=9" />
 
 <div align="center">
 	<form:form commandName="accountForm" method="post">

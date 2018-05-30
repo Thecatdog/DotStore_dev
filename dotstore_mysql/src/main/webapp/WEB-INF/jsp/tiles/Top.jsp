@@ -1,10 +1,10 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link type="text/css" rel="stylesheet" href="../style/top.css?ver=8" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/top.css?ver=10" />
 <div class="top-container">
 	<nav class="navbar navbar-expand-lg top-nav-color">
 		<a class="navbar-brand" href="<c:url value="/shop/index.do"/>"> <img
-			class="dot-logo" border="0" src="../images/dot-logo.png" /></a>
+			class="dot-logo" border="0" src="/dotstore_mysql/images/dot-logo.png" /></a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-item nav-link category-item" href="<c:url value="/shop/categoryList.do"/>">C2P</a>

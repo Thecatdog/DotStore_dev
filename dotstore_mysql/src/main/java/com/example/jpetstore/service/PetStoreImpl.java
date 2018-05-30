@@ -138,7 +138,6 @@ public class PetStoreImpl implements PetStoreFacade {
 		return orderDao.getOrdersByUsername(username);
 	}
 	
-	//°æ¸Å
 	public Auction getAuctionItem(String itemId) {
 		return auctionDao.getAuctionItem(itemId);
 	}
