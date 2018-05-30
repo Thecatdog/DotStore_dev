@@ -1,50 +1,64 @@
 @charset "UTF-8";
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-.icon {
-	color : #fff;
-	transition:0.3s;
+
+body {
+	text-align: center;
 }
+
+.top-container {
+	max-width: 1024px;
+	margin: auto;
+	display: inline-block;
+}
+
+.icon {
+	color: #fff;
+	transition: 0.3s;
+}
+
 .icon:hover {
-	color : #bcbbbd;
+	color: #bcbbbd;
 	text-decoration: none;
 }
 
 .welcome-msg {
-	color : #fff;
-	font-size : 0.8rem;
+	color: #fff;
+	font-size: 0.8rem;
 	font-family: 'Nanum Gothic';
-	padding-left : 2rem;
+	padding-left: 2rem;
 	padding-right: 1rem;
 }
 
 .category-item {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 15px 20px;
-  position: relative;
-}
-.category-item:after {    
-  background: none repeat scroll 0 0 transparent;
-  bottom: 5;
-  content: "";
-  display: block;
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-.category-item:hover:after { 
-  width: 100%; 
-  left: 0; 
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 20px;
+	position: relative;
 }
 
+.category-item:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 5;
+	content: "";
+	display: block;
+	height: 1px;
+	left: 50%;
+	position: absolute;
+	background: #fff;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+.category-item:hover:after {
+	width: 100%;
+	left: 0;
+}
 
 .dot-logo {
 	width: 8vw;
@@ -52,10 +66,9 @@
 }
 
 .top-nav-color {
-	background: linear-gradient(to right, #346cbf, #b941ae, 100%);
+	background-color: linear-gradient(to right, #346cbf, #b941ae, 100%);
 	margin-top: -0.5rem;
 }
-
 
 .top-category {
 	width: 65vw;
@@ -96,8 +109,8 @@
 }
 
 .btn-gradient {
-	margin-left:1rem;
-	margin-right:1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 	border: 2px solid #ffffff;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -123,7 +136,7 @@
 
 .btn-gradient:hover {
 	border: 2px solid #1e3f6f;
-	color:#dad9db;
+	color: #dad9db;
 	background-color: #295597;
 	background-image: -webkit-gradient(linear, left, right, from(#295597),
 		to(#93348b));

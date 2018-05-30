@@ -4,9 +4,10 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body {
 	background : linear-gradient(to right, #346cbf , #b941ae);
+	text-align:center;
 }
 .main-background {
-	background-image : url("../images/main-background.png");
+	background-image : url("../images/main-background2.png");
 	background-repeat : no-repeat;
 	background-position : center top;
 	width:100vw;
@@ -15,10 +16,4 @@ body {
 }
 .body-container {
 	background-color : #ffffff;
-}
-.top-container {
-	max-width: 1024px;
-	margin: auto;
-	margin-top: 525px;
-	display: inline-block;
 }
