@@ -6,20 +6,30 @@
 <tiles-definitions>
 	<definition name="base_layout"
 		template="/WEB-INF/jsp/tiles/template/layout.jsp">
-		<put-attribute name="title" value="DOT STORE" type="string"/>
+		<put-attribute name="title" value="JPetStore Demo" type="string"/>
 		<put-attribute name="header"
+			value="/WEB-INF/jsp/tiles/Top.jsp" />
+		<put-attribute name="body"
 			value="" />
 		<put-attribute name="footer"
 			value="/WEB-INF/jsp/tiles/Bottom.jsp" />
 		<put-attribute name="banner" value="" />
 	</definition>
-
-	<definition name="layout_with_banner" extends="base_layout">
-		<put-attribute name="banner"
-			value="/WEB-INF/jsp/tiles/Banner.jsp" />
+	<definition name="index_layout"
+		template="/WEB-INF/jsp/tiles/template/index_layout.jsp">
+		<put-attribute name="title" value="JPetStore Demo" type="string"/>
+		<put-attribute name="body"
+			value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/jsp/tiles/Bottom.jsp" />
+		<put-attribute name="banner" value="" />
 	</definition>
-	
-	<definition name="index" extends="layout_with_banner">
+<!-- 
+	<definition name="banner" extends="layout_with_banner">
+		<put-attribute name="banner"
+			value="/WEB-INF/jsp/tiles/ShoppingHistory.jsp" />
+	</definition>
+ -->	<definition name="index" extends="index_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/index.jsp" />
 	</definition>	
@@ -29,17 +39,17 @@
 			value="/WEB-INF/jsp/tiles/{1}.jsp" />
 	</definition> 
  
- 	<definition name="tiles/SignonForm" extends="base_layout">
+ 	<definition name="SignonForm" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/SignonForm.jsp" />			
 	</definition>
 	
- 	<definition name="tiles/EditAccountForm" extends="base_layout">
+ 	<definition name="EditAccountForm" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/EditAccountForm.jsp" />			
 	</definition>
  
-	 <definition name="tiles/categoryList" extends="base_layout">
+	 <definition name="categoryList" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/categoryList.jsp" />
 	</definition> 

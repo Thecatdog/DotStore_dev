@@ -9,12 +9,6 @@ body {
 	text-align: center;
 }
 
-.top-container {
-	max-width: 1024px;
-	margin: auto;
-	display: inline-block;
-}
-
 img {
 	width: 65%;
 	transition: .5s ease;
