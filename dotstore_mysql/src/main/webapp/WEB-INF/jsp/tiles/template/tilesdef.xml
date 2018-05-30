@@ -13,7 +13,7 @@
 			value="" />
 		<put-attribute name="footer"
 			value="/WEB-INF/jsp/tiles/Bottom.jsp" />
-		<put-attribute name="banner" value="" />
+		<put-attribute name="banner" value="/WEB-INF/jsp/tiles/ShoppingHistory.jsp" />
 	</definition>
 	<definition name="index_layout"
 		template="/WEB-INF/jsp/tiles/template/index_layout.jsp">
@@ -24,12 +24,12 @@
 			value="/WEB-INF/jsp/tiles/Bottom.jsp" />
 		<put-attribute name="banner" value="" />
 	</definition>
-<!-- 
-	<definition name="banner" extends="layout_with_banner">
+
+	<definition name="banner" extends="base_layout">
 		<put-attribute name="banner"
 			value="/WEB-INF/jsp/tiles/ShoppingHistory.jsp" />
 	</definition>
- -->	<definition name="index" extends="index_layout">
+	<definition name="index" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/index.jsp" />
 	</definition>	
