@@ -28,7 +28,13 @@ public class ViewItemController {
 	public String handleRequest(
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
+<<<<<<< Updated upstream
 		Item item = this.petStore.getItem(itemId);
+=======
+
+		Item item = this.petStore.getItem(itemId);
+		Product product = item.getProduct();
+>>>>>>> Stashed changes
 		model.put("item", item);
 		model.put("product", item.getProduct());
 		return "Item";

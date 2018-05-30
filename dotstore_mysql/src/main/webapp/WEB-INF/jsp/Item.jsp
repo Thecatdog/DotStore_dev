@@ -1,5 +1,7 @@
+<%@ page pageEncoding="utf-8"%>
 <%@ include file="IncludeTop.jsp"%>
 
+<!-- 림아왈 : id값 건들지 말아줄것 -->
 <table id="main-menu">
   <tr>
     <td>
@@ -18,7 +20,7 @@
         <c:out value="${product.description}" escapeXml="false" /></td>
     </tr>
     <tr>
-      <td width="100%" bgcolor="#CCCCCC"><b><c:out value="${item.itemId}" /></b></td>
+      <td id="itemName" width="100%" bgcolor="#CCCCCC"><c:out value="${item.itemId}" /></td>
     </tr>
     <tr>
       <td><b><font size="4"> 
@@ -31,7 +33,7 @@
         </font></b></td>
     </tr>
     <tr>
-      <td><font size="3"><i><c:out value="${product.name}" /></i></font></td>
+      <td id="cate">${product.name}</td>
     </tr>
     <tr>
       <td>
@@ -44,7 +46,7 @@
       </td>
     </tr>
     <tr>
-      <td><fmt:formatNumber value="${item.listPrice}" pattern="$#,##0.00" /></td>
+      <td id="price"> ${item.listPrice} 원</td>
     </tr>
     <tr>
       <td>
@@ -54,6 +56,7 @@
       </td>
     </tr>
   </table>
+	
 </div>
-
+	
 <%@ include file="IncludeBottom.jsp"%>
