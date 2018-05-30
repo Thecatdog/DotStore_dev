@@ -41,7 +41,7 @@ table {
 	font-family: 'Nanum Gothic';
 	font-size: 0.9rem;
 	text-align: center;
-	margin-top: 3rem;
+	margin-top: 1rem;
 }
 
 body {
@@ -57,11 +57,12 @@ body {
 
 .msg-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 65vh;
+	height: 74vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;
 	padding-right: 3rem;
+	position:relative;
 }
 
 .msg-tab {
@@ -96,25 +97,32 @@ body {
 .message-title {
 	width: 50%;
 }
+
 .message-title a {
-	text-decoration:none;
-	color:#fff;
-	font-size : 0.9rem;
+	text-decoration: none;
+	color: #fff;
+	font-size: 0.9rem;
 	font-family: 'Nanum Gothic';
-	transition:0.3s;
+	transition: 0.3s;
 }
+
 .message-title a:hover {
-	color:#aaaaac;
+	color: #aaaaac;
 }
+
 .msg-search {
-	padding-left:1rem;
-	padding-right:1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	width: 40%;
-	}
-input::-webkit-input-placeholder{
-	font-size : 0.9rem;
+}
+
+
+
+input::-webkit-input-placeholder {
+	font-size: 0.9rem;
 	font-family: 'Nanum Gothic';
 }
+
 .btn-search {
 	color: #fff;
 	background-color: rgb(0, 0, 0, 0%);
@@ -135,6 +143,20 @@ input::-webkit-input-placeholder{
 		startColorstr=#346CBF, endColorstr=#B941AE);
 	text-decoration: none;
 }
-.btn-group-msg td{
-	padding-top:22vh;
+
+a {
+	text-decoration:none;
+	color: #346CBF;
+	transition:0.3s;
+}
+
+a:hover {
+	color:#B941AE;
+	text-decoration:none;
+}
+
+.div-footer {
+	position:absolute;
+	bottom:1;
+	margin-left:-2rem;
 }
