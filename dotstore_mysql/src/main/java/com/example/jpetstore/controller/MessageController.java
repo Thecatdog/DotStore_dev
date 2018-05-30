@@ -58,7 +58,7 @@ public class MessageController implements Serializable{
 	// Message send
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.GET)
 	public ModelAndView send() {
-		ModelAndView mv = new ModelAndView("MsgWrite");
+		ModelAndView mv = new ModelAndView("tiles/MsgWrite");
 		return mv;
 	}
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.POST) 
