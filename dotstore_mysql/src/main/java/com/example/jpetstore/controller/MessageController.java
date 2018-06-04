@@ -79,7 +79,7 @@ public class MessageController implements Serializable{
 	// Message Detail
 	@RequestMapping("/msg/detail.do")
 	public ModelAndView detail(@RequestParam("id") int messageId) {
-		ModelAndView mv = new ModelAndView("MsgDetail");
+		ModelAndView mv = new ModelAndView("tiles/MsgDetail");
 		Message msg = messageMapper.getMessageById(messageId);
 		mv.addObject("message", msg);
 		return mv;
