@@ -9,5 +9,4 @@ public class MessageVo{
 	private String receiverId;
 	private String title;
 	private String context;
-	
 }

@@ -30,22 +30,26 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		
 		<table class="table table-hover div-footer">
 			<tfoot>
 				<tr class="btn-group-msg">
 					<td>
 						<button class="btn-gradient btn-msg-del" type="submit"><i class="fas fa-trash-alt msg-icon"></i></button>
 					</td>
+	</form>
+	<form method="GET" action="<c:url value="/msg/search/list.do" /> ">
 					<td colspan="2">
-						<div class="input-group mb-3">
-							<input type="text" class="form-control"
-								placeholder="검색어를 입력하세요."
-								aria-label="message keyword"
-								aria-describedby="basic-addon2" id="searchKey" name="searchKey">
-							<div class="input-group-append">
-								<button class="btn btn-search" type="submit" name="search"><i class="fas fa-search"></i></button>
-							</div>
-						</div> 
+							<div class="input-group mb-3">
+								<input type="text" class="form-control"
+									placeholder="검색어를 입력하세요."
+									aria-label="message keyword"
+									aria-describedby="basic-addon2" id="searchKey" name="searchKey">
+								<div class="input-group-append">
+									<button class="btn btn-search" type="submit" name="search"><i class="fas fa-search"></i></button>
+								</div>
+							</div> 
+						</form>
 					</td>
 					<td>
 						<a class="btn-gradient btn-msg-send" href="<c:url value="/msg/send.do" />" >메세지 보내기</a>
@@ -65,24 +69,8 @@
 					</c:forEach> <!-- Paging Numbering End --></td>
 				</tr>
 			</tfoot>
-
 		</table>
 	</form>
 
 </div>
-
-<!-- <script type="text/javascript">
-		$(document).ready(function(){
-			$('#search').click(function(){
-				$.ajax({
-					type: "post",
-					url: "/msg/search",
-					data: "key=" + $('#searchKey').val(),
-					success: function(){
-						// 모르겟
-					}
-				});
-			});
-		});
-	</script> -->
 	
