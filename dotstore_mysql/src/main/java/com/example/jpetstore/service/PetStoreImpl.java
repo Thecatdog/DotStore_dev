@@ -5,13 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.example.jpetstore.dao.AccountDao;
-import com.example.jpetstore.dao.AuctionDao;
 import com.example.jpetstore.dao.CategoryDao;
 import com.example.jpetstore.dao.ItemDao;
 import com.example.jpetstore.dao.OrderDao;
 import com.example.jpetstore.dao.ProductDao;
 import com.example.jpetstore.domain.Account;
-import com.example.jpetstore.domain.Auction;
 import com.example.jpetstore.domain.Category;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Order;
@@ -66,8 +64,6 @@ public class PetStoreImpl implements PetStoreFacade {
 	private ItemDao itemDao;
 	@Autowired
 	private OrderDao orderDao;
-	@Autowired
-	private AuctionDao auctionDao;
 
 	//-------------------------------------------------------------------------
 	// Operation methods, implementing the PetStoreFacade interface
@@ -138,25 +134,4 @@ public class PetStoreImpl implements PetStoreFacade {
 		return orderDao.getOrdersByUsername(username);
 	}
 	
-	public Auction getAuctionItem(String itemId) {
-		return auctionDao.getAuctionItem(itemId);
-	}
-	public void createAuctionItem(Auction auction) {
-		auctionDao.createAuctionItem(auction);
-	}
-	public void readAuctionItem(Auction auction) {
-		
-	}
-	public void updateAuctionItem(Auction auction) {
-		
-	}
-	public void deleteAuctionItem(Auction auction) {
-		
-	}
-	public void changeAuctionItem(Auction auction, int price) {
-		
-	}
-	public List<Auction> getAuctionItemList(){
-		return auctionDao.getAuctionItemList();
-	}
 }

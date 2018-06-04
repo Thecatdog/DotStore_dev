@@ -6,20 +6,17 @@
 
 <!-- 여기서부터 추가 -->
 
-  <insert id="insertAuction" parameterType="Auction">
-    INSERT INTO AUCTION
-      (IDAUCTION, NAME, DESCRIPTION, STARTPRICE, DEADLINE)
+  <insert id="insertAuction" parameterType="AuctionItem">
+    INSERT INTO AUCTIONITEM
+      (ITEMID, PRODUCTID, LISTPRICE, UNITCOST, SUPPLIER, STATUS, ATTR1, ATTR2, ATTR3, ATTR4, ATTR5, BUYERID, DUETIME, DESCRIPTION, COMPANYSUPPLIER, CATEGORYID)
     VALUES
-      (#{idAUCTION}, #{name}, #{description}, #{startPrice}, #{deadline})
+      (#{itemId}, #{productId}, #{listprice}, #{unitcost}, #{supplier}, #{status}, #{attr1}, #{attr2}, #{attr3}, #{attr4}, #{attr5}, #{buyerId}, #{dueTime}, #{description}, #{companySupplier}, #{categoryId})
   </insert>
   
-  <select id="getAuctionList" resultType="java.lang.String">
-    SELECT idAUCTION,
-    		name,
-    		description,
-    		startPrice,
-    		deadline
-    FROM AUCTION
+  <select id="getAuctionList" resultType="AuctionItem">
+    SELECT *
+    FROM AUCTIONITEM
+    WHERE productId = #{productId}
   </select>
 
 </mapper>

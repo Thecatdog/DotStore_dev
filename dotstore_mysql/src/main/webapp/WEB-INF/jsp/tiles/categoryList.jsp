@@ -15,30 +15,36 @@
 	</thead>
 		<tr>
 			<td>
-				<a href="<c:url value="/shop/viewCategory.do?categoryId=DOGS"/>">
+				<a href="<c:url value="/shop/${type}/viewCategory.do?categoryId=DOGS"/>">
 	            	<img class="image" border="0" src="/dotstore_mysql/images/dog-logo.png" />
 	            </a>
 			</td>
 			<td>
-				<a href="<c:url value="/shop/viewCategory.do?categoryId=FISH"/>">
+				<a href="<c:url value="/shop/${type}/viewCategory.do?categoryId=FISH"/>">
 	            	<img border="0" src="/dotstore_mysql/images/fish-logo.png" />
 	            </a>
 			</td>
 			<td>
-				<a href="<c:url value="/shop/viewCategory.do?categoryId=BIRDS"/>">
+				<a href="<c:url value="/shop/${type}/viewCategory.do?categoryId=BIRDS"/>">
 	            	<img border="0" src="/dotstore_mysql/images/parrot-logo.png" />
 	            </a>
 			</td>
 			<td>
-				<a href="<c:url value="/shop/viewCategory.do?categoryId=CATS"/>">
+				<a href="<c:url value="/shop/${type}/viewCategory.do?categoryId=CATS"/>">
 	            	<img border="0" src="/dotstore_mysql/images/cat-logo.png" />
 	            </a>
 			</td>
 			<td>
-				<a href="<c:url value="/shop/viewCategory.do?categoryId=REPTILES"/>">
+				<a href="<c:url value="/shop/${type}/viewCategory.do?categoryId=REPTILES"/>">
 	            	<img border="0" src="/dotstore_mysql/images/reptiles-logo.png" />
 	            </a>
 			</td>
 		</tr>
 	</table>
+	<c:if test="${!empty userSession.account}">
+		<c:if test="${requestScope['javax.servlet.forward.request_uri'] eq '/dotstore_mysql/shop/auction/categoryList.do'}">
+			<a href="<c:url value="/shop/auctionForm.do"/>" class="btn btn-gradient">경매상품등록</a>
+		</c:if>
+	</c:if>
+		
 </div>

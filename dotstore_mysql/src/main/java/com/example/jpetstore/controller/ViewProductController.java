@@ -1,14 +1,21 @@
 package com.example.jpetstore.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
+import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
+import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.service.PetStoreFacade;
@@ -22,39 +29,86 @@ import com.example.jpetstore.service.PetStoreFacade;
 @SessionAttributes({"category", "productList"})
 public class ViewProductController { 
 
-	private PetStoreFacade petStore;
+private PetStoreFacade petStore;
 
-	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
-	}
+@Autowired
+public void setPetStore(PetStoreFacade petStore) {
+this.petStore = petStore;
+}
 
-	@RequestMapping("/shop/viewProduct.do")
-	public String handleRequest(
-			@RequestParam("productId") String productId,
-			ModelMap model) throws Exception {
-		PagedListHolder<Item> itemList = new PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
-		itemList.setPageSize(4);
-		Product product = this.petStore.getProduct(productId);
-		model.put("itemList", itemList);
-		model.put("product", product);
-		return "Product";
-	}
-	
-	@RequestMapping("/shop/viewProduct2.do")
-	public String handleRequest2(
-			@ModelAttribute("product") Product product,
-			@ModelAttribute("itemList") PagedListHolder<Item> itemList,
-			@RequestParam("pageName") String page, 
-			ModelMap model) throws Exception {
-		if ("next".equals(page)) {
-			itemList.nextPage();
-		}
-		else if ("previous".equals(page)) {
-			itemList.previousPage();
-		}
-		model.put("itemList", itemList);
-		model.put("product", product);
-		return "Product";
-	}
+
+@Autowired
+private AuctionMapper auctionMapper;
+@Autowired
+private ProductMapper productMapper;
+
+@RequestMapping("/shop/{type}/viewProduct.do")
+public ModelAndView handleRequest(
+@RequestParam("productId") String productId,
+ModelMap model,
+@PathVariable("type") String type
+) throws Exception {
+//PagedListHolder<Item> itemList = new PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
+//itemList.setPageSize(4);
+//Product product = this.petStore.getProduct(productId);
+//model.put("itemList", itemList);
+//model.put("product", product);
+//return "Product";
+
+ModelAndView mv = new ModelAndView("tiles/Product");
+
+mv.addObject("type", type);
+
+//System.out.println(productId);
+//String productName = productMapper.getProductNameByProductId(productId);
+//mv.addObject("productName", productName);
+//System.out.println(productName);
+
+Product product = productMapper.getProduct(productId);
+System.out.println(product);
+mv.addObject("product", product);
+
+if (type.equals("auction")) {
+List<AuctionItem> list = auctionMapper.getAuctionList(productId);
+System.out.println(list);
+mv.addObject("itemList", list);
+} else if (type.equals("p2p")) {
+//List<> list = ~~
+//mv.addObject("itemList", list);
+} else if (type.equals("c2p")) {
+//List<> list = ~~
+//mv.addObject("itemList", list);
+}
+
+return mv;
+}
+
+//@RequestMapping("/shop/{type}/viewProduct.do")
+//public String handleRequest(
+//@RequestParam("productId") String productId,
+//ModelMap model) throws Exception {
+//PagedListHolder<Item> itemList = new PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
+//itemList.setPageSize(4);
+//Product product = this.petStore.getProduct(productId);
+//model.put("itemList", itemList);
+//model.put("product", product);
+//return "Product";
+//}
+
+@RequestMapping("/shop/{type}/viewProduct2.do")
+public String handleRequest2(
+@ModelAttribute("product") Product product,
+@ModelAttribute("itemList") PagedListHolder<Item> itemList,
+@RequestParam("pageName") String page, 
+ModelMap model) throws Exception {
+if ("next".equals(page)) {
+itemList.nextPage();
+}
+else if ("previous".equals(page)) {
+itemList.previousPage();
+}
+model.put("itemList", itemList);
+model.put("product", product);
+return "Product";
+}
 }

@@ -1,5 +1,6 @@
 package com.example.jpetstore.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,72 +13,134 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
+
+import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
+import com.example.jpetstore.dao.mybatis.mapper.CategoryMapper;
+import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
+import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Category;
 import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.service.AccountFormValidator;
-import com.example.jpetstore.service.PetStoreFacade;
+import com.example.jpetstore.service.AuctionService;
+import com.example.jpetstore.vo.AuctionVo;
 
 @Controller
-@RequestMapping({"/shop/auctionForm.do","/shop/auctionEdit.do"})
+//@RequestMapping({"/shop/auctionForm.do","/shop/auctionEdit.do"})
 public class AuctionFormController { 
 
-	@Value("tiles/auctionForm")
-	private String formViewName;
-	@Value("tiles/auctionList")
-	private String successViewName;
-	
-	@Autowired
-	private PetStoreFacade petStore;
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
-	}
+//@Value("tiles/auctionForm")
+//private String formViewName;
+//@Value("tiles/auctionList")
+//private String successViewName;
 
-	@Autowired
-	private AccountFormValidator validator;
-	public void setValidator(AccountFormValidator validator) {
-		this.validator = validator;
-	}
-		
-	@ModelAttribute("auctionForm")
-	public AuctionForm formBackingObject(HttpServletRequest request) 
-			throws Exception {
-		
-//		Auction item = getAuctionItem();
-		
-//		if (userSession != null) {	// edit an existing account
-//			return new AuctionForm(
-//				petStore.getAuctionItem(userSession.getAuction().getUsername()));
-//		}
-//		else {	// create a new account
-			return new AuctionForm();
-//		}
-	}
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public String showForm() {
-		return formViewName;
-	}
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public String onSubmit(
-			HttpServletRequest request, HttpSession session,
-			@ModelAttribute("auctionForm") AuctionForm auctionForm,
-			BindingResult result) throws Exception {
+@Autowired
+private AuctionMapper auctionMapper;
+@Autowired
+private CategoryMapper categoryMapper;
+@Autowired
+private ProductMapper productMapper;
+private static final String[] COMPANYSUPPLIER = {"Company", "Member"};
 
-//		if (request.getParameter("auction.listOption") == null) {
-//			auctionForm.getAuction().setListOption(false);
-//		}
-//		if (request.getParameter("auction.bannerOption") == null) {
-//			auctionForm.getAccount().setBannerOption(false);
-//		}
-		
-//		validator.validate(auctionForm, result);
-		
-		if (result.hasErrors()) return formViewName;
-		
-		petStore.createAuctionItem(auctionForm.getAuction());
-		
-		return successViewName;  
-	}
+@Autowired
+private AuctionService auctionService;
+
+//@Autowired
+//private AccountFormValidator validator;
+//public void setValidator(AccountFormValidator validator) {
+//this.validator = validator;
+//}
+
+@ModelAttribute("auctionForm")
+public AuctionForm formBackingObject(HttpServletRequest request) 
+throws Exception {
+
+//Auction item = getAuctionItem();
+
+//if (userSession != null) {// edit an existing account
+//return new AuctionForm(
+//petStore.getAuctionItem(userSession.getAuction().getUsername()));
+//}
+//else {// create a new account
+return new AuctionForm();
+//}
+}
+
+@ModelAttribute("categories")
+public List<Category> getCategoryList() {
+return categoryMapper.getCategoryList();
+}
+
+@ModelAttribute("companySupplier")
+public String[] getSupplier() {
+return COMPANYSUPPLIER;
+}
+
+@RequestMapping(value="/shop/auctionForm.do", method = RequestMethod.GET)
+public ModelAndView showForm() {
+ModelAndView mv = new ModelAndView("tiles/auctionForm");
+
+String cate[] = {"BIRDS", "CATS", "DOGS", "FISH", "REPTILES"};
+List<Product> productList = null;
+
+for (int i=0; i<cate.length; i++) {
+productList = productMapper.getProductListByCategory(cate[i]);
+mv.addObject("products"+ cate[i], productList);
+System.out.println(productList);
+}
+
+return mv;
+}
+
+@RequestMapping(value="/shop/auctionForm.do", method = RequestMethod.POST)
+public String onSubmit(
+HttpServletRequest request, HttpSession session,
+@ModelAttribute AuctionVo auctionVo) throws Exception {
+
+//validator.validate(auctionForm, result);
+
+AuctionItem auction = new AuctionItem();
+
+auction.setCategoryId(auctionVo.getCategoryId());
+
+String productId = productMapper.getProductIdListByCategory(auctionVo.getProductId());
+auction.setProductId(productId);
+
+auction.setItemId(auctionVo.getItemId());
+String price=auctionVo.getListprice();
+auction.setListprice(Integer.parseInt(price));
+if (!auctionVo.getUnitcost().equals("")) auction.setUnitcost(Integer.parseInt(auctionVo.getUnitcost()));
+else auction.setUnitcost(0);
+auction.setSupplier(getUserName(request));
+auction.setStatus(auctionVo.getStatus());
+auction.setAttr1(auctionVo.getAttr1());
+auction.setAttr2(auctionVo.getAttr2());
+auction.setAttr3(auctionVo.getAttr3());
+auction.setAttr4(auctionVo.getAttr4());
+auction.setAttr5(auctionVo.getAttr5());
+
+auction.setBuyerId(null);
+
+String time = auctionVo.getDueTime();
+java.sql.Date d = java.sql.Date.valueOf(time);
+auction.setDueTime(d);
+
+auction.setDescription(auctionVo.getDescription());
+auction.setCompanySupplier(auctionVo.getCompanySupplier());
+
+System.out.println(auction.toString());
+
+auctionService.insert(auction);
+return "redirect:/shop/auction/categoryList.do";
+}
+
+
+// Request濡� Username 媛��졇�삤�뒗 �븿�닔 : return 媛� : UserId<String>
+public String getUserName(HttpServletRequest request) {
+UserSession userSession = 
+(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+String username = userSession.getAccount().getUsername();
+return username;
+}
 }

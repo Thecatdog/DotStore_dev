@@ -9,7 +9,7 @@
 			<div class="navbar-nav">
 				<a class="nav-item nav-link category-item" href="<c:url value="/shop/categoryList.do"/>">C2P</a>
 				<a class="nav-item nav-link category-item" href="#">P2P</a>
-				<a class="nav-item nav-link category-item" href="<c:url value="/shop/auctionList.do"/>">AUCTION</a>
+				<a class="nav-item nav-link category-item" href="<c:url value="/shop/auction/auctionList.do"/>">AUCTION</a>
 			</div>
 			<form class="go-sign-form">
 				<c:if test="${!empty userSession.account}">
