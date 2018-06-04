@@ -2,31 +2,27 @@ package com.example.jpetstore.controller;
 
 import java.io.Serializable;
 
-import com.example.jpetstore.domain.Auction;
+import com.example.jpetstore.domain.AuctionItem;
 
+import lombok.Data;
+
+@Data
 @SuppressWarnings("serial")
 public class AuctionForm implements Serializable {
 
-	private Auction auction;
+private AuctionItem auction;
 
-//	private boolean newAccount;
+public AuctionForm(AuctionItem auction) {
+this.auction = auction;
+}
 
-	public AuctionForm(Auction auction) {
-		this.auction = auction;
-//		this.newAccount = false;
-	}
+public AuctionForm() {
+this.auction = new AuctionItem();
+}
 
-	public AuctionForm() {
-		this.auction = new Auction();
-//		this.newAccount = true;
-	}
-
-	public Auction getAuction() {
-		return auction;
-	}
-
-	public void setAuction(Auction auction) {
-		this.auction = auction;
-	}
+public AuctionItem getAuction() {
+// TODO Auto-generated method stub
+return auction;
+}
 
 }

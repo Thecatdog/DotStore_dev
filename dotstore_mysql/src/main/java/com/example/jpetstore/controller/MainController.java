@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.MainMapper;
-import com.example.jpetstore.domain.Auction;
+import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
 
 @Controller
