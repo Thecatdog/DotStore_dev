@@ -6,7 +6,7 @@
 Based on Clinton Begin's JPetStore (http://www.ibatis.com).
 
 
-1. MOTIVATION ぞぞ
+1. MOTIVATION ぞぞkk
 
 Features a Spring-managed middle tier with iBATIS Database Layer as data access
 strategy, in combination with Spring's transaction and DAO abstractions.
