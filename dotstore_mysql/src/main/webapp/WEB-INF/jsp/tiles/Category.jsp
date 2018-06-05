@@ -1,11 +1,19 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/category.css?ver=10"/>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/category.css?ver=11"/>
 <script>
 </script>
 <div class="container body-container">
 	<table>
 		<thead>
+			<tr>
+				<td colspan="4">
+					<a href='<c:url value="/shop/${type}/categoryList.do"/>'>
+				        <b><font color="white" size="2">
+				          카테고리 목록으로 돌아가기</font></b>
+			        </a>
+				</td>
+			</tr>
 			<tr>
 				<td class="cateheader" colspan="4">
 					<c:if test="${category.categoryId eq 'DOGS'}">
@@ -67,9 +75,9 @@
 			    			<div class="container">
 								<b><a class="productId" href='<c:url value="/shop/${type}/viewProduct.do">
 								<c:param name="productId" value="${product.productId}"/></c:url>'>
-								<c:out value="${product.productId}" />
+								<c:out value="${product.productId}" /><br>
+								<c:out value="${product.name}" />
 								</a></b>
-			          	    	<c:out value="${product.name}" />
 			    			</div>
 			    		</td>
 			    </c:forEach>

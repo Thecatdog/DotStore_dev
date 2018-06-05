@@ -66,3 +66,12 @@ p {
 	color:#fff;
 	font-size:0.8rem;
 }
+a{
+    text-decoration: none !important;
+}
+font {
+	transition:0.4s;
+}
+font:hover {
+	color: rgb(185, 65, 174);
+}

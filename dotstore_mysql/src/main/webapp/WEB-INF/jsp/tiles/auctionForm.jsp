@@ -1,15 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/auctionForm.css?ver=3"/>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/auctionForm.css?ver=5"/>
 
 <div align="center" class="auctionForm-container container">
-<p>Auction Product FORM</p>
+<br/>
+<h3>AUCTION FORM</h3>
+<hr/>
 	<form method="POST" name="fm" action="<c:url value="/shop/auctionForm.do"/>"> 
 		<table>
 			<thead>
 				<tr>
-					<td><label for="categoryId">Category</label></td>
+					<td><label for="categoryId">CATEGORY</label></td>
 					<td>
 						<select name="categoryId" id="categoryId" onChange="redirect(this.options.selectedIndex)">
 						<option value="">---선택하세요---</option>
@@ -20,7 +22,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="productId">Product</label></td>
+					<td><label for="productId">PRODUCT</label></td>
 					<td>
 						<select name="productId" id="productId">
 						<option value="">---카테고리를 먼저 선택해주세요---</option>
@@ -44,36 +46,32 @@
 				<tr>
 					<td><label for="companySupplier">공급자(회사/회원 아이디)</label></td>
 					<td>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" name="companySupplier" value="member" checked="checked" class="custom-control-input"/> 회원
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-		            		<input type="radio" name="companySupplier" value="company" class="custom-control-input"/> 회사
-		            	</div>
+						<input type="radio" name="companySupplier" value="member" checked="checked" /> 회원
+		            	<input type="radio" name="companySupplier" value="company" /> 회사
 					</td>
 				</tr>
 				<tr>
-					<td><label for="status">status</label></td>
+					<td><label for="status">STATUS</label></td>
 					<td><input type="text" name="status" class="form-control" /></td>
 				</tr>
 				<tr>
-					<td><label for="attr1">attr1</label></td>
+					<td><label for="attr1">ATTR1</label></td>
 					<td><input type="text" name="attr1" class="form-control" /></td>
 				</tr>
 				<tr>
-					<td><label for="attr2">attr2</label></td>
+					<td><label for="attr2">ATTR2</label></td>
 					<td><input type="text" name="attr2" class="form-control"/></td>
 				</tr>
 				<tr>
-					<td><label for="attr3">attr3</label></td>
+					<td><label for="attr3">ATTR3</label></td>
 					<td><input type="text" name="attr3" class="form-control" /></td>
 				</tr>
 				<tr>
-					<td><label for="attr4">attr4</label></td>
+					<td><label for="attr4">ATTR4</label></td>
 					<td><input type="text" name="attr4" class="form-control" /></td>
 				</tr>
 				<tr>
-					<td><label for="attr5">attr5</label></td>
+					<td><label for="attr5">ATTR5</label></td>
 					<td><input type="text" name="attr5" class="form-control"/></td>
 				</tr>
 				<tr>
@@ -87,8 +85,12 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="2"><button type="submit" class="btn btn-gradient">등록</button>
-					<a href='<c:url value="/shop/categoryList.do"/>' class="btn btn-gradient">취소</a></td>
+					<td colspan="2">
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<button type="submit" class="btn btn-gradient">등록</button>
+							<a href='<c:url value="/shop/categoryList.do"/>' class="btn btn-gradient">취소</a>
+						</div>
+					</td>
 				</tr>
 			</tfoot>
 		</table>
