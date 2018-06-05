@@ -8,3 +8,15 @@
 	height:30vh;
 	background-color : rgba(0,0,0,0.1);
 }
+.history-logo {
+	width:5vw;
+	height:7vh;
+}
+.history-item {
+	padding-top: 1rem;
+	background-color:rgba(255,255,255,0.8);
+	transition:0.4s;
+}
+.history-item:hover{
+	background-color:rgba(255,255,255,0.5);
+}
