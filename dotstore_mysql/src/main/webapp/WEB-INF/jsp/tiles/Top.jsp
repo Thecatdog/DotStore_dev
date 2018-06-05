@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/top.css?ver=11" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/top.css?ver=12" />
 <div class="top-container">
 	<nav class="navbar navbar-expand-lg top-nav-color">
 		<a class="navbar-brand" href="<c:url value="/shop/index.do"/>"> <img
