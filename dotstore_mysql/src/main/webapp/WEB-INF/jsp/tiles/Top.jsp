@@ -7,9 +7,9 @@
 			class="dot-logo" border="0" src="/dotstore_mysql/images/dot-logo.png" /></a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-item nav-link category-item" href="<c:url value="/shop/categoryList.do"/>">C2P</a>
-				<a class="nav-item nav-link category-item" href="#">P2P</a>
-				<a class="nav-item nav-link category-item" href="<c:url value="/shop/auction/auctionList.do"/>">AUCTION</a>
+				<a class="nav-item nav-link category-item" href="<c:url value="/shop/c2p/categoryList.do"/>">C2P</a>
+				<a class="nav-item nav-link category-item" href="<c:url value="/shop/p2p/categoryList.do"/>">P2P</a>
+				<a class="nav-item nav-link category-item" href="<c:url value="/shop/auction/categoryList.do"/>">AUCTION</a>
 			</div>
 			<form class="go-sign-form">
 				<c:if test="${!empty userSession.account}">

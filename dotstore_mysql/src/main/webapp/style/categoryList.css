@@ -40,3 +40,8 @@ table {
 img:hover {
   opacity: 0.8;
 }
+
+.button-td{
+	height:10vh;
+	padding-bottom:3rem;
+}
