@@ -18,5 +18,11 @@
     FROM AUCTIONITEM
     WHERE productId = #{productId}
   </select>
+  
+  <select id="getAuctionItem" resultType="AuctionItem">
+  	SELECT *
+  	FROM AUCTIONITEM
+  	WHERE itemId = #{itemId}
+  </select>
 
 </mapper>

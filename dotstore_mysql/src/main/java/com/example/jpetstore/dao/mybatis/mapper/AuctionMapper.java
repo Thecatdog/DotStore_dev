@@ -9,14 +9,12 @@ import com.example.jpetstore.domain.AuctionItem;
 @Mapper
 public interface AuctionMapper {
 
-//  Account getAccountByUsername(String username);
-//
-//  Account getAccountByUsernameAndPassword(String username, String password);
-//
-  List<AuctionItem> getAuctionList(String productId);
-  
-  void insertAuction(AuctionItem auction);
+	AuctionItem getAuctionItem(String itemId);
+	
+	List<AuctionItem> getAuctionList(String productId);
 
-//  void updateUpdate(Account account);
+	void insertAuction(AuctionItem auction);
+
+	// void updateUpdate(Account account);
 
 }
