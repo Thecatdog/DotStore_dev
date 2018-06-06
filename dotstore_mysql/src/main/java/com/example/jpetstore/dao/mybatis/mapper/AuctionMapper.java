@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.jpetstore.domain.AuctionItem;
+import com.example.jpetstore.domain.Buyer;
 
 @Mapper
 public interface AuctionMapper {
@@ -17,4 +18,6 @@ public interface AuctionMapper {
 
 	// void updateUpdate(Account account);
 
+	void insertBuyer(Buyer buyer);
+	void updateAuctionBuyer(Buyer buyer);
 }

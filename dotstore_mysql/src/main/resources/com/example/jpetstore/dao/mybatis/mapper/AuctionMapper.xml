@@ -4,8 +4,6 @@
 <mapper namespace="com.example.jpetstore.dao.mybatis.mapper.AuctionMapper">
   <cache />
 
-<!-- 여기서부터 추가 -->
-
   <insert id="insertAuction" parameterType="AuctionItem">
     INSERT INTO AUCTIONITEM
       (ITEMID, PRODUCTID, LISTPRICE, UNITCOST, SUPPLIER, STATUS, ATTR1, ATTR2, ATTR3, ATTR4, ATTR5, BUYERID, DUETIME, DESCRIPTION, COMPANYSUPPLIER, CATEGORYID)
@@ -25,4 +23,17 @@
   	WHERE itemId = #{itemId}
   </select>
 
+  <insert id="insertBuyer" parameterType="Buyer">
+  	INSERT INTO BUYER
+  	  (USERNAME, ITEMID, LISTPRICE)
+  	VALUES
+  	  (#{username}, #{itemId}, #{listprice})
+  </insert>
+  
+  <update id="updateAuctionBuyer" parameterType="Buyer">
+  	UPDATE AUCTIONITEM SET
+  	  LISTPRICE = #{listprice},
+  	  BUYERID = #{username}
+  	WHERE ITEMID = #{itemId}
+  </update>
 </mapper>

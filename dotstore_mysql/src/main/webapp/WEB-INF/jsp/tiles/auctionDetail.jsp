@@ -67,12 +67,15 @@
 		<c:if test="${currentUser ne item.supplier}">
 			<div class="">
 				<p>경매에 참가하세요</p>
+				<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
 	
-				<form method="post" name="" action="<c:url value="/shop/auctionForm.do"/>">
+				<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
+					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+<%-- 					<input type="hidden" name="itemId" value="${item.itemId}"> --%>
 					<table border="0">
 						<tr>
-							<td>입찰 금액</td>
-							<td><input id="" type="number" class="" name=""></td>
+							<td>입찰 금액 : </td>
+							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td>
 							<td><button type="submit">입찰</button></td>
 						</tr>
 					</table>
@@ -82,26 +85,26 @@
 		<!-- 구매자에게만 보여짐 (여기까지) -->
 
 		<!-- 최고 입찰자에게만 보여지는 부분 -->
-		<div class="">
-			<p>
-				김나영 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을
-				취소하시겠습니까?
-			</p>
+<!-- 		<div class=""> -->
+<!-- 			<p> -->
+<!-- 				김나영 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을 -->
+<!-- 				취소하시겠습니까? -->
+<!-- 			</p> -->
 
-			<button type="button">입찰 취소</button>
-		</div>
+<!-- 			<button type="button">입찰 취소</button> -->
+<!-- 		</div> -->
 		<!-- 최고 입찰자에게만 보여지는 부분 (여기까지) -->
 
 		<hr>
 
 		<!-- 경매 마감 시 -->
-		<div class="">
-			<p>김나영 님이 현재 최고 입찰자입니다.</p>
-			<p>상품을 구매하려면 Add to Cart를, 경매를 취소하려면 경매 취소 버튼을 눌러주세요.</p>
+<!-- 		<div class=""> -->
+<!-- 			<p>김나영 님이 현재 최고 입찰자입니다.</p> -->
+<!-- 			<p>상품을 구매하려면 Add to Cart를, 경매를 취소하려면 경매 취소 버튼을 눌러주세요.</p> -->
 
-			<button type="button">Add to Cart</button>
-			<button type="button">경매 취소</button>
-		</div>
+<!-- 			<button type="button">Add to Cart</button> -->
+<!-- 			<button type="button">경매 취소</button> -->
+<!-- 		</div> -->
 		<!-- 경매 마감 시 (여기까지) -->
 	</div>
 </body>
