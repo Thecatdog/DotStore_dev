@@ -1,23 +1,36 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <title>나의 경매 목록 보기</title>
 
 <body id="">
-    <div id="">
+    <div id="" align="center">
         <div class="">
             <p>내가 등록한 경매</p>
 
             <table border="1">
-                <caption>내가 등록한 경매</caption>
                 <thead>
-                    <th>ID</th>
+                    <th>CATEGORY</th>
                     <th>상품 이름</th>
-                    <th>가격</th>
+                    <th>현재 가격</th>
+                    <th>마감 날짜</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="">라이언 마우스</a></td>
-                        <td>15,500</td>
-                    </tr>
+                	<c:forEach var="item" items="${myAuctionList}">
+	                    <tr>
+	                        <td>${item.categoryId}</td>
+	                        <td>
+	                        	<a class="itemid-a" href='<c:url value="/shop/auctionDetail.do">
+				    				<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+				    					${item.itemId}
+				    			</a>
+				    		</td>
+	                        <td>${item.listprice}</td>
+	                        <td><fmt:formatDate value="${item.dueTime}" pattern="yyyy-MM-dd" /></td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -28,27 +41,28 @@
             <p>내가 입찰한 경매</p>
 
             <table border="1">
-                <caption>내가 입찰한 경매</caption>
-
                 <thead>
-                    <th>ID</th>
+                    <th>CATEGORY</th>
                     <th>상품 이름</th>
+                    <th>나의 입찰 금액</th>
                     <th>현재 가격</th>
-                    <th>상태</th>
+                    <th>마감 날짜</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>2</td>
-                        <td><a href="">스타벅스 다이어리</a></td>
-                        <td>21,000</td>
-                        <td>현재 최고가</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><a href="">한정판인 무언가</a></td>
-                        <td>55,000</td>
-                        <td>낙찰 실패</td>
-                    </tr>
+                	<c:forEach var="list" items="${myBiddingList}">
+	                    <tr>
+	                        <td>${list.categoryId}</td>
+	                        <td>
+								<a class="itemid-a" href='<c:url value="/shop/auctionDetail.do">
+				    				<c:param name="itemId" value="${list.itemId}"/></c:url>'>
+				    					${list.itemId}
+				    			</a>
+							</td>
+	                        <td>${list.myPrice}</td>
+	                        <td>${list.nowPrice}</td>
+	                        <td><fmt:formatDate value="${list.dueTime}" pattern="yyyy-MM-dd" /></td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>

@@ -36,4 +36,30 @@
   	  BUYERID = #{username}
   	WHERE ITEMID = #{itemId}
   </update>
+  
+  <select id="myAuctionItemList" resultType="AuctionItem">
+  	SELECT *
+  	FROM AUCTIONITEM
+  	WHERE SUPPLIER = #{username}
+  </select>
+  
+  <select id="myBidList" parameterType="java.lang.String" resultType="java.util.HashMap">
+  	SELECT b.username as username, 
+  			b.itemId as itemId, 
+  			max(b.listprice) as myPrice, 
+  			a.categoryId as categoryId, 
+  			a.listprice as nowPrice, 
+  			a.dueTime as dueTime
+	FROM BUYER b, AUCTIONITEM a
+	WHERE b.itemId=a.itemId
+	AND b.username=#{username} 
+	GROUP BY username, itemId;
+  </select>
+  
+<!--   <select id="selectBuyerByitemIdAndUsername" parameterType="Buyer" resultType="Buyer"> -->
+<!--   	SELECT username, itemId, max(listprice) as listprice  -->
+<!--   	FROM BUYER  -->
+<!-- 	WHERE itemId=#{itemId} and username=#{username}  -->
+<!-- 	GROUP BY username, itemId; -->
+<!--   </select> -->
 </mapper>

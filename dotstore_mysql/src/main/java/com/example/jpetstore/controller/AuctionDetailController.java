@@ -3,6 +3,8 @@ package com.example.jpetstore.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -47,6 +49,10 @@ public class AuctionDetailController {
 		mv.addObject("dday", dday);
 		mv.addObject("currentUser", getUserName(request));
 		
+//		Buyer buyer = new Buyer(getUserName(request), itemId);
+//		Buyer myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(buyer);
+//		mv.addObject("myBidStatus", myBidStatus);
+		
 		return mv;
 	}
 	
@@ -68,6 +74,19 @@ public class AuctionDetailController {
 		return "redirect:/shop/auctionDetail.do";
 	}
 
+	@RequestMapping("/shop/myAuctionList.do")
+	public ModelAndView myAuctionList(HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView("tiles/myAuctionList");
+		
+		List<AuctionItem> myAuctionList = auctionMapper.myAuctionItemList(getUserName(request));
+		mv.addObject("myAuctionList", myAuctionList);
+		
+		List<HashMap<String, String>> myBiddingList = auctionMapper.myBidList(getUserName(request));
+		mv.addObject("myBiddingList", myBiddingList);
+		
+		return mv;
+	}
+	
 	public String getUserName(HttpServletRequest request) {
 		UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		String username = userSession.getAccount().getUsername();

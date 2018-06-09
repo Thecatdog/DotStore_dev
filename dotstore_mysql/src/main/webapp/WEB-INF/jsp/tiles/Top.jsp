@@ -22,6 +22,8 @@
 					<a class="fas fa-shopping-cart icon" href="#"></a>
 					<a href="<c:url value="/shop/signoff.do"/>"
 						class="btn btn-gradient">LOGOUT</a>
+					<a href="<c:url value="/shop/myAuctionList.do"/>"
+						class="btn btn-gradient">MyAuctionList</a>
 				</c:if>
 				<c:if test="${empty userSession.account}">
 					<a href="<c:url value="/shop/signonForm.do"/>"

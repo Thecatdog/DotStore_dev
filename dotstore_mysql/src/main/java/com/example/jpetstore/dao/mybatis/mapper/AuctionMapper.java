@@ -1,5 +1,6 @@
 package com.example.jpetstore.dao.mybatis.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -20,4 +21,9 @@ public interface AuctionMapper {
 
 	void insertBuyer(Buyer buyer);
 	void updateAuctionBuyer(Buyer buyer);
+	
+	List<AuctionItem> myAuctionItemList(String username);
+	List<HashMap<String, String>> myBidList(String username);
+	
+//	Buyer selectBuyerByitemIdAndUsername(Buyer buyer);
 }
