@@ -49,9 +49,17 @@
 		<!-- 경매 등록한 사람(판매자)에게만 보여짐 -->
 		<c:if test="${currentUser eq item.supplier}">
 			<div class="">
-				<button type="button">경매 수정</button>
-				<button type="button">경매 삭제</button>
-				<br>
+				<a href='<c:url value="/shop/editAuction.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 수정
+				</a>
+				<a href='<c:url value="/shop/deleteAuction.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+							<c:param name="productId" value="${item.productId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 삭제
+				</a>
 			</div>
 		</c:if>
 		<!-- 경매 등록한 사람(판매자)에게만 보여짐 (여기까지) -->
@@ -74,16 +82,15 @@
 				<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
 	
 				<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
-					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
-<%-- 					<input type="hidden" name="itemId" value="${item.itemId}"> --%>
-					<table border="0">
-						<tr>
-							<td>입찰 금액 : </td>
-							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td>
-							<td><button type="submit">입찰</button></td>
-						</tr>
-					</table>
-				</form>
+ 					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+ 					<table border="0"> 
+ 						<tr> 
+ 							<td>입찰 금액 : </td>
+ 							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td> 
+ 							<td><button type="submit">입찰</button></td>
+ 						</tr> 
+ 					</table>
+ 				</form> 
 			</div>
 		</c:if>
 		<!-- 구매자에게만 보여짐 (여기까지) -->

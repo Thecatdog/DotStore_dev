@@ -11,13 +11,12 @@ import com.example.jpetstore.domain.Buyer;
 @Mapper
 public interface AuctionMapper {
 
-	AuctionItem getAuctionItem(String itemId);
-	
 	List<AuctionItem> getAuctionList(String productId);
 
 	void insertAuction(AuctionItem auction);
-
-	// void updateUpdate(Account account);
+	AuctionItem getAuctionItem(String itemId);
+	void updateAuction(AuctionItem auction);
+	void deleteAuctionByItemId(String itemId);
 
 	void insertBuyer(Buyer buyer);
 	void updateAuctionBuyer(Buyer buyer);

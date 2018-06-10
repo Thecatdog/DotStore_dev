@@ -37,6 +37,20 @@
   	WHERE ITEMID = #{itemId}
   </update>
   
+  <update id="updateAuction" parameterType="AuctionItem">
+  	UPDATE AUCTIONITEM SET
+  	  UNITCOST = #{unitcost}, STATUS = #{status}, 
+  	  ATTR1 = #{attr1}, ATTR2 = #{attr2}, ATTR3 = #{attr3}, 
+  	  ATTR4 = #{attr4}, ATTR5 = #{attr5}, DUETIME = #{dueTime}, DESCRIPTION = #{description}
+  	WHERE ITEMID = #{itemId}
+  </update>
+  
+  <delete id="deleteAuctionByItemId" parameterType="AuctionItem">
+  	DELETE 
+  	FROM AUCTIONITEM
+  	WHERE itemId = #{itemId}
+  </delete>
+  
   <select id="myAuctionItemList" resultType="AuctionItem">
   	SELECT *
   	FROM AUCTIONITEM
@@ -53,7 +67,7 @@
 	FROM BUYER b, AUCTIONITEM a
 	WHERE b.itemId=a.itemId
 	AND b.username=#{username} 
-	GROUP BY username, itemId;
+	GROUP BY username, itemId
   </select>
   
 <!--   <select id="selectBuyerByitemIdAndUsername" parameterType="Buyer" resultType="Buyer"> -->

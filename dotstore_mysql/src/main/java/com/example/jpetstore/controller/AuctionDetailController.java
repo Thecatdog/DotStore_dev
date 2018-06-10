@@ -34,7 +34,7 @@ public class AuctionDetailController {
 	@Autowired
 	private AuctionService auctionService;
 
-	@RequestMapping(value="/shop/auctionDetail.do")
+	@RequestMapping(value="/shop/auctionDetail.do", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam("itemId") String itemId,
 			HttpServletRequest request, HttpSession session) throws Exception {
 
@@ -85,6 +85,17 @@ public class AuctionDetailController {
 		mv.addObject("myBiddingList", myBiddingList);
 		
 		return mv;
+	}
+	
+	@RequestMapping(value = "/shop/deleteAuction.do", method = RequestMethod.GET)
+	public String deleteAuction(
+			@RequestParam("itemId") String itemId,
+			@RequestParam("productId") String productId,
+			RedirectAttributes redirectAttributes) throws Exception {
+		
+		auctionMapper.deleteAuctionByItemId(itemId);
+		redirectAttributes.addAttribute("productId", productId);
+		return "redirect:/shop/auction/viewProduct.do";
 	}
 	
 	public String getUserName(HttpServletRequest request) {
