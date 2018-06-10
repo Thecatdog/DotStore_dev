@@ -45,13 +45,24 @@ public class AuctionDetailController {
 		
 		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy,MM,dd");
 		String dday = transFormat.format(item.getDueTime());		
-		
 		mv.addObject("dday", dday);
+		
 		mv.addObject("currentUser", getUserName(request));
 		
-//		Buyer buyer = new Buyer(getUserName(request), itemId);
-//		Buyer myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(buyer);
-//		mv.addObject("myBidStatus", myBidStatus);
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("itemId", itemId);
+		map.put("username", getUserName(request));
+		HashMap<String, String> myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(map);
+		
+		System.out.println(myBidStatus);
+		String str_myPrice = String.valueOf(myBidStatus.get("listprice"));
+		str_myPrice = str_myPrice.substring(0, str_myPrice.length()-3);
+		mv.addObject("myPrice", str_myPrice);
+		String str_nowPrice = String.valueOf(item.getListprice());
+		
+		int isBest = 0;
+		if (str_myPrice.equals(str_nowPrice)) isBest = 1;
+		mv.addObject("myBidStatus", isBest);
 		
 		return mv;
 	}
@@ -69,6 +80,24 @@ public class AuctionDetailController {
 		buyer.setListprice(buyerVo.getListprice());
 		
 		auctionService.insertBuyer(buyer); //Buyer테이블 삽입, Auction테이블 갱신 동시에
+		
+		redirectAttributes.addAttribute("itemId", itemId);
+		return "redirect:/shop/auctionDetail.do";
+	}
+	
+	@RequestMapping(value="/shop/deleteBidding.do")
+	public String deleteBidding(
+			HttpServletRequest request,
+			@RequestParam("itemId") String itemId,
+			@RequestParam("myPrice") String myPrice,
+			RedirectAttributes redirectAttributes) throws Exception {
+		
+		Buyer buyer = new Buyer();
+		buyer.setItemId(itemId);
+		buyer.setListprice(Integer.parseInt(myPrice));
+		buyer.setUsername(getUserName(request));
+		
+		auctionService.deleteBuyer(buyer, itemId);
 		
 		redirectAttributes.addAttribute("itemId", itemId);
 		return "redirect:/shop/auctionDetail.do";

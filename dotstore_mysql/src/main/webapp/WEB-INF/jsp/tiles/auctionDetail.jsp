@@ -74,38 +74,42 @@
 		<!-- 구매자에게만 보여짐 -->
 		<c:if test="${currentUser ne item.supplier}">
 			<div class="">
-<%-- 				<c:if test="${item.listprice ne myBidStatus.listprice}"> --%>
-<!-- 					<p>김나영 님은 현재 최고 입찰자가 아닙니다.</p> -->
-<%-- 				</c:if> --%>
+				<c:if test="${myBidStatus ne 1}">
+					<p>${currentUser} 님은 현재 최고 입찰자가 아닙니다.</p>
 				
-				<p>경매에 참가하세요</p>
-				<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
-	
-				<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
- 					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
- 					<table border="0"> 
- 						<tr> 
- 							<td>입찰 금액 : </td>
- 							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td> 
- 							<td><button type="submit">입찰</button></td>
- 						</tr> 
- 					</table>
- 				</form> 
+					<p>경매에 참가하세요</p>
+					<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
+		
+					<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
+	 					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+	 					<table border="0"> 
+	 						<tr> 
+	 							<td>입찰 금액 : </td>
+	 							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td> 
+	 							<td><button type="submit">입찰</button></td>
+	 						</tr> 
+	 					</table>
+	 				</form> 
+	 				</c:if>
 			</div>
 		</c:if>
 		<!-- 구매자에게만 보여짐 (여기까지) -->
-
+		
 		<!-- 최고 입찰자에게만 보여지는 부분 -->
-<%-- 		<c:if test="${item.listprice eq myBidStatus.listprice}"> --%>
-<!-- 			<div class=""> -->
-<!-- 				<p> -->
-<!-- 					김나영 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을 -->
-<!-- 					취소하시겠습니까? -->
-<!-- 				</p> -->
+		<c:if test="${myBidStatus eq 1}">
+			<div class="">
+				<p>
+					${currentUser} 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을
+					취소하시겠습니까?
+				</p>
 	
-<!-- 				<button type="button">입찰 취소</button> -->
-<!-- 			</div> -->
-<%-- 		</c:if> --%>
+				<a href='<c:url value="/shop/deleteBidding.do">
+							<c:param name="itemId" value="${item.itemId}" />
+							<c:param name="myPrice" value="${myPrice}" />
+						</c:url>'
+					class="btn btn-gradient">입찰 취소</a>
+			</div>
+		</c:if>
 		<!-- 최고 입찰자에게만 보여지는 부분 (여기까지) -->
 
 		<hr>

@@ -31,11 +31,27 @@
   </insert>
   
   <update id="updateAuctionBuyer" parameterType="Buyer">
-  	UPDATE AUCTIONITEM SET
-  	  LISTPRICE = #{listprice},
-  	  BUYERID = #{username}
+  	UPDATE AUCTIONITEM 
+  	SET LISTPRICE = #{listprice},
+  	  	BUYERID = #{username}
   	WHERE ITEMID = #{itemId}
   </update>
+  
+  <delete id="deleteBuyer" parameterType="Buyer">
+  	DELETE 
+  	FROM BUYER
+  	WHERE username = #{username}
+  	AND itemId = #{itemId}
+  	AND listprice = #{listprice}
+  </delete>
+  
+  <select id="bestBuyerByItemId" parameterType="java.lang.String" resultType="java.util.HashMap">
+  	SELECT username, itemId, max(listprice) as listprice
+  	FROM BUYER 
+  	WHERE itemId = #{itemId}
+  	GROUP BY username, itemId
+  	ORDER BY max(listprice) DESC;
+  </select>
   
   <update id="updateAuction" parameterType="AuctionItem">
   	UPDATE AUCTIONITEM SET
@@ -70,10 +86,10 @@
 	GROUP BY username, itemId
   </select>
   
-<!--   <select id="selectBuyerByitemIdAndUsername" parameterType="Buyer" resultType="Buyer"> -->
-<!--   	SELECT username, itemId, max(listprice) as listprice  -->
-<!--   	FROM BUYER  -->
-<!-- 	WHERE itemId=#{itemId} and username=#{username}  -->
-<!-- 	GROUP BY username, itemId; -->
-<!--   </select> -->
+  <select id="selectBuyerByitemIdAndUsername" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+  	SELECT username, itemId, max(listprice) as listprice 
+  	FROM BUYER 
+	WHERE itemId=#{itemId} AND username=#{username} 
+	GROUP BY username, itemId
+  </select>
 </mapper>

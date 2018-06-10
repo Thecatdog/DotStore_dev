@@ -20,9 +20,11 @@ public interface AuctionMapper {
 
 	void insertBuyer(Buyer buyer);
 	void updateAuctionBuyer(Buyer buyer);
+	void deleteBuyer(Buyer buyer);
+	List<HashMap<String, String>> bestBuyerByItemId(String itemId);
 	
 	List<AuctionItem> myAuctionItemList(String username);
 	List<HashMap<String, String>> myBidList(String username);
 	
-//	Buyer selectBuyerByitemIdAndUsername(Buyer buyer);
+	HashMap<String, String> selectBuyerByitemIdAndUsername(HashMap<String, String> buyer);
 }
