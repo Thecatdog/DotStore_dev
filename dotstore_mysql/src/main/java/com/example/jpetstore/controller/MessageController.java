@@ -99,7 +99,7 @@ public class MessageController implements Serializable{
 	}
 
 	// Request로 Username 가져오는 함수 : return 값 : UserId<String>
-	public String getUserName(HttpServletRequest request) {
+	public static String getUserName(HttpServletRequest request) {
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		String username = userSession.getAccount().getUsername();
