@@ -40,12 +40,7 @@
 								<small>${item.description}</small>
 							</c:if>
 							<c:if test="${type ne 'auction'}">
-								<small>${item.attr1}
-										${item.attr2}
-										${item.attr3}
-										${item.attr4}
-										${item.attr5}
-										${item.name}</small>
+								<small>${item.description}</small>
 							</c:if>
 						</p>
 					</td>

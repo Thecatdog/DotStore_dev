@@ -53,7 +53,14 @@
 			<c:if test="${requestScope['javax.servlet.forward.request_uri'] eq '/dotstore_mysql/shop/p2p/categoryList.do'}">
 				<tfoot>
 					<tr>
-						<td class="button-td" colspan="5"><a href="<c:url value="/shop/auctionForm.do"/>" class="btn btn-gradient">P2P상품등록</a></td>
+						<td class="button-td" colspan="5"><a href="<c:url value="/shop/${type}Form.do"/>" class="btn btn-gradient">P2P상품등록</a></td>
+					</tr>
+				</tfoot>
+			</c:if>
+			<c:if test="${requestScope['javax.servlet.forward.request_uri'] eq '/dotstore_mysql/shop/c2p/categoryList.do'}">
+				<tfoot>
+					<tr>
+						<td class="button-td" colspan="5"><a href="<c:url value="/shop/${type}Form.do"/>" class="btn btn-gradient">C2P상품등록</a></td>
 					</tr>
 				</tfoot>
 			</c:if>

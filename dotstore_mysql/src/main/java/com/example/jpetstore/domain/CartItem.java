@@ -28,7 +28,7 @@ public class CartItem implements Serializable {
 
 	public double getTotalPrice() {
 		if (item != null) {
-			return item.getListPrice() * quantity;
+			return item.getListprice() * quantity;
 		}
 		else {
 			return 0;

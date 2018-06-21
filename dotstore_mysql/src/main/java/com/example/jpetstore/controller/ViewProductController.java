@@ -1,6 +1,5 @@
 package com.example.jpetstore.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ItemMapper;
+import com.example.jpetstore.dao.mybatis.mapper.P2PMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
 import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
+import com.example.jpetstore.domain.P2PItem;
 import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.service.PetStoreFacade;
 
@@ -40,6 +41,10 @@ public class ViewProductController {
 
 	@Autowired
 	private AuctionMapper auctionMapper;
+	@Autowired
+	private P2PMapper p2pMapper;
+	@Autowired
+	private ItemMapper c2pMapper;
 	@Autowired
 	private ProductMapper productMapper;
 	@Autowired
@@ -73,12 +78,10 @@ public class ViewProductController {
 			List<AuctionItem> list = auctionMapper.getAuctionList(productId);
 			mv.addObject("itemList", list);
 		} else if (type.equals("p2p")) {
-			// List<> list = ~~
-			// mv.addObject("itemList", list);
+			List<P2PItem> list = p2pMapper.getP2PList(productId, "member");
+			mv.addObject("itemList", list);
 		} else if (type.equals("c2p")) {
-			// List<> list = ~~
-			// mv.addObject("itemList", list);
-			List<HashMap<String, String>> list = itemMapper.getItemListByProduct2(productId);
+			List<Item> list = c2pMapper.getC2PList(productId, "company");
 			System.out.println(list);
 			mv.addObject("itemList", list);
 		}

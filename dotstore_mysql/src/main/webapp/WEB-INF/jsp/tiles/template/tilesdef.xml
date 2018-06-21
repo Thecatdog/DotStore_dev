@@ -56,16 +56,20 @@
 	
 	<definition name="msgList" extends="base_layout">
 		<put-attribute name="body"
-			value="/WEB-INF/jsp/MsgList.jsp" />
+			value="/WEB-INF/jsp/tiles/MsgList.jsp" />
 	</definition> 
  
  	<definition name="msgDetail" extends="base_layout">
 		<put-attribute name="body"
-			value="/WEB-INF/jsp/MsgDetail.jsp" />
+			value="/WEB-INF/jsp/tiles/MsgDetail.jsp" />
 	</definition> 
 	<definition name="auctionForm" extends="base_layout">
 		<put-attribute name="body"
-			value="/WEB-INF/jsp/auctionForm.jsp" />
+			value="/WEB-INF/jsp/tiles/auctionForm.jsp" />
+	</definition> 
+	<definition name="p2pForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/p2pForm.jsp" />
 	</definition> 
  	<!-- <definition name="tiles/Category" extends="base_layout">
 		<put-attribute name="body"
