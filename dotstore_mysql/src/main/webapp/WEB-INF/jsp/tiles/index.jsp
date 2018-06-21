@@ -12,7 +12,7 @@
 							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
 							<b>${c.itemId}</b><br/>
 							<small>${c.productId}</small><br/>
-							<p>${c.listPrice}</p>
+							<p>${c.listprice}</p>
 						</td>
 					</tr>
 				</c:forEach>
@@ -26,7 +26,7 @@
 							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
 							<b>${p.itemId}</b><br/>
 							<small>${p.productId}</small><br/>
-							<p>${p.listPrice}</p>
+							<p>${p.listprice}</p>
 						</td>
 					</tr>
 				</c:forEach>

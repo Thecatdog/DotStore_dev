@@ -24,29 +24,19 @@
     </tr>
     <tr>
       <td><b><font size="4"> 
-        <c:out value="${item.attribute1}" />
-        <c:out value="${item.attribute2}" /> 
-        <c:out value="${item.attribute3}" />
-        <c:out value="${item.attribute4}" /> 
-        <c:out value="${item.attribute5}" />
-        <c:out value="${product.name}" />
+        <c:out value="${item.attr1}" />
+        <c:out value="${item.attr2}" /> 
+        <c:out value="${item.attr3}" />
+        <c:out value="${item.attr4}" /> 
+        <c:out value="${item.attr5}" />
+        <c:out value="${item.description}" />
         </font></b></td>
     </tr>
     <tr>
       <td id="cate">${product.name}</td>
     </tr>
     <tr>
-      <td>
-      <c:if test="${item.quantity <= 0}">
-        <font color="red" size="2"><i>Back ordered.</i></font>
-      </c:if> 
-      <c:if test="${item.quantity > 0}">
-        <font size="2"><fmt:formatNumber value="${item.quantity}" /> in stock.</font>
-      </c:if>
-      </td>
-    </tr>
-    <tr>
-      <td id="price"> ${item.listPrice} 원</td>
+      <td id="price"> ${item.listprice} 원</td>
     </tr>
     <tr>
       <td>
