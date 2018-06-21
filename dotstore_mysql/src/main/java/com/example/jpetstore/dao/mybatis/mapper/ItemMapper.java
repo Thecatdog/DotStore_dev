@@ -16,17 +16,27 @@
 
 package com.example.jpetstore.dao.mybatis.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.example.jpetstore.domain.Item;
+import com.example.jpetstore.domain.P2PItem;
 
 public interface ItemMapper {
+	void insertC2P(Item c2pItem);
 
-  void updateInventoryQuantity(Map<String, Object> param);
-  int getInventoryQuantity(String itemId);
-  List<Item> getItemListByProduct(String productId);
-  Item getItem(String itemId);
-  boolean isItemInStock(String itemId);
+	List<Item> getC2PList(String productId, String supplier_cate);
+	
+	Item getItem(String itemId);
+	
+	void updateInventoryQuantity(Map<String, Object> param);
 
+	int getInventoryQuantity(String itemId);
+
+	List<Item> getItemListByProduct(String productId);
+
+	boolean isItemInStock(String itemId);
+
+	List<HashMap<String, String>> getItemListByProduct2(String productId);
 }

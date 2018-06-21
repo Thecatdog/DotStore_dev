@@ -34,7 +34,7 @@ public class AuctionDetailController {
 	@Autowired
 	private AuctionService auctionService;
 
-	@RequestMapping(value="/shop/auctionDetail.do")
+	@RequestMapping(value="/shop/auctionDetail.do", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam("itemId") String itemId,
 			HttpServletRequest request, HttpSession session) throws Exception {
 
@@ -45,14 +45,28 @@ public class AuctionDetailController {
 		
 		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy,MM,dd");
 		String dday = transFormat.format(item.getDueTime());		
-		
 		mv.addObject("dday", dday);
+		
 		mv.addObject("currentUser", getUserName(request));
 		
-//		Buyer buyer = new Buyer(getUserName(request), itemId);
-//		Buyer myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(buyer);
-//		mv.addObject("myBidStatus", myBidStatus);
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("itemId", itemId);
+		map.put("username", getUserName(request));
+		HashMap<String, String> myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(map);
 		
+		//System.out.println("myBidStatus : " + myBidStatus);
+		
+		int isBest = 0; //내가 최고 입찰자인가 확인
+		if (myBidStatus != null) {
+			String str_myPrice = String.valueOf(myBidStatus.get("listprice"));
+			str_myPrice = str_myPrice.substring(0, str_myPrice.length()-3);
+			mv.addObject("myPrice", str_myPrice);
+			String str_nowPrice = String.valueOf(item.getListprice());
+			
+			if (str_myPrice.equals(str_nowPrice)) isBest = 1; //내가 최고 입찰자
+		}
+		
+		mv.addObject("myBidStatus", isBest);
 		return mv;
 	}
 	
@@ -73,6 +87,24 @@ public class AuctionDetailController {
 		redirectAttributes.addAttribute("itemId", itemId);
 		return "redirect:/shop/auctionDetail.do";
 	}
+	
+	@RequestMapping(value="/shop/deleteBidding.do")
+	public String deleteBidding(
+			HttpServletRequest request,
+			@RequestParam("itemId") String itemId,
+			@RequestParam("myPrice") String myPrice,
+			RedirectAttributes redirectAttributes) throws Exception {
+		
+		Buyer buyer = new Buyer();
+		buyer.setItemId(itemId);
+		buyer.setListprice(Integer.parseInt(myPrice));
+		buyer.setUsername(getUserName(request));
+		
+		auctionService.deleteBuyer(buyer, itemId);
+		
+		redirectAttributes.addAttribute("itemId", itemId);
+		return "redirect:/shop/auctionDetail.do";
+	}
 
 	@RequestMapping("/shop/myAuctionList.do")
 	public ModelAndView myAuctionList(HttpServletRequest request) throws Exception {
@@ -85,6 +117,17 @@ public class AuctionDetailController {
 		mv.addObject("myBiddingList", myBiddingList);
 		
 		return mv;
+	}
+	
+	@RequestMapping(value = "/shop/deleteAuction.do", method = RequestMethod.GET)
+	public String deleteAuction(
+			@RequestParam("itemId") String itemId,
+			@RequestParam("productId") String productId,
+			RedirectAttributes redirectAttributes) throws Exception {
+		
+		auctionMapper.deleteAuctionByItemId(itemId);
+		redirectAttributes.addAttribute("productId", productId);
+		return "redirect:/shop/auction/viewProduct.do";
 	}
 	
 	public String getUserName(HttpServletRequest request) {

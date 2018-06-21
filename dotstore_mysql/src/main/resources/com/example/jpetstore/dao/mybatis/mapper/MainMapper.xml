@@ -25,25 +25,49 @@
 	WHERE I.itemid = T.itemid
   </select>
   
-<!--    <select id="getBestItems" resultType="Auction">
-    SELECT
-      I.ITEMID,
-      I.PRODUCTID,
-      LISTPRICE,
-      UNITCOST,
-      SUPPLIER AS supplierId,
-      I.PRODUCTID AS "product.productId",
-      NAME AS "product.name",
-      DESCN AS "product.description",
-      CATEGORY AS "product.categoryId",
-      STATUS,
-      ATTR1 AS attribute1,
-      ATTR2 AS attribute2,
-      ATTR3 AS attribute3,
-      ATTR4 AS attribute4,
-      ATTR5 AS attribute5
-    FROM LINEITEM L, Auction A
-	WHERE L.itemid = A.itemid
+ <!--  <select id="getBestP2PItems" resultType="">
+     SELECT
+      A.CATEGORYID AS categoryId,
+      A.ITEMID AS itemId,
+      A.PRODUCTID AS productId,
+      LISTPRICE AS listprice,
+      UNITCOST AS unitcost,
+      SUPPLIER AS supplier,
+      STATUS AS status,
+      ATTR1 AS attr1,
+      ATTR2 AS attr2,
+      ATTR3 AS attr3,
+      ATTR4 AS attr4,
+      ATTR5 AS attr5
+    FROM AUCTIONITEM A, (
+		SELECT `itemid`, sum(quantity)
+		FROM LINEITEM
+		GROUP BY `itemid`
+	) T
+	WHERE A.itemid = T.itemid
   </select> -->
+ 
+  
+  <select id="getBestAuctionItems" resultType="AuctionItem">
+     SELECT
+      A.CATEGORYID AS categoryId,
+      A.ITEMID AS itemId,
+      A.PRODUCTID AS productId,
+      LISTPRICE AS listprice,
+      UNITCOST AS unitcost,
+      SUPPLIER AS supplier,
+      STATUS AS status,
+      ATTR1 AS attr1,
+      ATTR2 AS attr2,
+      ATTR3 AS attr3,
+      ATTR4 AS attr4,
+      ATTR5 AS attr5
+    FROM AUCTIONITEM A, (
+		SELECT `itemid`, sum(quantity)
+		FROM LINEITEM
+		GROUP BY `itemid`
+	) T
+	WHERE A.itemid = T.itemid
+  </select>
   
 </mapper>

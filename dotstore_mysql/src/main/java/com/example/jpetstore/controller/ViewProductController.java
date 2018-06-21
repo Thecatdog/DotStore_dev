@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
+import com.example.jpetstore.dao.mybatis.mapper.ItemMapper;
 import com.example.jpetstore.dao.mybatis.mapper.P2PMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
 import com.example.jpetstore.domain.AuctionItem;
@@ -43,7 +44,11 @@ public class ViewProductController {
 	@Autowired
 	private P2PMapper p2pMapper;
 	@Autowired
+	private ItemMapper c2pMapper;
+	@Autowired
 	private ProductMapper productMapper;
+	@Autowired
+	private ItemMapper itemMapper;
 
 	@RequestMapping("/shop/{type}/viewProduct.do")
 	public ModelAndView handleRequest(@RequestParam("productId") String productId, ModelMap model,
@@ -73,14 +78,12 @@ public class ViewProductController {
 			List<AuctionItem> list = auctionMapper.getAuctionList(productId);
 			mv.addObject("itemList", list);
 		} else if (type.equals("p2p")) {
-			System.out.println(productId);
 			List<P2PItem> list = p2pMapper.getP2PList(productId, "member");
 			mv.addObject("itemList", list);
-			// List<> list = ~~
-			// mv.addObject("itemList", list);
 		} else if (type.equals("c2p")) {
-			// List<> list = ~~
-			// mv.addObject("itemList", list);
+			List<Item> list = c2pMapper.getC2PList(productId, "company");
+			System.out.println(list);
+			mv.addObject("itemList", list);
 		}
 
 		return mv;

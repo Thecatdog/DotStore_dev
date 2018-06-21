@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <title>경매 상품 상세 보기</title>
 
@@ -38,7 +39,9 @@
 			</tr>
 			<tr>
 				<td>현재 가격</td>
-				<td>${item.listprice}</td>
+<%-- 				<td>${item.listprice}원</td> --%>
+				<td><fmt:formatNumber value="${item.listprice}"
+            		pattern="#,###" />원</td>
 			</tr>
 			<tr>
 				<td>판매자</td>
@@ -49,9 +52,17 @@
 		<!-- 경매 등록한 사람(판매자)에게만 보여짐 -->
 		<c:if test="${currentUser eq item.supplier}">
 			<div class="">
-				<button type="button">경매 수정</button>
-				<button type="button">경매 삭제</button>
-				<br>
+				<a href='<c:url value="/shop/editAuction.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 수정
+				</a>
+				<a href='<c:url value="/shop/deleteAuction.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+							<c:param name="productId" value="${item.productId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 삭제
+				</a>
 			</div>
 		</c:if>
 		<!-- 경매 등록한 사람(판매자)에게만 보여짐 (여기까지) -->
@@ -63,43 +74,46 @@
 
 		<hr>
 
-		<!-- 구매자에게만 보여짐 -->
+		<!-- 최고 입찰자가 아닌 구매자에게만 보여짐 -->
 		<c:if test="${currentUser ne item.supplier}">
 			<div class="">
-<%-- 				<c:if test="${item.listprice ne myBidStatus.listprice}"> --%>
-<!-- 					<p>김나영 님은 현재 최고 입찰자가 아닙니다.</p> -->
-<%-- 				</c:if> --%>
+				<c:if test="${myBidStatus eq 0}">
+					<p>${currentUser} 님은 현재 최고 입찰자가 아닙니다.</p>
 				
-				<p>경매에 참가하세요</p>
-				<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
-	
-				<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
-					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
-<%-- 					<input type="hidden" name="itemId" value="${item.itemId}"> --%>
-					<table border="0">
-						<tr>
-							<td>입찰 금액 : </td>
-							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td>
-							<td><button type="submit">입찰</button></td>
-						</tr>
-					</table>
-				</form>
+					<p>경매에 참가하세요</p>
+					<p>현재 가격보다 더 높은 금액을 제시해야 경매에 참가할 수 있습니다.</p>
+		
+					<form method="post" name="" action='<c:url value="/shop/auctionDetail.do">
+	 					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+	 					<table border="0"> 
+	 						<tr> 
+	 							<td>입찰 금액 : </td>
+	 							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td> 
+	 							<td><button type="submit">입찰</button></td>
+	 						</tr> 
+	 					</table>
+	 				</form> 
+	 			</c:if>
 			</div>
 		</c:if>
-		<!-- 구매자에게만 보여짐 (여기까지) -->
-
-		<!-- 최고 입찰자에게만 보여지는 부분 -->
-<%-- 		<c:if test="${item.listprice eq myBidStatus.listprice}"> --%>
-<!-- 			<div class=""> -->
-<!-- 				<p> -->
-<!-- 					김나영 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을 -->
-<!-- 					취소하시겠습니까? -->
-<!-- 				</p> -->
+		<!-- 최고 입찰자가 아닌 구매자에게만 보여짐 (여기까지) -->
+		
+		<!-- 최고 입찰자인 구매자에게만 보여지는 부분 -->
+		<c:if test="${myBidStatus eq 1}">
+			<div class="">
+				<p>
+					${currentUser} 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을
+					취소하시겠습니까?
+				</p>
 	
-<!-- 				<button type="button">입찰 취소</button> -->
-<!-- 			</div> -->
-<%-- 		</c:if> --%>
-		<!-- 최고 입찰자에게만 보여지는 부분 (여기까지) -->
+				<a href='<c:url value="/shop/deleteBidding.do">
+							<c:param name="itemId" value="${item.itemId}" />
+							<c:param name="myPrice" value="${myPrice}" />
+						</c:url>'
+					class="btn btn-gradient">입찰 취소</a>
+			</div>
+		</c:if>
+		<!-- 최고 입찰자인 구매자에게만 보여지는 부분 (여기까지) -->
 
 		<hr>
 
@@ -123,6 +137,7 @@ function dayGap () {
     var dday = new Date("${dday}");//디데이
     var ddayChange = dday.getTime();
     var nowday = new Date();//현재
+    nowday.setDate(nowday.getDate() - 1);//24시 마감이기 때문
     nowday = nowday.getTime();//밀리세컨드 단위변환
     var distance = ddayChange - nowday;//디데이에서 현재까지 뺀다.
     

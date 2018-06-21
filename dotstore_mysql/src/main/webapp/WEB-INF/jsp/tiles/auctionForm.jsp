@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
 <link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/auctionForm.css?ver=5"/>
 
 <div align="center" class="auctionForm-container container">
@@ -37,7 +39,7 @@
 				</tr>
 				<tr>
 					<td><label for="listprice">경매 가격</label></td>
-					<td><input id="listprice" type="number"  class="form-control" name="listprice" required /></td>
+					<td><input id="listprice" type="number" min="1" class="form-control" name="listprice" required /></td>
 				</tr>
 				<tr>
 					<td><label for="unitcost">단일 비용</label></td>
@@ -74,9 +76,14 @@
 					<td><label for="attr5">ATTR5</label></td>
 					<td><input type="text" name="attr5" class="form-control"/></td>
 				</tr>
+<!-- 				<tr> -->
+<!-- 					<td><label for="dueTime">마감 시간</label></td> -->
+<!-- 					<td><input type="date" name="dueTime" required /></td> -->
+<!-- 				</tr> -->
 				<tr>
-					<td><label for="dueTime">마감 시간</label></td>
-					<td><input type="date" name="dueTime" required /></td>
+					<td><label for="dueTime">마감일</label>
+						<p>*해당 날짜의 24시까지 진행됩니다.*</p></td>
+					<td><input type="text" id="datepicker" name="dueTime" class="form-control" required /></td>
 				</tr>
 				<tr>
 					<td><label for="description">상품 설명</label></td>
@@ -102,22 +109,32 @@
 
   var temp=document.fm.productId  // c2 : 두번째 name값
   function redirect(x){
-//alert(x);
-//var arr=new Array("${productsBIRDS}", "${productsCATS}", "${productsDOGS}", "${productsFISH}", "${productsREPTILES}");
-var arr=new Array("${productsBIRDS}", "${productsCATS}", "${productsDOGS}", "${productsFISH}", "${productsREPTILES}");
-//alert(arr[x-1]);
-var str = arr[x-1].substr(1, arr[x-1].length-2);
-//alert(str);
-var name=str.split(',');
- 
-temp.length=name.length;
- 
-for(i=0;i<name.length;i++) {
-temp.options[i] = new Option(name[i]);
-temp.options[i].value=name[i];
-}
- 
-temp.options[0].selected=true
+	var arr=new Array("${productsBIRDS}", "${productsCATS}", "${productsDOGS}", "${productsFISH}", "${productsREPTILES}");
+	var str = arr[x-1].substr(1, arr[x-1].length-2);
+	var name=str.split(',');
+	 
+	temp.length=name.length;
+	 
+	for(i=0;i<name.length;i++) {
+		temp.options[i] = new Option(name[i]);
+		temp.options[i].value=name[i];
+	}
+	 
+	temp.options[0].selected=true
   }
 
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $('#datepicker').datepicker({
+        altField : '#dueTime',
+        changeMonth: true,
+        changeYear: true,
+        dateFormat : 'yy-mm-dd',
+        dayNamesMin : ['일','월','화','수','목','금','토'],
+    	monthNamesShort : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        minDate : 1
+    });
 </script>
