@@ -1,21 +1,15 @@
 package com.example.jpetstore.controller;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.jpetstore.dao.mybatis.mapper.PointMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ReviewMapper;
 import com.example.jpetstore.domain.Point;
 import com.example.jpetstore.domain.Review;
-import com.example.jpetstore.service.PointService;
 import com.example.jpetstore.service.ReviewService;
 import com.example.jpetstore.vo.ReviewVo;
 
@@ -24,7 +18,6 @@ public class ReviewController {
 	
 	@Autowired ReviewService reviewService;
 	@Autowired ReviewMapper reviewMapper;
-	@Autowired PointService pointService;
 
 	@RequestMapping(value="/shop/{itemId}/review.do", method=RequestMethod.POST)
 	public String send(
@@ -41,9 +34,8 @@ public class ReviewController {
 		point.setUserId(userid);
 		point.setPoint(20);
 		point.setContent("상품 리뷰 등록 20포인트 적립");
-		
-		reviewService.insert(review);
-		pointService.addPoint(point);
+
+		reviewService.insert(review, point);
 		
 		return "redirect:/shop/viewItem.do?itemId={itemId}"; 
 	}
