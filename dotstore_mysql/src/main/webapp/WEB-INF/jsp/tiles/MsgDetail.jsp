@@ -44,6 +44,12 @@
 				onclick="location.href='<c:url value="/msg.do?id=${message.id}"/>' ">
 				<i class="fas fa-trash-alt"></i>
 			</button>
+			<button class="" type="button"
+				onclick="location.href='<c:url value="/msg/send.do">
+							<c:param name="messageId" value="${message.id}"/>
+							</c:url>'">
+				답장하기<i class=""></i>
+			</button>
 			<button class="btn-gradient btn-msg-send" onclick="goBack()">
 				<i class="fas fa-list-ul"></i>
 			</button>
