@@ -23,8 +23,9 @@ public class ReviewService {
 	}
 	
 	@Transactional
-	public void deleteById(long reviewId) {
+	public void deleteById(long reviewId, Point point) {
 		reviewMapper.deleteReview(reviewId);
+		pointMapper.addPoint(point);
 	}
 	
 	@Transactional

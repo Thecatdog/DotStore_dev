@@ -44,10 +44,17 @@ public class ReviewController {
 	public String delete(
 			@RequestParam("reviewId") int reviewId,
 			@RequestParam("itemId") String itemId,
-			RedirectAttributes redirectAttributes) {
+			RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
 		
-//		System.out.println("reviewId: " + reviewId + ", itemId: " + itemId);
-		reviewService.deleteById(reviewId);
+		String userid = MessageController.getUserName(request);
+		
+		Point point = new Point();
+		point.setUserId(userid);
+		point.setPoint(-20);
+		point.setContent("상품 리뷰 취소 20포인트 차감");
+		
+		reviewService.deleteById(reviewId, point);
 		
 //		return "redirect:/shop/viewItem.do?itemId="+itemId;
 		redirectAttributes.addAttribute("itemId", itemId);
