@@ -11,5 +11,5 @@ import com.example.jpetstore.domain.Item;
 @Mapper
 public interface MainMapper {
 	List<Item> getBestItems() throws DataAccessException; // 베스트셀러 아이템 
-	//List<Auction> getBestAuction() throws DataAccessException; // 베스트 옥션 아이템
+	List<AuctionItem> getBestAuctionItems() throws DataAccessException; // 베스트 옥션 아이템
 }
