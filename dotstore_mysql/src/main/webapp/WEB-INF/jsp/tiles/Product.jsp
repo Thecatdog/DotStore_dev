@@ -45,7 +45,7 @@
 										${item.attr3}
 										${item.attr4}
 										${item.attr5}
-										${item.productId}</small>
+										${item.name}</small>
 							</c:if>
 						</p>
 					</td>
