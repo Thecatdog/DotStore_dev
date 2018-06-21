@@ -1,6 +1,5 @@
 package com.example.jpetstore.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
-import com.example.jpetstore.dao.mybatis.mapper.ItemMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
 import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
@@ -42,16 +40,27 @@ public class ViewProductController {
 	private AuctionMapper auctionMapper;
 	@Autowired
 	private ProductMapper productMapper;
-	@Autowired
-	private ItemMapper itemMapper;
 
 	@RequestMapping("/shop/{type}/viewProduct.do")
 	public ModelAndView handleRequest(@RequestParam("productId") String productId, ModelMap model,
 			@PathVariable("type") String type) throws Exception {
+		// PagedListHolder<Item> itemList = new
+		// PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
+		// itemList.setPageSize(4);
+		// Product product = this.petStore.getProduct(productId);
+		// model.put("itemList", itemList);
+		// model.put("product", product);
+		// return "Product";
 
 		ModelAndView mv = new ModelAndView("tiles/Product");
 
 		mv.addObject("type", type);
+
+		// System.out.println(productId);
+		// String productName =
+		// productMapper.getProductNameByProductId(productId);
+		// mv.addObject("productName", productName);
+		// System.out.println(productName);
 
 		Product product = productMapper.getProduct(productId);
 		mv.addObject("product", product);
@@ -63,29 +72,25 @@ public class ViewProductController {
 			// List<> list = ~~
 			// mv.addObject("itemList", list);
 		} else if (type.equals("c2p")) {
-//			PagedListHolder<Item> list = new PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
-//			list.setPageSize(4); 
-//			List<Item> list = itemMapper.getItemListByProduct(productId);
-			List<HashMap<String, String>> list = itemMapper.getItemListByProduct2(productId);
-			System.out.println(list);
-			mv.addObject("itemList", list);
+			// List<> list = ~~
+			// mv.addObject("itemList", list);
 		}
 
 		return mv;
 	}
 
-//	 @RequestMapping("/shop/{type}/viewProduct.do")
-//	 public String handleRequest(
-//	 @RequestParam("productId") String productId,
-//	 ModelMap model) throws Exception {
-//	 PagedListHolder<Item> itemList = new
-//	 PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
-//	 itemList.setPageSize(4);
-//	 Product product = this.petStore.getProduct(productId);
-//	 model.put("itemList", itemList);
-//	 model.put("product", product);
-//	 return "Product";
-//	 }
+	// @RequestMapping("/shop/{type}/viewProduct.do")
+	// public String handleRequest(
+	// @RequestParam("productId") String productId,
+	// ModelMap model) throws Exception {
+	// PagedListHolder<Item> itemList = new
+	// PagedListHolder<Item>(this.petStore.getItemListByProduct(productId));
+	// itemList.setPageSize(4);
+	// Product product = this.petStore.getProduct(productId);
+	// model.put("itemList", itemList);
+	// model.put("product", product);
+	// return "Product";
+	// }
 
 	@RequestMapping("/shop/{type}/viewProduct2.do")
 	public String handleRequest2(@ModelAttribute("product") Product product,
