@@ -21,9 +21,10 @@ public class MainController implements Serializable{
 	public ModelAndView list() {
 		ModelAndView mv = new ModelAndView("tiles/index");
 
-		List<Item> itemList = mainMapper.getBestItems();
-		//List<Auction> p2pList = mainMapper.getBestAuction();
-		mv.addObject("bestSellers", itemList);
+		List<Item> c2pList = mainMapper.getBestItems();
+		List<AuctionItem> auctionList = mainMapper.getBestAuctionItems();
+		mv.addObject("c2pBestSellers", c2pList);
+		mv.addObject("auctionBestSellers", auctionList);
 		return mv;
 	}
 	
