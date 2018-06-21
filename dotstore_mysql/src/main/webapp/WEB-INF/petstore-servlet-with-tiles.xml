@@ -54,6 +54,8 @@
 	<mvc:view-controller path="/shop/auctionForm.do" view-name="tiles/auctionForm"/>
 	<mvc:view-controller path="/shop/auctionUpdate.do" view-name="tiles/auctionUpdate"/>
 	
+	<mvc:view-controller path="/shop/p2pForm.do" view-name="tiles/p2pForm"/>
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
     	    <mvc:mapping path="/shop/editAccount.do"/>
