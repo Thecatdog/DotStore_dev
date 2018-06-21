@@ -11,26 +11,23 @@
 		<div class="slider_container">
 			<div class="frame">
 				<!-- <ul class="noti" style="display:none;"> -->
-				<table align="center" style="width:10vw">
-					<tr>
+				<table id="noti" align="center" style="width:10vw">
+				
+					<strong id="none_noti" style="display:none;">
+						<span>저장된 히스토리가 없습니다.</span>
+					</strong>
+					
+					<!-- <tr>
 						<td align="center" class="history-item">
 							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
 							<b>금붕어</b><br/>
 							<small>FISH</small><br/>
 							<p>가격</p>
 						</td>
-					</tr>
+					</tr> -->
+					
 				</table>
-				<!-- <ul class="noti">
-					<li>금붕어 FISH 1400.0</li>
-					<li>금붕어 FISH 1400.0</li>
-					<li>금붕어 FISH 1400.0</li>
-				</ul> -->
 
-				<!-- <strong class="none_noti">
-					<span>저장된 히스토리가 없습니다.</span>
-				</strong>
-					 -->
 			</div>
 		</div>
 	</div>
@@ -38,7 +35,6 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			/* localStorage */
 			var out = localStorage.getItem('list');
 			var list = JSON.parse(out);
 			if ( list == null) list = [];
@@ -51,6 +47,30 @@
 			if(id != null) {
 		 		list.unshift(str);
 				localStorage.setItem('list', JSON.stringify(list));
+			}
+			
+			if(list.length != 0){
+				$('#noti').show();
+				$('#none_noti').hide();
+
+				var tagList = [];
+				for (i in list){
+					var strArray = list[i].split('|');
+					var tag = 
+						'<tr><td align="center" class="history-item"> <img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/> <b>' 
+						+ strArray[0] 
+						+ '</b><br/><small>' 
+						+ strArray[1] 
+						+ '</small><br/><p>' 
+						+ strArray[2] 
+						+ '</p></td></tr>';
+						
+					tagList += tag;
+				}
+				$('#noti').html(tagList);
+				
+			} else {
+				$('#none_noti').show();
 			}
 		});
 	</script>
