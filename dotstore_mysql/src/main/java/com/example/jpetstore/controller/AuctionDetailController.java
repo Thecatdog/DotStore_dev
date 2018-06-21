@@ -54,16 +54,19 @@ public class AuctionDetailController {
 		map.put("username", getUserName(request));
 		HashMap<String, String> myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(map);
 		
-		System.out.println(myBidStatus);
-		String str_myPrice = String.valueOf(myBidStatus.get("listprice"));
-		str_myPrice = str_myPrice.substring(0, str_myPrice.length()-3);
-		mv.addObject("myPrice", str_myPrice);
-		String str_nowPrice = String.valueOf(item.getListprice());
+		//System.out.println("myBidStatus : " + myBidStatus);
 		
-		int isBest = 0;
-		if (str_myPrice.equals(str_nowPrice)) isBest = 1;
+		int isBest = 0; //내가 최고 입찰자인가 확인
+		if (myBidStatus != null) {
+			String str_myPrice = String.valueOf(myBidStatus.get("listprice"));
+			str_myPrice = str_myPrice.substring(0, str_myPrice.length()-3);
+			mv.addObject("myPrice", str_myPrice);
+			String str_nowPrice = String.valueOf(item.getListprice());
+			
+			if (str_myPrice.equals(str_nowPrice)) isBest = 1; //내가 최고 입찰자
+		}
+		
 		mv.addObject("myBidStatus", isBest);
-		
 		return mv;
 	}
 	

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,11 +33,6 @@ import com.example.jpetstore.vo.AuctionVo;
 // @RequestMapping({"/shop/auctionForm.do","/shop/auctionEdit.do"})
 public class AuctionFormController {
 
-	// @Value("tiles/auctionForm")
-	// private String formViewName;
-	// @Value("tiles/auctionList")
-	// private String successViewName;
-
 	@Autowired
 	private AuctionMapper auctionMapper;
 	@Autowired
@@ -54,20 +50,6 @@ public class AuctionFormController {
 	// this.validator = validator;
 	// }
 
-	@ModelAttribute("auctionForm")
-	public AuctionForm formBackingObject(HttpServletRequest request) throws Exception {
-
-		// Auction item = getAuctionItem();
-
-		// if (userSession != null) {// edit an existing account
-		// return new AuctionForm(
-		// petStore.getAuctionItem(userSession.getAuction().getUsername()));
-		// }
-		// else {// create a new account
-		return new AuctionForm();
-		// }
-	}
-
 	@ModelAttribute("categories")
 	public List<Category> getCategoryList() {
 		return categoryMapper.getCategoryList();
@@ -77,7 +59,7 @@ public class AuctionFormController {
 	public String[] getSupplier() {
 		return COMPANYSUPPLIER;
 	}
-
+	
 	@RequestMapping(value = "/shop/auctionForm.do", method = RequestMethod.GET)
 	public ModelAndView showForm() {
 		ModelAndView mv = new ModelAndView("tiles/auctionForm");
@@ -88,9 +70,9 @@ public class AuctionFormController {
 		for (int i = 0; i < cate.length; i++) {
 			productList = productMapper.getProductListByCategory(cate[i]);
 			mv.addObject("products" + cate[i], productList);
-			System.out.println(productList);
+			//System.out.println(productList);
 		}
-
+		
 		return mv;
 	}
 
@@ -136,7 +118,7 @@ public class AuctionFormController {
 		auctionService.insert(auction);
 		return "redirect:/shop/auction/categoryList.do";
 	}
-
+	
 	@RequestMapping(value = "/shop/editAuction.do", method = RequestMethod.GET)
 	public ModelAndView editForm(@RequestParam("itemId") String itemId) throws Exception {
 		ModelAndView mv = new ModelAndView("tiles/auctionEditForm");
