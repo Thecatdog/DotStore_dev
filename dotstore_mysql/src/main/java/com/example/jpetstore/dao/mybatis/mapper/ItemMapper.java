@@ -16,6 +16,7 @@
 
 package com.example.jpetstore.dao.mybatis.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,4 +30,5 @@ public interface ItemMapper {
   Item getItem(String itemId);
   boolean isItemInStock(String itemId);
 
+  List<HashMap<String, String>> getItemListByProduct2(String productId);
 }

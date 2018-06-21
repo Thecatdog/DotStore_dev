@@ -1,5 +1,6 @@
 package com.example.jpetstore.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
+import com.example.jpetstore.dao.mybatis.mapper.ItemMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
 import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
@@ -40,6 +42,8 @@ public class ViewProductController {
 	private AuctionMapper auctionMapper;
 	@Autowired
 	private ProductMapper productMapper;
+	@Autowired
+	private ItemMapper itemMapper;
 
 	@RequestMapping("/shop/{type}/viewProduct.do")
 	public ModelAndView handleRequest(@RequestParam("productId") String productId, ModelMap model,
@@ -74,6 +78,9 @@ public class ViewProductController {
 		} else if (type.equals("c2p")) {
 			// List<> list = ~~
 			// mv.addObject("itemList", list);
+			List<HashMap<String, String>> list = itemMapper.getItemListByProduct2(productId);
+			System.out.println(list);
+			mv.addObject("itemList", list);
 		}
 
 		return mv;

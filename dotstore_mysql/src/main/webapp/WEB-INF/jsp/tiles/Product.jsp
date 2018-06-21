@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link type="text/css" rel="stylesheet"
 	href="/dotstore_mysql/style/product.css?ver=12" />
@@ -35,12 +36,23 @@
 							</b>
 						</h5> 
 						<p class="description-text">
-							<small>${item.description}</small>
+							<c:if test="${type eq 'auction'}">
+								<small>${item.description}</small>
+							</c:if>
+							<c:if test="${type ne 'auction'}">
+								<small>${item.attr1}
+										${item.attr2}
+										${item.attr3}
+										${item.attr4}
+										${item.attr5}
+										${item.productId}</small>
+							</c:if>
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<td style="float: right">${item.listprice}원&nbsp;&nbsp; <a
+					<td style="float: right"><fmt:formatNumber value="${item.listprice}"
+            		pattern="#,###" />원&nbsp;&nbsp; <a
 						class="cart-logo"
 						href='<c:url value="/shop/addItemToCart.do">
             	<c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
