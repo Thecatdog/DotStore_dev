@@ -60,3 +60,23 @@
 </div>
 	
 <%@ include file="IncludeBottom.jsp"%>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/* localStorage */
+		var out = localStorage.getItem('list');
+		var list = JSON.parse(out);
+		if ( list == null) list = [];
+		
+		var id = $('#itemName').html();
+		var category = $('#cate').html();
+		var price = $('#price').html();
+		var str = id+'|'+category+'|'+price;
+		
+		if(id != null) {
+	 		list.unshift(str);
+			localStorage.setItem('list', JSON.stringify(list));
+		}
+	});
+</script>
