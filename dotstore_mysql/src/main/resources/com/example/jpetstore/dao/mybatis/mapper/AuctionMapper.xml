@@ -92,4 +92,16 @@
 	WHERE itemId=#{itemId} AND username=#{username} 
 	GROUP BY username, itemId
   </select>
+  
+  <select id="selectOpenAuction" resultType="AuctionItem">
+  	SELECT *
+  	FROM AUCTIONITEM
+  	WHERE finish = 'open'
+  </select>
+  
+  <update id="updateAuctionFinish" parameterType="java.lang.String">
+  	UPDATE AUCTIONITEM
+  	SET finish = 'close'
+  	WHERE itemId = #{itemId}
+  </update>
 </mapper>

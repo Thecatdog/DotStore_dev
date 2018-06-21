@@ -27,4 +27,7 @@ public interface AuctionMapper {
 	List<HashMap<String, String>> myBidList(String username);
 	
 	HashMap<String, String> selectBuyerByitemIdAndUsername(HashMap<String, String> buyer);
+	
+	List<AuctionItem> selectOpenAuction();
+	void updateAuctionFinish(String itemId);
 }
