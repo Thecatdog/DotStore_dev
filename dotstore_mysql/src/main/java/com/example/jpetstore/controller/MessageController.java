@@ -58,12 +58,18 @@ public class MessageController implements Serializable{
 		
 	// Message send
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.GET)
-	public ModelAndView send() {
-
+	public ModelAndView send(
+			 @RequestParam(value="messageId", defaultValue="-1") int messageId ) {
 		ModelAndView mv = new ModelAndView("tiles/MsgWrite");
-
+		
+		if(messageId != -1) {
+			Message msg = messageMapper.getMessageById(messageId);
+			mv.addObject("msg", msg);
+		}
+		
 		return mv;
 	}
+	
 	@RequestMapping(value="/msg/send.do", method=RequestMethod.POST) 
 	public String send(@ModelAttribute MessageVo msgvo, HttpServletRequest request) {
 		Message msg = new Message();
@@ -75,6 +81,7 @@ public class MessageController implements Serializable{
 		messageService.insert(msg);
 		return "redirect:/msg/recv/list.do";
 	}
+	
 	
 	// Message Detail
 	@RequestMapping("/msg/detail.do")
