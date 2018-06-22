@@ -28,13 +28,12 @@
 	<tr>
 		<td colspan="5">
 			<h1>총 가격 : <fmt:formatNumber value="${totalPrice}" pattern="#,###" />원</h1>
-			<p>나의 포인트 : ${myPoint}</p>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="5">
-			<a href='<c:url value="/shop/checkCart.do">
-			</c:url>' class="btn btn-gradient">주문하기</a>
+			<a href='<c:url value="/shop/newOrder.do">
+			</c:url>' class="btn btn-gradient">계속하기</a>
 		</td>
 	</tr>
 </table>

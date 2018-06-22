@@ -124,7 +124,7 @@ public class Order implements Serializable {
 
   /* Public Methods */
 
-  public void initOrder(Account account, Cart cart) {
+  public void initOrder(Account account, int price) { //, Cart cart) {
     username = account.getUsername();
     orderDate = new Date();
 
@@ -146,7 +146,7 @@ public class Order implements Serializable {
     billZip = account.getZip();
     billCountry = account.getCountry();
 
-    totalPrice = cart.getSubTotal();
+    totalPrice = price;
 
     creditCard = "999 9999 9999 9999";
     expiryDate = "12/03";
@@ -155,11 +155,11 @@ public class Order implements Serializable {
     locale = "CA";
     status = "P";
 
-    Iterator<CartItem> i = cart.getAllCartItems();
-    while (i.hasNext()) {
-      CartItem cartItem = (CartItem) i.next();
-      addLineItem(cartItem);
-    }
+//    Iterator<CartItem> i = cart.getAllCartItems();
+//    while (i.hasNext()) {
+//      CartItem cartItem = (CartItem) i.next();
+//      addLineItem(cartItem);
+//    }
   }
 
   public void addLineItem(CartItem cartItem) {

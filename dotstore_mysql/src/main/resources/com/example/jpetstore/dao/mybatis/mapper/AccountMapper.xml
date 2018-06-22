@@ -4,6 +4,13 @@
 <mapper namespace="com.example.jpetstore.dao.mybatis.mapper.AccountMapper">
   <cache />
 
+  <select id="selectUserAccount" parameterType="java.lang.String" resultType="Account">
+  	SELECT userid, email, firstname, lastname, addr1 AS address1, addr2 AS address2,
+  			city, state, zip, country, phone
+  	FROM ACCOUNT
+  	WHERE userid = #{username}
+  </select>
+
   <select id="getAccountByUsername" resultType="Account">
     SELECT SIGNON.USERNAME,
           ACCOUNT.EMAIL,

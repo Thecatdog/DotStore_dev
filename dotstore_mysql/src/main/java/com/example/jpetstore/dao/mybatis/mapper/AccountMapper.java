@@ -25,6 +25,8 @@ import com.example.jpetstore.domain.Account;
  *
  */
 public interface AccountMapper {
+	
+  Account selectUserAccount(String username);
 
   Account getAccountByUsername(String username);
 
