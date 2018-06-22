@@ -3,13 +3,13 @@
 
 <mapper namespace="com.example.jpetstore.dao.mybatis.mapper.P2PMapper">
   <cache />
-  <insert id="insertP2P" parameterType="P2PItem">
+  <insert id="insertP2P" parameterType="Item">
     INSERT INTO ITEM
       (ITEMID, PRODUCTID, LISTPRICE, UNITCOST, SUPPLIER, STATUS, ATTR1, ATTR2, ATTR3, ATTR4, ATTR5, DESCRIPTION, SUPPLIER_CATE, CATEGORYID)
     VALUES
       (#{itemId}, #{productId}, #{listprice}, #{unitcost}, #{supplier}, #{status}, #{attr1}, #{attr2}, #{attr3}, #{attr4}, #{attr5}, #{description}, #{supplier_cate}, #{categoryId})
   </insert>
-  <select id="getP2PList" resultType="P2PItem">
+  <select id="getP2PList" resultType="Item">
   	SELECT *
   	FROM ITEM
   	WHERE productid = #{param1} and supplier_cate = #{param2}
@@ -19,4 +19,17 @@
   	FROM ITEM
   	WHERE itemid = #{param1}
   </select>
+  <delete id="deleteById" parameterType="Item">
+  	DELETE 
+  	FROM ITEM
+  	WHERE itemid=#{param1}
+  </delete>
+    <update id="updateP2P" parameterType="Item">
+  	UPDATE ITEM SET
+  	  LISTPRICE = #{listprice}, STATUS = #{status}, 
+  	  ATTR1 = #{attr1}, ATTR2 = #{attr2}, ATTR3 = #{attr3}, 
+  	  ATTR4 = #{attr4}, ATTR5 = #{attr5}, DESCRIPTION = #{description}
+  	WHERE ITEMID = #{itemId}
+  </update>
+  
 </mapper>

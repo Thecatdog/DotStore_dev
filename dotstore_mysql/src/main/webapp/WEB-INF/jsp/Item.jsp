@@ -22,6 +22,11 @@
     <tr>
       <td id="itemName" width="100%" bgcolor="#CCCCCC"><c:out value="${item.itemId}" /></td>
     </tr>
+  	<tr>
+  		<td>
+  			<c:out value="${item.supplier}"/>
+  		</td>
+  	</tr>
     <tr>
       <td><b><font size="4"> 
         <c:out value="${item.attr1}" />
@@ -43,10 +48,29 @@
         <a href='<c:url value="/shop/addItemToCart.do">
           <c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
           <img border="0" src="../images/button_add_to_cart.gif" alt="" /></a>
-          <a href='<c:url value="/shop/itemDelete.do">
-          <c:param name="itemId" value="${item.itemId}"/></c:url>'>
-          삭제</a>
-      </td>
+          <c:if test="${item.supplier eq userSession.account.firstName}">
+          	${form_type }
+          	<c:if test="${form_type eq 'c2p'}">
+          		<a href='<c:url value="/shop/editC2PForm.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 수정
+				</a>
+          	</c:if>
+          	<c:if test="${form_type eq 'p2p'}">
+          		<a href='<c:url value="/shop/editP2PForm.do">
+							<c:param name="itemId" value="${item.itemId}"/>
+						</c:url>'
+					class="btn btn-gradient">경매 수정
+				</a>
+          	</c:if>
+			<a href='<c:url value="/shop/itemDelete.do">
+	          <c:param name="itemId" value="${item.itemId}"/>
+	          <c:param name="supplier_cate" value="${item.supplier_cate}"/>
+	          </c:url>'>
+	        삭제</a>
+		  </c:if>
+	  </td>
     </tr>
   </table>
 	

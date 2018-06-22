@@ -14,7 +14,14 @@
 			<i class="fas fa-arrow-circle-left"></i>
 		</a> ${product.name}
 	</h4>
-	<p class="itemCount">${fn:length(itemList)}items</p>
+	<p class="itemCount">${fn:length(itemList)} items
+	<br/>
+	<br/>
+		<c:if test="${fn:length(itemList) eq 0 }">
+		아직 상품이 존재하지 않습니다.
+		</c:if>
+	</p>
+
 	<c:forEach var="item" items="${itemList}">
 		<div class="item-container">
 			<table class="item-table">

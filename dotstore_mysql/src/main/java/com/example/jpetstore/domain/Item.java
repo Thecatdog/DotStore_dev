@@ -12,7 +12,7 @@ public class Item implements Serializable {
 	private String productId;
 	private String itemId;
 	private int listprice;
-	private int unitcost;
+	private int unitcost = 0;
 	private String supplier;
 	private String supplier_cate;
 	private String status;
