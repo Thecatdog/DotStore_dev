@@ -24,6 +24,14 @@
   	FROM ITEM
   	WHERE itemid=#{param1}
   </delete>
+   <update id="updateC2P" parameterType="Item">
+  	UPDATE ITEM SET
+  	  LISTPRICE = #{listprice}, STATUS = #{status}, 
+  	  ATTR1 = #{attr1}, ATTR2 = #{attr2}, ATTR3 = #{attr3}, 
+  	  ATTR4 = #{attr4}, ATTR5 = #{attr5}, DESCRIPTION = #{description}
+  	WHERE ITEMID = #{itemId}
+  </update>
+  
 <!-- 
   <select id="getItemListByProduct" resultType="Item">
     SELECT
