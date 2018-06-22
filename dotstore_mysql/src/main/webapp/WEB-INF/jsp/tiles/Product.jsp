@@ -50,8 +50,10 @@
             		pattern="#,###" />원&nbsp;&nbsp; 
             		<c:if test="${type ne 'auction'}">
 	            		<a class="cart-logo"
-							href='<c:url value="/shop/addItemToCart.do">
-	            			<c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
+							href='<c:url value="/shop/addCart.do">
+	            			<c:param name="workingItemId" value="${item.itemId}"/>
+	            			<c:param name="price" value="${item.listprice}"/>
+	            			</c:url>'>
 								<i class="fas fa-cart-plus"></i>
 						</a>
 					</c:if>
