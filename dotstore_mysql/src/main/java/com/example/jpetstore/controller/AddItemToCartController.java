@@ -95,13 +95,12 @@ public class AddItemToCartController {
 	@RequestMapping("/shop/addCart.do")
 	public String addCart(@RequestParam("workingItemId") String workingItemId,
 			@RequestParam("price") int price,
-			RedirectAttributes redirectAttributes, HttpServletRequest request) throws Exception {
+			HttpServletRequest request) throws Exception {
 		
 		NewCart cart = new NewCart(workingItemId, getUserName(request), price);
 		System.out.println(cart.toString());
 		newCartMapper.addCart(cart);
 		
-		//redirectAttributes.addAttribute("itemId", workingItemId);
 		return "redirect:/shop/viewCartList.do";
 	}
 	
@@ -144,10 +143,10 @@ public class AddItemToCartController {
 		mv.addObject("cartList", cartList);
 		
 		//포인트 조회
-		int myPoint = pointMapper.selectMyPoint(getUserName(request));
+		long myPoint = pointMapper.getPointByUserId(getUserName(request));
 		System.out.println("myPoint : " + myPoint);
 		mv.addObject("myPoint", myPoint);
-		
+				
 		return mv;
 	}
 	
@@ -155,6 +154,13 @@ public class AddItemToCartController {
 	public String removeItemCart(@RequestParam("itemId") String itemId) throws Exception {
 		newCartMapper.removeCart(itemId);
 		return "redirect:/shop/viewCartList.do";
+	}
+	
+	@RequestMapping("/shop/checkCart.do")
+	public ModelAndView checkCart(@RequestParam("cartList") List<HashMap<String, String>> cartList) throws Exception {
+		ModelAndView mv = new ModelAndView("tiles/Checkout");
+		mv.addObject(cartList);
+		return mv;
 	}
 	
 	public String getUserName(HttpServletRequest request) {
