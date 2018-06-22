@@ -27,7 +27,7 @@
 				    					${item.itemId}
 				    			</a>
 				    		</td>
-	                        <td>${item.listprice}</td>
+	                        <td><fmt:formatNumber value="${item.listprice}" pattern="#,###" />원</td>
 	                        <td><fmt:formatDate value="${item.dueTime}" pattern="yyyy-MM-dd" /></td>
 	                    </tr>
                     </c:forEach>
@@ -58,8 +58,8 @@
 				    					${list.itemId}
 				    			</a>
 							</td>
-	                        <td>${list.myPrice}</td>
-	                        <td>${list.nowPrice}</td>
+	                        <td><fmt:formatNumber value="${list.myPrice}" pattern="#,###" />원</td>
+	                        <td><fmt:formatNumber value="${list.nowPrice}" pattern="#,###" />원</td>
 	                        <td><fmt:formatDate value="${list.dueTime}" pattern="yyyy-MM-dd" /></td>
 	                    </tr>
                     </c:forEach>

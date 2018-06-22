@@ -33,12 +33,14 @@ public class AuctionService {
 		auctionMapper.deleteBuyer(buyer);
 		List<HashMap<String, String>> mapList = auctionMapper.bestBuyerByItemId(itemId);
 		
-		Buyer best = new Buyer();
-		best.setItemId(itemId);
-		String price =  String.valueOf(mapList.get(0).get("listprice"));
-		price = price.substring(0, price.length()-3);
-		best.setListprice(Integer.parseInt(price));
-		best.setUsername(mapList.get(0).get("username"));
-		auctionMapper.updateAuctionBuyer(best);
+		if (mapList.size() > 0) { //입찰 하나였는지 검사
+			Buyer best = new Buyer();
+			best.setItemId(itemId);
+			String price =  String.valueOf(mapList.get(0).get("listprice"));
+			price = price.substring(0, price.length()-3);
+			best.setListprice(Integer.parseInt(price));
+			best.setUsername(mapList.get(0).get("username"));
+			auctionMapper.updateAuctionBuyer(best);
+		}
 	}
 }

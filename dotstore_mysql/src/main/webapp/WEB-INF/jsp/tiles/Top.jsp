@@ -19,7 +19,8 @@
 					<a class="fas fa-user icon" href="#"></a>
 					<a class="fas fa-envelope icon"
 						href="<c:url value="/msg/recv/list.do" />"></a>
-					<a class="fas fa-shopping-cart icon" href="#"></a>
+					<a href="<c:url value="/shop/viewCartList.do"/>"
+						class="fas fa-shopping-cart icon"></a>
 					<a href="<c:url value="/shop/signoff.do"/>"
 						class="btn btn-gradient">LOGOUT</a>
 					<a href="<c:url value="/shop/myAuctionList.do"/>"
