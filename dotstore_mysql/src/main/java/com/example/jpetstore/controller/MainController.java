@@ -32,11 +32,11 @@ public class MainController implements Serializable{
 		for(Item i : itemList) {
 			if(i.getSupplier_cate().equals("member")) {
 				p2pItem.add(i);
-				System.out.println("member : " + i.toString());
+				//System.out.println("member : " + i.toString());
 			}
 			else {
 				c2pItem.add(i);
-				System.out.println("company : " + i.toString());
+				//System.out.println("company : " + i.toString());
 			}
 		}
 		
