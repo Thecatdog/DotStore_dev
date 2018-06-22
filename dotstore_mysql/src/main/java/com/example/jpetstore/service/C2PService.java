@@ -16,4 +16,9 @@ public class C2PService {
 public void insert(Item c2pItem) {
 	c2pMapper.insertC2P(c2pItem);
 }
+@Transactional
+public void deleteById(String itemId) {
+	c2pMapper.deleteById(itemId);
+}
+
 }

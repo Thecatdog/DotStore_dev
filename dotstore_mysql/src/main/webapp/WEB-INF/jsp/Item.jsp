@@ -43,6 +43,9 @@
         <a href='<c:url value="/shop/addItemToCart.do">
           <c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
           <img border="0" src="../images/button_add_to_cart.gif" alt="" /></a>
+          <a href='<c:url value="/shop/itemDelete.do">
+          <c:param name="itemId" value="${item.itemId}"/></c:url>'>
+          삭제</a>
       </td>
     </tr>
   </table>

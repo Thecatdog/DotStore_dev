@@ -13,6 +13,7 @@ import com.example.jpetstore.dao.mybatis.mapper.ReviewMapper;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.domain.Review;
+import com.example.jpetstore.service.C2PService;
 import com.example.jpetstore.service.PetStoreFacade;
 
 /**
@@ -31,7 +32,9 @@ public class ViewItemController {
 	@Autowired
 	private ReviewMapper reviewMapper;
 	
-
+	@Autowired
+	C2PService c2pService;
+	
 	@Autowired
 	public void setPetStore(PetStoreFacade petStore) {
 		this.petStore = petStore;
@@ -54,6 +57,12 @@ public class ViewItemController {
 		model.put("reviewList", reviewList);
 		
 		return "Item";
+	}
+	
+	@RequestMapping("/shop/itemDelete.do")
+	public String itemDelete(@RequestParam("itemId") String itemId, ModelMap model) throws Exception {
+		c2pService.deleteById(itemId);
+		return "redirect:/shop/index.do";
 	}
 
 }

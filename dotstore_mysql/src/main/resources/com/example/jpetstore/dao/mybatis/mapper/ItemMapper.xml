@@ -19,6 +19,11 @@
   	FROM ITEM
   	WHERE itemid = #{param1}
   </select>
+  <delete id="deleteById" parameterType="Item">
+  	DELETE 
+  	FROM ITEM
+  	WHERE itemid=#{param1}
+  </delete>
 <!-- 
   <select id="getItemListByProduct" resultType="Item">
     SELECT
