@@ -47,12 +47,23 @@
 				</tr>
 				<tr>
 					<td style="float: right"><fmt:formatNumber value="${item.listprice}"
-            		pattern="#,###" />원&nbsp;&nbsp; <a
-						class="cart-logo"
-						href='<c:url value="/shop/addItemToCart.do">
-            	<c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
-							<i class="fas fa-cart-plus"></i>
-					</a></td>
+            		pattern="#,###" />원&nbsp;&nbsp; 
+            		<c:if test="${type ne 'auction'}">
+	            		<a class="cart-logo"
+							href='<c:url value="/shop/addItemToCart.do">
+	            			<c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
+								<i class="fas fa-cart-plus"></i>
+						</a>
+					</c:if>
+					<c:if test="${type eq 'auction'}">
+						<c:if test="${item.finish eq 'open'}">
+							<p>경매중</p>
+						</c:if>
+						<c:if test="${item.finish eq 'close'}">
+							<p>마감됨</p>
+						</c:if>
+					</c:if>
+					</td>
 				</tr>
 			</table>
 		</div>
