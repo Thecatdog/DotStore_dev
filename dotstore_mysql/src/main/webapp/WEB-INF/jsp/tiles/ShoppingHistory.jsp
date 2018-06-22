@@ -54,7 +54,7 @@
 				$('#none_noti').hide();
 
 				var tagList = [];
-				for (i in list){
+				for (i = 0; i < 5; i++) {
 					var strArray = list[i].split('|');
 					var tag = 
 						'<tr><td align="center" class="history-item"> <img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/> <b>' 
