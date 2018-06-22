@@ -6,7 +6,7 @@
 		<div class="best-seller">
 			<h1>C2P BEST SELLER</h1>
 			<table>
-				<c:forEach var="c" items="${c2pBestSellers}">
+				<c:forEach var="c" items="${c2pItem}">
 					<tr>
 						<td>
 							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
@@ -18,9 +18,9 @@
 				</c:forEach>
 			</table>
 			
-			<%-- <h1>P2P BEST SELLER</h1>
+			<h1>P2P BEST SELLER</h1>
 			<table>
-				<c:forEach var="p" items="${p2pBestSellers}">
+				<c:forEach var="p" items="${p2pItem}">
 					<tr>
 						<td>
 							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
@@ -30,7 +30,7 @@
 						</td>
 					</tr>
 				</c:forEach>
-			</table> --%>
+			</table> 
 			
 			<h1>AUCTION BEST SELLER</h1>
 			<table>
