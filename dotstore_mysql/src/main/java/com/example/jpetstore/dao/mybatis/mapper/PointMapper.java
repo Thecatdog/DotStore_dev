@@ -8,4 +8,5 @@ import com.example.jpetstore.domain.Point;
 @Mapper
 public interface PointMapper {
 	void addPoint(Point point) throws DataAccessException;
+	long getPointByUserId(String userId) throws DataAccessException;
 }

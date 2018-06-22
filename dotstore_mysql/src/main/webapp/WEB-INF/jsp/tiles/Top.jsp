@@ -13,8 +13,8 @@
 			</div>
 			<form class="go-sign-form">
 				<c:if test="${!empty userSession.account}">
-					<span class="welcome-msg">환영합니다, <b>${userSession.account.firstName}</b>
-						님!
+					<span class="welcome-msg">환영합니다, <b id="userId">${userSession.account.firstName}</b>
+						님!<p id="pointVal"></p>
 					</span>
 					<a class="fas fa-user icon" href="#"></a>
 					<a class="fas fa-envelope icon"
@@ -36,3 +36,43 @@
 		</div>
 	</nav>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	
+	/* 
+		1. user가 있는지를 먼저 확인하기
+		-> sessionStroage에 point 값 있을 경우 -> 그냥 포인트 갔다 쓰기
+		-> sessionStroage에 point 값 없을 경우 -> ajax통신으로 포인트 가지고 오기 -> sessionStroage에 저장
+		2. user가 없으면 -끝- 
+	*/
+	
+	$(document).ready(function(){
+		
+		var userId = $('#userId').html();
+		console.log(userId);
+		
+		if(userId != null){
+			var point = sessionStorage.getItem('point');
+			if( point != null){
+				$('#pointVal').html(point + "P");
+			} else {	
+				//ajax-call
+				$.ajax({
+		            url: "/dotstore_mysql/top.do",
+		            type: "POST",
+		            data : {userId: userId},
+		            dataType: "text",
+		            success: function (data) {
+		            	console.log("성공?!" + data);
+		            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
+		            	$('#pointVal').html(data + "P");
+		            },
+		            error : function(e1, e2){
+		                console.log("error!");
+		            }
+		        });
+			}
+	    }
+	});
+</script>
