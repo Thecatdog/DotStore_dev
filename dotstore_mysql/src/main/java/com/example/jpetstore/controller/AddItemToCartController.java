@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +35,7 @@ import com.example.jpetstore.service.PetStoreFacade;
  * @modified-by Changsup Park
  */
 @Controller
-@SessionAttributes("sessionCart")
+@SessionAttributes({"sessionCart", "totalPrice"})
 public class AddItemToCartController { 
 
 	private PetStoreFacade petStore;
@@ -50,10 +51,10 @@ public class AddItemToCartController {
 		this.petStore = petStore;
 	}
 
-	@ModelAttribute("sessionCart")
-	public Cart createCart() {
-		return new Cart();
-	}
+//	@ModelAttribute("sessionCart")
+//	public Cart createCart() {
+//		return new Cart();
+//	}
 	
 //	@RequestMapping("/shop/{type}/addItemToCart.do")
 //	public ModelAndView handleRequest(
@@ -105,7 +106,7 @@ public class AddItemToCartController {
 	}
 	
 	@RequestMapping("/shop/viewCartList.do")
-	public ModelAndView viewCart(HttpServletRequest request) throws Exception {
+	public ModelAndView viewCart(HttpServletRequest request, Model model) throws Exception {
 		ModelAndView mv = new ModelAndView("tiles/Cart");
 		//user의 장바구니 itemId 목록 조회
 		List<String> itemIdList = newCartMapper.chooseItemIdByUsername(getUserName(request));
@@ -144,9 +145,12 @@ public class AddItemToCartController {
 		
 		//포인트 조회
 		long myPoint = pointMapper.getPointByUserId(getUserName(request));
-		System.out.println("myPoint : " + myPoint);
 		mv.addObject("myPoint", myPoint);
 				
+		//세션 저장
+		model.addAttribute("sessionCart", cartList);
+		model.addAttribute("totalPrice", totalPrice);
+		
 		return mv;
 	}
 	
@@ -157,10 +161,11 @@ public class AddItemToCartController {
 	}
 	
 	@RequestMapping("/shop/checkCart.do")
-	public ModelAndView checkCart(@RequestParam("cartList") List<HashMap<String, String>> cartList) throws Exception {
-		ModelAndView mv = new ModelAndView("tiles/Checkout");
-		mv.addObject(cartList);
-		return mv;
+	public String checkCart(Model model, @ModelAttribute("totalPrice") int totalPrice,
+			@ModelAttribute("sessionCart") List<HashMap<String, String>> cartList) throws Exception {
+		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("cartList", cartList);
+		return "tiles/Checkout";
 	}
 	
 	public String getUserName(HttpServletRequest request) {

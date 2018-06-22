@@ -1,6 +1,7 @@
 package com.example.jpetstore.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
+import org.springframework.web.util.WebUtils;
 
+import com.example.jpetstore.dao.mybatis.mapper.AccountMapper;
 import com.example.jpetstore.domain.Account;
 import com.example.jpetstore.domain.Cart;
 import com.example.jpetstore.service.OrderValidator;
@@ -26,12 +29,13 @@ import com.example.jpetstore.service.PetStoreFacade;
  * @modified by Changsup Park
  */
 @Controller
-@SessionAttributes({"sessionCart", "orderForm"})
+@SessionAttributes({"sessionCart", "totalPrice", "orderForm"})
 public class OrderController {
 	@Autowired
 	private PetStoreFacade petStore;
 	@Autowired
 	private OrderValidator orderValidator;
+	@Autowired private AccountMapper accountMapper;
 	
 	@ModelAttribute("orderForm")
 	public OrderForm createOrderForm() {
@@ -49,21 +53,15 @@ public class OrderController {
 	
 	@RequestMapping("/shop/newOrder.do")
 	public String initNewOrder(HttpServletRequest request,
-			@ModelAttribute("sessionCart") Cart cart,
+			@ModelAttribute("sessionCart") List<HashMap<String, String>> cartList,
+			@ModelAttribute("totalPrice") int totalPrice,
 			@ModelAttribute("orderForm") OrderForm orderForm
 			) throws ModelAndViewDefiningException {
-		UserSession userSession = (UserSession) request.getSession().getAttribute("userSession");
-		if (cart != null) {
-			// Re-read account from DB at team's request.
-			Account account = petStore.getAccount(userSession.getAccount().getUsername());
-			orderForm.getOrder().initOrder(account, cart);
-			return "NewOrderForm";	
-		}
-		else {
-			ModelAndView modelAndView = new ModelAndView("Error");
-			modelAndView.addObject("message", "An order could not be created because a cart could not be found.");
-			throw new ModelAndViewDefiningException(modelAndView);
-		}
+		
+		Account account = accountMapper.selectUserAccount(getUserName(request));
+		orderForm.getOrder().initOrder(account, totalPrice);
+		
+		return "tiles/NewOrderForm";
 	}
 	
 	@RequestMapping("/shop/newOrderSubmitted.do")
@@ -74,20 +72,20 @@ public class OrderController {
 			// from NewOrderForm
 			orderValidator.validateCreditCard(orderForm.getOrder(), result);
 			orderValidator.validateBillingAddress(orderForm.getOrder(), result);
-			if (result.hasErrors()) return "NewOrderForm";
+			if (result.hasErrors()) return "tiles/NewOrderForm";
 			
 			if (orderForm.isShippingAddressRequired() == true) {
 				orderForm.setShippingAddressProvided(true);
-				return "ShippingForm";
+				return "tiles/ShippingForm";
 			}
 			else {			
-				return "ConfirmOrder";
+				return "tiles/ConfirmOrder";
 			}
 		}
 		else {		// from ShippingForm
 			orderValidator.validateShippingAddress(orderForm.getOrder(), result);
-			if (result.hasErrors()) return "ShippingForm";
-			return "ConfirmOrder";
+			if (result.hasErrors()) return "tiles/ShippingForm";
+			return "tiles/ConfirmOrder";
 		}
 	}
 	
@@ -96,10 +94,16 @@ public class OrderController {
 			@ModelAttribute("orderForm") OrderForm orderForm, 
 			SessionStatus status) {
 		petStore.insertOrder(orderForm.getOrder());
-		ModelAndView mav = new ModelAndView("ViewOrder");
+		ModelAndView mav = new ModelAndView("tiles/ViewOrder");
 		mav.addObject("order", orderForm.getOrder());
 		mav.addObject("message", "Thank you, your order has been submitted.");
 		status.setComplete();  // remove sessionCart and orderForm from session
 		return mav;
+	}
+	
+	public String getUserName(HttpServletRequest request) {
+		UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		String username = userSession.getAccount().getUsername();
+		return username;
 	}
 }
