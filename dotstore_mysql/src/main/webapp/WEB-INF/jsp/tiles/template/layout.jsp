@@ -19,8 +19,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link type="text/css" rel="stylesheet"
-	href="/dotstore_mysql/style/layout.css?ver=4" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/layout.css?ver=4" />
 
 </head>
 <body>
@@ -36,9 +35,11 @@
 	<tiles:insertAttribute name="body"/>
 	<tiles:insertAttribute name="banner" />
 	<tiles:insertAttribute name="footer" /> --%>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	
+	<!-- 얘는 충돌이 나서 없애자 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous"></script> -->
+		
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

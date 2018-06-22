@@ -47,20 +47,13 @@ public class MainController implements Serializable{
 	}
 	
 	// Top.jsp 에서 point를 구하는 통신 API
-//	@RequestMapping(value = "/top.do")
-//	public int getPoint(String userId) {
-//		int point = pointMapper.getPointByUserId(userId);
-//		return point;
-//	}
-//	
-	
 	@RequestMapping(value = "/top.do")
 	@ResponseBody
-	public Point getPoint(@RequestParam(value="userId" , required = false) String userId) {
-		Point point = new Point();
-		point.setPoint(pointMapper.getPointByUserId(userId));
-		return point;
+	// request body로 안받는 이유 : vo로 새로 만들어서 받아야해서
+	public String getPoint(@RequestParam(value="userId" , required = false) String userId) {
+		long point = pointMapper.getPointByUserId(userId);
+		String strPoint = String.valueOf(point);
+		return strPoint;
 	}
-	
-	
+
 }
