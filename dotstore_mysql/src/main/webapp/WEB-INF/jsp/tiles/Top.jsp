@@ -50,26 +50,23 @@
 	$(document).ready(function(){
 		
 		var userId = $('#userId').html();
+		console.log(userId);
 		
 		if(userId != null){
-			console.log("222");
 			var point = sessionStorage.getItem('point');
 			if( point != null){
-				console.log("333");
-				$('#pointVal').val(point + "P");
+				$('#pointVal').html(point + "P");
 			} else {	
-				console.log("4444");
 				//ajax-call
-				$.
-				ajax({
+				$.ajax({
 		            url: "/dotstore_mysql/top.do",
 		            type: "POST",
 		            data : {userId: userId},
-		            dataType: "JSON",
+		            dataType: "text",
 		            success: function (data) {
-		            	console.log("성공?!" + data.point);
-		            	sessionStorage.setItem('point', data.point); // 가져왔으면 sessionstroage에 넣기
-		            	$('#pointVal').val(data.point + "P");
+		            	console.log("성공?!" + data);
+		            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
+		            	$('#pointVal').html(data + "P");
 		            },
 		            error : function(e1, e2){
 		                console.log("error!");
@@ -77,6 +74,5 @@
 		        });
 			}
 	    }
-	
 	});
 </script>
