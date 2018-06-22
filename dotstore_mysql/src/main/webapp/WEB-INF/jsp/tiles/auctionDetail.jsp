@@ -75,7 +75,7 @@
 		<hr>
 
 		<!-- 최고 입찰자가 아닌 구매자에게만 보여짐 -->
-		<c:if test="${currentUser ne item.supplier}">
+		<c:if test="${item.finish eq 'open' && currentUser ne item.supplier}">
 			<div class="">
 				<c:if test="${myBidStatus eq 0}">
 					<p>${currentUser} 님은 현재 최고 입찰자가 아닙니다.</p>
@@ -99,7 +99,7 @@
 		<!-- 최고 입찰자가 아닌 구매자에게만 보여짐 (여기까지) -->
 		
 		<!-- 최고 입찰자인 구매자에게만 보여지는 부분 -->
-		<c:if test="${myBidStatus eq 1}">
+		<c:if test="${item.finish eq 'open' && myBidStatus eq 1}">
 			<div class="">
 				<p>
 					${currentUser} 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을
@@ -118,13 +118,25 @@
 		<hr>
 
 		<!-- 경매 마감 시 -->
-<!-- 		<div class=""> -->
-<!-- 			<p>김나영 님이 현재 최고 입찰자입니다.</p> -->
-<!-- 			<p>상품을 구매하려면 Add to Cart를, 경매를 취소하려면 경매 취소 버튼을 눌러주세요.</p> -->
-
-<!-- 			<button type="button">Add to Cart</button> -->
-<!-- 			<button type="button">경매 취소</button> -->
-<!-- 		</div> -->
+		<c:if test="${item.finish eq 'close' && myBidStatus eq 1}">
+			<div class="">
+				<p>경매가 마감되었습니다.</p>
+				<p>${currentUser} 님이 현재 최고 입찰자입니다.</p>
+				<p>상품을 구매하려면 카트를, 입찰을 취소하려면 입찰 취소 버튼을 눌러주세요.</p>
+	
+				<a class="cart-logo"
+							href='<c:url value="/shop/addCart.do">
+	            			<c:param name="workingItemId" value="${item.itemId}"/>
+	            			<c:param name="price" value="${item.listprice}"/></c:url>'>
+								<i class="fas fa-cart-plus"></i>
+						</a>
+				<a href='<c:url value="/shop/deleteBidding.do">
+							<c:param name="itemId" value="${item.itemId}" />
+							<c:param name="myPrice" value="${myPrice}" />
+						</c:url>'
+					class="btn btn-gradient">입찰 취소</a>
+			</div>
+		</c:if>
 		<!-- 경매 마감 시 (여기까지) -->
 	</div>
 </body>
