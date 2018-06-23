@@ -73,7 +73,7 @@
 	                    </tr>
                     </c:forEach>
                 </tbody>
-            </table>F
+            </table>
         </div>
 
         <div id="pointContainer">
@@ -90,6 +90,10 @@
                 </div>
             </div>
             <button onclick="getPointListPlus()" class="btn btn-warning">더보기</button>
+        </div>
+        
+        <div>
+       		<h3><b><a href='<c:url value="/shop/listOrders.do"/>'>주문내역</a></b></h3>
         </div>
 
     </div>

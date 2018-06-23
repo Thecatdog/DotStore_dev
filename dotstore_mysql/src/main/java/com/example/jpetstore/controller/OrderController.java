@@ -92,9 +92,10 @@ public class OrderController {
 	@RequestMapping("/shop/confirmOrder.do")
 	protected ModelAndView confirmOrder(HttpServletRequest request,
 			@ModelAttribute("orderForm") OrderForm orderForm, 
+			@ModelAttribute("sessionCart") List<HashMap<String, String>> cartList,
 			SessionStatus status) {
 		
-		orderAndCartService.insertOrderAndDeleteCart(orderForm.getOrder(), getUserName(request));
+		orderAndCartService.insertOrderAndDeleteCart(orderForm.getOrder(), cartList, getUserName(request));
 		ModelAndView mav = new ModelAndView("tiles/ViewOrder");
 		mav.addObject("order", orderForm.getOrder());
 		mav.addObject("message", "Thank you, your order has been submitted.");

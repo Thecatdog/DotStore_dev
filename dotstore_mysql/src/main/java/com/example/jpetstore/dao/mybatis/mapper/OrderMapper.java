@@ -25,6 +25,10 @@ import com.example.jpetstore.domain.Order;
  */
 public interface OrderMapper {
 
+  int getMaxorderId();
+  List<Order> orderList(String username);
+  Order getOrderByOrderId(int orderId);
+	
   List<Order> getOrdersByUsername(String username);
 
   Order getOrder(int orderId);
