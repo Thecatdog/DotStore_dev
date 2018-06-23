@@ -9,12 +9,26 @@
 		INSERT INTO POINT (user_id, point, content, create_at)
 	    VALUES(#{userId}, #{point}, #{content}, NOW())
   	</insert>
-  	
+  
   	<select id="getPointByUserId" resultType="long">
 	 	select sum(point) 
 		from POINT
 		WHERE user_id = #{userId}
 		group by user_id;
+  	</select>
+  	
+  	<insert id="addCalendar" parameterType="String">
+		INSERT INTO CALENDAR (user_id, create_at)
+	    VALUES(#{userId}, NOW())
+  	</insert>
+  	
+  	<select id="getCalendarList" resultType="CALENDAR">
+	 	select 
+	 		cldr_id AS cldrId,
+	 		user_id AS userId,
+	 		create_at AS createAt
+		from CALENDAR
+		WHERE user_id = #{userId}
   	</select>
 
 </mapper>

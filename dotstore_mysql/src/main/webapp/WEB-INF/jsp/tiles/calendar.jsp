@@ -17,26 +17,36 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	var userId = $('#userId').html();
-	console.log(userId);
-	var dataList;
-	$.ajax({
-        url: "/dotstore_mysql/daily.do",
-        type: "POST",
-        data : {userId: userId},
-        dataType: "JSON",
-        success: function (dataList) {
-        	console.log("성공?!" + dataList);        	
-        },
-        error : function(e1, e2){
-            console.log("error!");
-        }
-    });
 	
+	//??? 모르겟는게 이미 출석체크를 햇으면 버튼비활성화 시키기는것
+			
 	$(function() {
 	  $('#calendar').fullCalendar({
 	    header: {
 	      right: 'custom2 prevYear,prev,next,nextYear'
+	    },
+	    customButtons: {
+	        custom2: {
+	          text: '출석체크하기!',
+	          id: 'check',
+	          click: function() {	         	            
+	            var userId = $('#userId').html();
+	        	$.ajax({
+	                url: "/dotstore_mysql/daily/check.do",
+	                type: "POST",
+	                data : {userId: userId},
+	                dataType: "text",
+	                success: function (data) {
+	                	console.log("성공?!" + data);
+	                	$(".fc-custom2-button").prop('disabled', true);
+	                	$(".fc-custom2-button").html('출석완료');
+	                },
+	                error : function(e1, e2){
+	                    console.log("error!");
+	                }
+	            });
+	          }
+	        }
 	    }
 	  });
 	});

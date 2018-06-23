@@ -1,8 +1,11 @@
 package com.example.jpetstore.controller;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,14 +18,17 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.jpetstore.dao.mybatis.mapper.MainMapper;
 import com.example.jpetstore.dao.mybatis.mapper.PointMapper;
 import com.example.jpetstore.domain.AuctionItem;
+import com.example.jpetstore.domain.Calendar;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.P2PItem;
 import com.example.jpetstore.domain.Point;
+import com.example.jpetstore.service.PointService;
 
 @Controller
 public class MainController implements Serializable{
 	@Autowired MainMapper mainMapper;
 	@Autowired PointMapper pointMapper;
+	@Autowired PointService pointService;
 
 	// Message List
 	@RequestMapping(value = "/shop/index.do")
@@ -57,9 +63,34 @@ public class MainController implements Serializable{
 	}
 	
 	@RequestMapping(value = "/daily.do")
-	public ModelAndView calendar() {
+	public ModelAndView calendar(HttpServletRequest request) {
+		
 		ModelAndView mv = new ModelAndView("tiles/calendar");
+		String userId = MessageController.getUserName(request);
+		
+		// Data 가져오기
+		List<Calendar> calList = pointMapper.getCalendarList(userId);
+		for(Calendar c : calList) {
+			System.out.println(c.toString());
+		}
+		mv.addObject("calList", calList);
+		
 		return mv;
+	}
+	
+	@RequestMapping(value = "/daily/check.do")
+	@ResponseBody
+	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) {
+
+		Point point = new Point();
+		point.setUserId(userId);
+		point.setPoint(+5);
+		point.setContent("출석체크 5포인트 적립");
+		
+		// Date에 저장 & point 적립
+		pointService.insertCalendar(userId, point);
+		
+		return userId;
 	}
 
 }
