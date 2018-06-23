@@ -71,6 +71,10 @@
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/p2pForm.jsp" />
 	</definition> 
+	<definition name="p2pEditForm" extends="base_layout">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/tiles/p2pEditForm.jsp" />
+	</definition> 
  	<!-- <definition name="tiles/Category" extends="base_layout">
 		<put-attribute name="body"
 			value="/WEB-INF/jsp/tiles/Category.jsp" />

@@ -14,6 +14,7 @@ import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Product;
 import com.example.jpetstore.domain.Review;
 import com.example.jpetstore.service.C2PService;
+import com.example.jpetstore.service.P2PService;
 import com.example.jpetstore.service.PetStoreFacade;
 
 /**
@@ -36,6 +37,9 @@ public class ViewItemController {
 	C2PService c2pService;
 	
 	@Autowired
+	P2PService p2pService;
+	
+	@Autowired
 	public void setPetStore(PetStoreFacade petStore) {
 		this.petStore = petStore;
 	}
@@ -52,6 +56,12 @@ public class ViewItemController {
 		model.put("item", item);
 		model.put("product", product);
 		
+		if(item.getSupplier_cate().equals("member")) {
+			model.put("form_type","p2p");
+		}else {
+			model.put("form_type","c2p");
+		}
+		
 		List<Review> reviewList = reviewMapper.getListByItemId(itemId);
 		
 		model.put("reviewList", reviewList);
@@ -60,8 +70,14 @@ public class ViewItemController {
 	}
 	
 	@RequestMapping("/shop/itemDelete.do")
-	public String itemDelete(@RequestParam("itemId") String itemId, ModelMap model) throws Exception {
-		c2pService.deleteById(itemId);
+	public String itemDelete(@RequestParam("itemId") String itemId,@RequestParam("supplier_cate") String supplier_cate, ModelMap model) throws Exception {
+		if(supplier_cate.equals("member")) {
+			p2pService.deleteById(itemId);
+		}
+		else {
+			c2pService.deleteById(itemId);
+		}
+		
 		return "redirect:/shop/index.do";
 	}
 

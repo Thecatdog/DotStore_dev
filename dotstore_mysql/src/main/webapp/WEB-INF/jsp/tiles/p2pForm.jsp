@@ -41,12 +41,8 @@
 					<td><input id="itemId" type="text" class="form-control" name="itemId" required /></td>
 				</tr>
 				<tr>
-					<td><label for="listprice">경매 가격</label></td>
+					<td><label for="listprice">가격</label></td>
 					<td><input id="listprice" type="number"  class="form-control" name="listprice" required /></td>
-				</tr>
-				<tr>
-					<td><label for="unitcost">단일 비용</label></td>
-					<td><input id="unitcost" type="number" name="unitcost" class="form-control"/></td>
 				</tr>
 				<tr>
 					<td><label for="supplier_cate">공급자(회사/회원 아이디)</label></td>

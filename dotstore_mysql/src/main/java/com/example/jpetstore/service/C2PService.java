@@ -20,5 +20,8 @@ public void insert(Item c2pItem) {
 public void deleteById(String itemId) {
 	c2pMapper.deleteById(itemId);
 }
-
+@Transactional
+public void update(Item c2pItem) {
+	c2pMapper.updateC2P(c2pItem);
+}
 }

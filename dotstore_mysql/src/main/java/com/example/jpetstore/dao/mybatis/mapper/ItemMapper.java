@@ -30,6 +30,8 @@ public interface ItemMapper {
 	
 	Item getItem(String itemId);
 	
+	void updateC2P(Item c2pItem);
+	
 	void deleteById(String itemId);
 	
 	void updateInventoryQuantity(Map<String, Object> param);
