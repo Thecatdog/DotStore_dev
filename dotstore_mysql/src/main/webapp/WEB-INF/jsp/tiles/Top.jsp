@@ -23,6 +23,8 @@
 						class="fas fa-shopping-cart icon"></a>
 					<a href="<c:url value="/shop/signoff.do"/>"
 						class="btn btn-gradient">LOGOUT</a>
+						<a href="<c:url value="/daily.do"/>"
+						class="btn btn-gradient">출석체크</a>
 					<a href="<c:url value="/shop/myAuctionList.do"/>"
 						class="btn btn-gradient">MyAuctionList</a>
 				</c:if>

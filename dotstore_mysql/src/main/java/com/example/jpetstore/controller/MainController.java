@@ -55,5 +55,11 @@ public class MainController implements Serializable{
 		String strPoint = String.valueOf(point);
 		return strPoint;
 	}
+	
+	@RequestMapping(value = "/daily.do")
+	public ModelAndView calendar() {
+		ModelAndView mv = new ModelAndView("tiles/calendar");
+		return mv;
+	}
 
 }
