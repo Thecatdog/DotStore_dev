@@ -57,24 +57,24 @@
 		if(userId != null){
 			var point = sessionStorage.getItem('point');
 			if( point != null){
-				$('#pointVal').html(point + "P");
-			} else {	
-				//ajax-call
-				$.ajax({
-		            url: "/dotstore_mysql/top.do",
-		            type: "POST",
-		            data : {userId: userId},
-		            dataType: "text",
-		            success: function (data) {
-		            	console.log("성공?!" + data);
-		            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
-		            	$('#pointVal').html(data + "P");
-		            },
-		            error : function(e1, e2){
-		                console.log("error!");
-		            }
-		        });
+				sessionStorage.removeItem('point');
 			}
+			
+			//ajax-call
+			$.ajax({
+	            url: "/dotstore_mysql/top.do",
+	            type: "POST",
+	            data : {userId: userId},
+	            dataType: "text",
+	            success: function (data) {
+	            	console.log("성공?!" + data);
+	            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
+	            	$('#pointVal').html(data + "P");
+	            },
+	            error : function(e1, e2){
+	                console.log("error!");
+	            }
+	        });
 	    }
 	});
 </script>
