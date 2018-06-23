@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,72 +26,18 @@ import com.example.jpetstore.domain.Cart;
 import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.NewCart;
+import com.example.jpetstore.domain.Point;
 import com.example.jpetstore.service.PetStoreFacade;
+import com.example.jpetstore.vo.BuyerVo;
 
-/**
- * @author Juergen Hoeller
- * @param <AuctionItem>
- * @since 30.11.2003
- * @modified-by Changsup Park
- */
 @Controller
 @SessionAttributes({"sessionCart", "totalPrice"})
 public class AddItemToCartController { 
 
-	private PetStoreFacade petStore;
-	//추가
 	@Autowired private AuctionMapper auctionMapper;
 	@Autowired private NewCartMapper newCartMapper;
 	@Autowired private ItemMapper itemMapper;
 	@Autowired private PointMapper pointMapper;
-	//
-	
-	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
-	}
-
-//	@ModelAttribute("sessionCart")
-//	public Cart createCart() {
-//		return new Cart();
-//	}
-	
-//	@RequestMapping("/shop/{type}/addItemToCart.do")
-//	public ModelAndView handleRequest(
-//			@RequestParam("workingItemId") String workingItemId,
-//			@ModelAttribute("sessionCart") Cart cart ,
-//			@PathVariable("type") String type
-//			) throws Exception {
-//		ModelAndView mv = new ModelAndView("tiles/Cart");
-//		
-//		if (cart.containsItemId(workingItemId)) {
-//			cart.incrementQuantityByItemId(workingItemId);
-//		}
-//		else {
-//			// isInStock is a "real-time" property that must be updated
-//			// every time an item is added to the cart, even if other
-//			// item details are cached.
-//			
-//			//변경
-//			AuctionItem auction = new AuctionItem();
-//			Item item = new Item();
-//			boolean isInStock = false;
-//			if (type.equals("auction")) {
-//				auction = auctionMapper.getAuctionItem(workingItemId);
-//				item = null;
-//			} else {
-//				isInStock = this.petStore.isItemInStock(workingItemId);
-//				item = this.petStore.getItem(workingItemId);
-//			}
-//			System.out.println("auction : " + auction);
-//			System.out.println("item : " + item);
-//			System.out.println("isInStock : " + isInStock);
-//			cart.addItem(auction, item, isInStock);
-//			//
-//		}
-//		mv.addObject("cart", cart);
-//		return mv;
-//	}
 	
 	@RequestMapping("/shop/addCart.do")
 	public String addCart(@RequestParam("workingItemId") String workingItemId,
@@ -99,14 +45,14 @@ public class AddItemToCartController {
 			HttpServletRequest request) throws Exception {
 		
 		NewCart cart = new NewCart(workingItemId, getUserName(request), price);
-		System.out.println(cart.toString());
 		newCartMapper.addCart(cart);
 		
 		return "redirect:/shop/viewCartList.do";
 	}
 	
 	@RequestMapping("/shop/viewCartList.do")
-	public ModelAndView viewCart(HttpServletRequest request, Model model) throws Exception {
+	public ModelAndView viewCart(HttpServletRequest request, Model model,
+			@RequestParam(value="usePoint", defaultValue="0") int usePoint) throws Exception {
 		ModelAndView mv = new ModelAndView("tiles/Cart");
 		//user의 장바구니 itemId 목록 조회
 		List<String> itemIdList = newCartMapper.chooseItemIdByUsername(getUserName(request));
@@ -140,7 +86,7 @@ public class AddItemToCartController {
 			cart = new HashMap<String, String>();
 		}
 		
-		mv.addObject("totalPrice", totalPrice);
+		mv.addObject("totalPrice", totalPrice-usePoint);
 		mv.addObject("cartList", cartList);
 		
 		//포인트 조회
@@ -149,14 +95,29 @@ public class AddItemToCartController {
 				
 		//세션 저장
 		model.addAttribute("sessionCart", cartList);
-		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("totalPrice", totalPrice-usePoint);
 		
 		return mv;
 	}
 	
 	@RequestMapping("/shop/removeCart.do")
-	public String removeItemCart(@RequestParam("itemId") String itemId) throws Exception {
-		newCartMapper.removeCart(itemId);
+	public String removeItemCart(HttpServletRequest request, @RequestParam("itemId") String itemId) throws Exception {
+		newCartMapper.removeCart(itemId, getUserName(request));
+		return "redirect:/shop/viewCartList.do";
+	}
+	
+	@RequestMapping(value="/shop/usePoint.do", method=RequestMethod.POST)
+	public String usePoint(HttpServletRequest request, @RequestParam("point") int usePoint,
+			Model model, @ModelAttribute("totalPrice") int totalPrice,
+			RedirectAttributes redirectAttributes) throws Exception {
+		Point point = new Point();
+		point.setUserId(getUserName(request));
+		point.setPoint(-usePoint);
+		point.setContent("상품 구매 포인트 차감");
+		pointMapper.addPoint(point);
+		
+//		model.addAttribute("totalPrice", totalPrice-usePoint);
+		redirectAttributes.addAttribute("usePoint", usePoint);
 		return "redirect:/shop/viewCartList.do";
 	}
 	

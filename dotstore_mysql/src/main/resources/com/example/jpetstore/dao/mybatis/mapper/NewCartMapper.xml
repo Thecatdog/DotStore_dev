@@ -20,7 +20,8 @@
   <delete id="removeCart" parameterType="java.lang.String">
   	DELETE
   	FROM NEWCART
-  	WHERE itemId = #{itemId}
+  	WHERE itemId = #{param1}
+  	AND username = #{param2}
   </delete>
   
   <delete id="deleteCartByUsername" parameterType="java.lang.String">

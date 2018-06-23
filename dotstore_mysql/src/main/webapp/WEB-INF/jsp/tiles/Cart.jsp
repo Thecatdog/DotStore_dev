@@ -29,6 +29,14 @@
 		<td colspan="5">
 			<h1>총 가격 : <fmt:formatNumber value="${totalPrice}" pattern="#,###" />원</h1>
 			<p>나의 포인트 : ${myPoint}</p>
+			
+			<!-- 장바구니에 아이템이 있을경우에만 출력 -->
+			<c:if test="${not empty cartList}"> 
+				<form method="post" action='<c:url value="/shop/usePoint.do" />'>
+					<p>포인트 사용하기 : <input id="point" type="number" min="1" max="${myPoint}" name="point" required />
+					<button type="submit">사용</button>
+				</form>
+			</c:if>
 		</td>
 	</tr>
 	<tr>

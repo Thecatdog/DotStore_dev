@@ -5,6 +5,47 @@
 
   <cache />
 
+  <select id="getMaxorderId" resultType="Integer">
+  	SELECT MAX(orderid)
+  	FROM ORDERS
+  </select>
+
+  <select id="orderList" resultType="Order">
+  	SELECT orderid, orderdate, totalPrice
+  	FROM ORDERS
+  	WHERE userid = #{userId}
+  </select>
+  
+  <select id="getOrderByOrderId" resultType="Order">
+  	SELECT BILLADDR1 AS billAddress1,
+      BILLADDR2 AS billAddress2,
+      BILLCITY,
+      BILLCOUNTRY,
+      BILLSTATE,
+      BILLTOFIRSTNAME,
+      BILLTOLASTNAME,
+      BILLZIP,
+      SHIPADDR1 AS shipAddress1,
+      SHIPADDR2 AS shipAddress2,
+      SHIPCITY,
+      SHIPCOUNTRY,
+      SHIPSTATE,
+      SHIPTOFIRSTNAME,
+      SHIPTOLASTNAME,
+      SHIPZIP,
+      CARDTYPE,
+      COURIER,
+      CREDITCARD,
+      EXPRDATE AS expiryDate,
+      LOCALE,
+      ORDERDATE,
+      ORDERID,
+      TOTALPRICE,
+      USERID AS username
+  	FROM ORDERS
+  	WHERE orderid = #{param1}
+  </select>
+
   <select id="getOrder" resultType="Order">
     select
       BILLADDR1 AS billAddress1,
