@@ -17,6 +17,18 @@
 		group by user_id;
   	</select>
   	
+  	<select id="listByUserId" parameterType="com.example.jpetstore.vo.PagingVo" resultType="Point">
+		SELECT
+			user_id AS userId,
+			point,
+			content,
+			create_at AS createAt
+		FROM POINT
+		WHERE user_id = #{userId}
+		ORDER BY create_at desc
+		LIMIT #{offset}, #{limit}
+	</select>
+  	
   	<insert id="addCalendar" parameterType="String">
 		INSERT INTO CALENDAR (user_id, create_at)
 	    VALUES(#{userId}, NOW())
@@ -30,5 +42,7 @@
 		from CALENDAR
 		WHERE user_id = #{userId}
   	</select>
+  	
+  	
 
 </mapper>
