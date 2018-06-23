@@ -25,6 +25,7 @@ $(document).ready(function(){
 	      right: 'custom2 prevYear,prev,next,nextYear'
 	    },
 	    customButtons: {
+            <c:if test="${isCheck}">
 	        custom2: {
 	          text: '출석체크하기!',
 	          id: 'check',
@@ -45,6 +46,7 @@ $(document).ready(function(){
 	            });
 	          }
 	        }
+            </c:if>
 	    },
 	    eventSources: [
 	    	{
@@ -52,7 +54,7 @@ $(document).ready(function(){
 				type: 'POST',
 				dataType: "JSON",
 				success: function (data) {
-					/* alert(data);
+					alert/* (data.title);
                		console.log(data.title + ",  " + data.start); */
                 },
 				error: function() {

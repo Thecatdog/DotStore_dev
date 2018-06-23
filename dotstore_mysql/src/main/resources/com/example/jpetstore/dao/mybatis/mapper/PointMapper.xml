@@ -43,6 +43,19 @@
 		WHERE user_id = #{userId}
   	</select>
   	
+  	<select id="getCalendarListByDate" resultType="CALENDAR">
+		select
+		cldr_id AS cldrId,
+		user_id AS userId,
+		create_at AS createAt
+		from CALENDAR
+		WHERE user_id = #{userId}
+		AND create_at > #{startDate}
+		<![CDATA[
+		AND create_at < #{endDate}
+		]]>
+	</select>
+  	
   	
 
 </mapper>

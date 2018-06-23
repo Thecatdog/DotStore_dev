@@ -25,6 +25,7 @@ import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.P2PItem;
 import com.example.jpetstore.domain.Point;
 import com.example.jpetstore.service.PointService;
+import com.example.jpetstore.vo.DateVo;
 import com.example.jpetstore.vo.EventVo;
 
 @Controller
@@ -67,7 +68,9 @@ public class MainController implements Serializable{
 	
 	@RequestMapping(value = "/daily.do", method = RequestMethod.GET)
 	public ModelAndView calendar(HttpServletRequest request) {
+		String userId = MessageController.getUserName(request);
 		ModelAndView mv = new ModelAndView("tiles/calendar");
+		mv.addObject("isCheck", pointMapper.getCalendarListByDate(new DateVo(userId)).size() < 1);
 		return mv;
 	}
 	
