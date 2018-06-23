@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.jpetstore.dao.mybatis.mapper.OrderItemMapper">
+  <cache />
+
+  <insert id="insertOrderItem" parameterType="OrderItem">
+  	INSERT INTO ORDERITEM 
+  		(orderid, itemid)
+  	VALUES
+  		(#{orderid}, #{itemid})
+  </insert>
+  
+  <select id="getItemIdListByOrderId" parameterType="Integer" resultType="java.lang.String">
+  	SELECT itemid
+  	FROM ORDERITEM
+  	WHERE orderid = #{orderid}
+  </select>
+
+</mapper>
