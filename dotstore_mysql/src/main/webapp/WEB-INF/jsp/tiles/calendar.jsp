@@ -19,8 +19,7 @@
 $(document).ready(function(){
 	
 	//??? 모르겟는게 이미 출석체크를 햇으면 버튼비활성화 시키기는것
-			
-	$(function() {
+
 	  $('#calendar').fullCalendar({
 	    header: {
 	      right: 'custom2 prevYear,prev,next,nextYear'
@@ -37,7 +36,6 @@ $(document).ready(function(){
 	                data : {userId: userId},
 	                dataType: "text",
 	                success: function (data) {
-	                	console.log("성공?!" + data);
 	                	$(".fc-custom2-button").prop('disabled', true);
 	                	$(".fc-custom2-button").html('출석완료');
 	                },
@@ -47,8 +45,26 @@ $(document).ready(function(){
 	            });
 	          }
 	        }
-	    }
+	    },
+	    eventSources: [
+	    	{
+				url: '/dotstore_mysql/daily.do',
+				type: 'POST',
+				dataType: "JSON",
+				success: function (data) {
+					/* alert(data);
+               		console.log(data.title + ",  " + data.start); */
+                },
+				error: function() {
+					alert('there was an error while fetching events!');
+				},
+				color: 'yellow',   // a non-ajax option
+				textColor: 'black' // a non-ajax option
+	    	}
+	    ]
 	  });
-	});
+	
+	   // 색칠하기
+	   
 });
 </script>

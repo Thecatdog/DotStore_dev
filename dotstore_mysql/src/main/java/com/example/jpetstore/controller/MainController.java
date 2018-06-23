@@ -1,6 +1,7 @@
 package com.example.jpetstore.controller;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,6 +25,7 @@ import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.P2PItem;
 import com.example.jpetstore.domain.Point;
 import com.example.jpetstore.service.PointService;
+import com.example.jpetstore.vo.EventVo;
 
 @Controller
 public class MainController implements Serializable{
@@ -62,20 +65,25 @@ public class MainController implements Serializable{
 		return strPoint;
 	}
 	
-	@RequestMapping(value = "/daily.do")
+	@RequestMapping(value = "/daily.do", method = RequestMethod.GET)
 	public ModelAndView calendar(HttpServletRequest request) {
-		
 		ModelAndView mv = new ModelAndView("tiles/calendar");
-		String userId = MessageController.getUserName(request);
-		
-		// Data 가져오기
-		List<Calendar> calList = pointMapper.getCalendarList(userId);
-		for(Calendar c : calList) {
-			System.out.println(c.toString());
-		}
-		mv.addObject("calList", calList);
-		
 		return mv;
+	}
+	
+	@RequestMapping(value = "/daily.do", method = RequestMethod.POST)
+	@ResponseBody
+	public List<EventVo> getCalendarList(HttpServletRequest request) {
+		String userId = MessageController.getUserName(request);
+		List<Calendar> calList = pointMapper.getCalendarList(userId);
+		List<EventVo> events = new ArrayList<>();
+		for(Calendar c : calList) {
+			EventVo e = new EventVo();
+			e.setStart(c.getCreateAtStr());
+			e.setTitle("출석");
+			events.add(e);
+		}
+		return events;
 	}
 	
 	@RequestMapping(value = "/daily/check.do")
@@ -89,7 +97,6 @@ public class MainController implements Serializable{
 		
 		// Date에 저장 & point 적립
 		pointService.insertCalendar(userId, point);
-		
 		return userId;
 	}
 
