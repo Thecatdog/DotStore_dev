@@ -1,10 +1,13 @@
 package com.example.jpetstore.controller;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -100,7 +103,7 @@ public class MainController implements Serializable{
 		
 		// Date에 저장 & point 적립
 		pointService.insertCalendar(userId, point);
-		return userId;
+		return new SimpleDateFormat("yyyy-MM-dd").format(Timestamp.valueOf(LocalDate.now().atStartOfDay()));
 	}
 
 }

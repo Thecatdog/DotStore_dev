@@ -36,9 +36,19 @@ $(document).ready(function(){
 	                type: "POST",
 	                data : {userId: userId},
 	                dataType: "text",
-	                success: function (data) {
+	                success: function (date) {
 	                	$(".fc-custom2-button").prop('disabled', true);
 	                	$(".fc-custom2-button").html('출석완료');
+	                	
+	                	 var dateStr = moment(date);
+	                	 $('#calendar').fullCalendar('renderEvent', {
+	                        title: '출석',
+	                        start: dateStr,
+	                        allDay: true,
+	                        color: 'purple',   
+	        			 	textColor: 'white'
+	                      });  
+  
 	                },
 	                error : function(e1, e2){
 	                    console.log("error!");
@@ -54,14 +64,13 @@ $(document).ready(function(){
 				type: 'POST',
 				dataType: "JSON",
 				success: function (data) {
-					alert/* (data.title);
-               		console.log(data.title + ",  " + data.start); */
+
                 },
 				error: function() {
 					alert('there was an error while fetching events!');
 				},
-				color: 'yellow',   // a non-ajax option
-				textColor: 'black' // a non-ajax option
+				color: 'purple',   
+			 	textColor: 'white' 
 	    	}
 	    ]
 	  });

@@ -13,7 +13,7 @@ public class DateVo {
 
     public DateVo(String userId) {
         this.userId = userId;
-        this.startDate = Timestamp.valueOf(LocalDate.now().atStartOfDay().minusHours(9));
-        this.endDate = Timestamp.valueOf(LocalDate.now().plusDays(1).atStartOfDay().minusHours(9));
+        this.startDate = Timestamp.valueOf(LocalDate.now().atStartOfDay());
+        this.endDate = Timestamp.valueOf(LocalDate.now().plusDays(1).atStartOfDay());
     }
 }

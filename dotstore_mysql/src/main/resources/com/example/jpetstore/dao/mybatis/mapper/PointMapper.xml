@@ -31,7 +31,7 @@
   	
   	<insert id="addCalendar" parameterType="String">
 		INSERT INTO CALENDAR (user_id, create_at)
-	    VALUES(#{userId}, NOW())
+	    VALUES(#{userId}, NOW() + INTERVAL 9 HOUR)
   	</insert>
   	
   	<select id="getCalendarList" resultType="CALENDAR">
