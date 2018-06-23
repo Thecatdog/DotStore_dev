@@ -86,7 +86,7 @@ public class AuctionFormController {
 
 		auction.setCategoryId(auctionVo.getCategoryId());
 
-		String productId = productMapper.getProductIdListByCategory(auctionVo.getProductId());
+		String productId = productMapper.getProductIdListByCategory(auctionVo.getProductId().trim());
 		auction.setProductId(productId);
 
 		auction.setItemId(auctionVo.getItemId());

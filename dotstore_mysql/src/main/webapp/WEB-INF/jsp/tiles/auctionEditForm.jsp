@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
 <link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/auctionForm.css?ver=5"/>
 
 <div align="center" class="auctionForm-container container">
@@ -61,9 +63,14 @@
 					<td><label for="attr5">ATTR5</label></td>
 					<td><input type="text" name="attr5" class="form-control" value="${item.attr5}" /></td>
 				</tr>
+<!-- 				<tr> -->
+<!-- 					<td><label for="dueTime">마감 시간</label></td> -->
+<%-- 					<td><input type="date" name="dueTime" value='<fmt:formatDate value="${item.dueTime}" pattern="yyyy-MM-dd"/>' required /></td> --%>
+<!-- 				</tr> -->
 				<tr>
-					<td><label for="dueTime">마감 시간</label></td>
-					<td><input type="date" name="dueTime" value='<fmt:formatDate value="${item.dueTime}" pattern="yyyy-MM-dd"/>' required /></td>
+					<td><label for="dueTime">마감일</label>
+						<p>*해당 날짜의 24시까지 진행됩니다.*</p></td>
+					<td><input type="text" id="datepicker" name="dueTime" value='<fmt:formatDate value="${item.dueTime}" pattern="yyyy-MM-dd"/>' class="form-control" required /></td>
 				</tr>
 				<tr>
 					<td><label for="description">상품 설명</label></td>
@@ -85,3 +92,18 @@
 		</table>
 	</form>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/Javascript">
+// <script>
+    $('#datepicker').datepicker({
+        altField : '#dueTime',
+        changeMonth: true,
+        changeYear: true,
+        dateFormat : 'yy-mm-dd',
+        dayNamesMin : ['일','월','화','수','목','금','토'],
+    	monthNamesShort : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        minDate : 0
+    });
+</script>
