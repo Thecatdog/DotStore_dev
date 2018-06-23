@@ -123,37 +123,26 @@
       <td colspan="2">
         <table class="n23" style="width:100%">
           <tr style="background-color:#CCCCCC;">
-            <td><b>Item ID</b></td>
-            <td><b>Description</b></td>
-            <td><b>Quantity</b></td>
-            <td><b>Price</b></td>
+          	<td><b>Item ID</b></td>
+			<td><b>Product ID</b></td>
+			<td><b>Description</b></td>
+			<td><b>Price</b></td>
             <td><b>Total Cost</b></td>
           </tr>
-          <c:forEach var="lineItem" items="${order.lineItems}">
+          <c:forEach var="item" items="${order.cartList}">
             <tr>
               <td>
-                <b><a href='<c:url value="/shop/viewItem.do">
-                  <c:param name="itemId" value="${lineItem.itemId}"/></c:url>'>
-                    <font color="black"><c:out value="${lineItem.itemId}" /></font>
+                <b><a href='<c:url value="/shop/${item.itemId}/findItem.do" />'>
+                    <font color="black">${item.itemId}</font>
                 </a></b></td>
-              <td>
-                <c:out value="${lineItem.item.attribute1}" />
-                <c:out value="${lineItem.item.attribute2}" /> 
-                <c:out value="${lineItem.item.attribute3}" />
-                <c:out value="${lineItem.item.attribute4}" /> 
-                <c:out value="${lineItem.item.attribute5}" />
-                <c:out value="${lineItem.item.product.name}" />                 
-              </td>
-              <td><c:out value="${lineItem.quantity}" /></td>
-              <td align="right"><fmt:formatNumber
-                  value="${lineItem.unitPrice}" pattern="$#,###" /></td>
-              <td align="right"><fmt:formatNumber
-                  value="${lineItem.totalPrice}" pattern="$#,###" /></td>
+			  <td>${item.productId}</td>
+			  <td>${item.description}</td>
+			  <td><fmt:formatNumber value="${item.listPrice}" pattern="#,###" />원</td>
             </tr>
           </c:forEach>
           <tr>
             <td colspan="5" align="right"><b>Total: <fmt:formatNumber
-                value="${order.totalPrice}" pattern="$#,###" /></b></td>
+                value="${order.totalPrice}" pattern="#,###" /></b></td>
           </tr>
         </table>
       </td>

@@ -22,4 +22,10 @@
   	FROM NEWCART
   	WHERE itemId = #{itemId}
   </delete>
+  
+  <delete id="deleteCartByUsername" parameterType="java.lang.String">
+  	DELETE
+  	FROM NEWCART
+  	WHERE username = #{username}
+  </delete>
 </mapper>

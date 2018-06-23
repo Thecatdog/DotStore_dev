@@ -15,4 +15,5 @@ public interface NewCartMapper {
 	void addCart(NewCart cart);
 	List<String> chooseItemIdByUsername(String username);
 	void removeCart(String itemId);
+	void deleteCartByUsername(String username);
 }
