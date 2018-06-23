@@ -34,6 +34,10 @@
         <font color="green" size="4"><b>Billing Address</b></font></td>
     </tr>
     <tr>
+    	<td>Username</td>
+    	<td><form:input path="order.username" value="${username}" readonly="true" /></td>
+    </tr>
+    <tr>
       <td>First name:</td>
       <td><form:input path="order.billToFirstName" /> 
         <form:errors path="order.billToFirstName" /></td>

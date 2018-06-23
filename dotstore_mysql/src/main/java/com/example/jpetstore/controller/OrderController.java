@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,24 +19,20 @@ import org.springframework.web.servlet.ModelAndViewDefiningException;
 import org.springframework.web.util.WebUtils;
 
 import com.example.jpetstore.dao.mybatis.mapper.AccountMapper;
+import com.example.jpetstore.dao.mybatis.mapper.OrderMapper;
 import com.example.jpetstore.domain.Account;
 import com.example.jpetstore.domain.Cart;
+import com.example.jpetstore.service.OrderAndCartService;
 import com.example.jpetstore.service.OrderValidator;
 import com.example.jpetstore.service.PetStoreFacade;
 
-/**
- * @author Juergen Hoeller
- * @since 01.12.2003
- * @modified by Changsup Park
- */
 @Controller
-@SessionAttributes({"sessionCart", "totalPrice", "orderForm"})
+@SessionAttributes({"sessionCart", "totalPrice", "orderForm", "username"})
 public class OrderController {
-	@Autowired
-	private PetStoreFacade petStore;
-	@Autowired
-	private OrderValidator orderValidator;
+	@Autowired private OrderValidator orderValidator;
 	@Autowired private AccountMapper accountMapper;
+	@Autowired private OrderMapper orderMapper;
+	@Autowired private OrderAndCartService orderAndCartService;
 	
 	@ModelAttribute("orderForm")
 	public OrderForm createOrderForm() {
@@ -55,11 +52,14 @@ public class OrderController {
 	public String initNewOrder(HttpServletRequest request,
 			@ModelAttribute("sessionCart") List<HashMap<String, String>> cartList,
 			@ModelAttribute("totalPrice") int totalPrice,
-			@ModelAttribute("orderForm") OrderForm orderForm
+			@ModelAttribute("orderForm") OrderForm orderForm,
+			Model model
 			) throws ModelAndViewDefiningException {
 		
 		Account account = accountMapper.selectUserAccount(getUserName(request));
-		orderForm.getOrder().initOrder(account, totalPrice);
+		orderForm.getOrder().initOrder(account, totalPrice, cartList);
+		
+		model.addAttribute("username", getUserName(request));
 		
 		return "tiles/NewOrderForm";
 	}
@@ -90,10 +90,11 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/shop/confirmOrder.do")
-	protected ModelAndView confirmOrder(
+	protected ModelAndView confirmOrder(HttpServletRequest request,
 			@ModelAttribute("orderForm") OrderForm orderForm, 
 			SessionStatus status) {
-		petStore.insertOrder(orderForm.getOrder());
+		
+		orderAndCartService.insertOrderAndDeleteCart(orderForm.getOrder(), getUserName(request));
 		ModelAndView mav = new ModelAndView("tiles/ViewOrder");
 		mav.addObject("order", orderForm.getOrder());
 		mav.addObject("message", "Thank you, your order has been submitted.");
