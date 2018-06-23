@@ -19,13 +19,13 @@
 $(document).ready(function(){
 	
 	//??? 모르겟는게 이미 출석체크를 햇으면 버튼비활성화 시키기는것
-			
-	$(function() {
+
 	  $('#calendar').fullCalendar({
 	    header: {
 	      right: 'custom2 prevYear,prev,next,nextYear'
 	    },
 	    customButtons: {
+            <c:if test="${isCheck}">
 	        custom2: {
 	          text: '출석체크하기!',
 	          id: 'check',
@@ -36,10 +36,19 @@ $(document).ready(function(){
 	                type: "POST",
 	                data : {userId: userId},
 	                dataType: "text",
-	                success: function (data) {
-	                	console.log("성공?!" + data);
+	                success: function (date) {
 	                	$(".fc-custom2-button").prop('disabled', true);
 	                	$(".fc-custom2-button").html('출석완료');
+	                	
+	                	 var dateStr = moment(date);
+	                	 $('#calendar').fullCalendar('renderEvent', {
+	                        title: '출석',
+	                        start: dateStr,
+	                        allDay: true,
+	                        color: 'purple',   
+	        			 	textColor: 'white'
+	                      });  
+  
 	                },
 	                error : function(e1, e2){
 	                    console.log("error!");
@@ -47,8 +56,26 @@ $(document).ready(function(){
 	            });
 	          }
 	        }
-	    }
+            </c:if>
+	    },
+	    eventSources: [
+	    	{
+				url: '/dotstore_mysql/daily.do',
+				type: 'POST',
+				dataType: "JSON",
+				success: function (data) {
+
+                },
+				error: function() {
+					alert('there was an error while fetching events!');
+				},
+				color: 'purple',   
+			 	textColor: 'white' 
+	    	}
+	    ]
 	  });
-	});
+	
+	   // 색칠하기
+	   
 });
 </script>
