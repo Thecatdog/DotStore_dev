@@ -29,6 +29,9 @@
 		<c:if test="${requestScope['javax.servlet.forward.request_uri'] eq '/dotstore_mysql/shop/index.do'}">
 			<tiles:insertAttribute name="banner" />
 		</c:if>
+		<c:if test="${requestScope['javax.servlet.forward.request_uri'] eq '/dotstore_mysql/shop/viewItem.do'}">
+			<tiles:insertAttribute name="review" />
+		</c:if>
 		<tiles:insertAttribute name="footer" />
 	</div>		
 	<script

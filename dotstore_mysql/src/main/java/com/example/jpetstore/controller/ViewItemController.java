@@ -87,7 +87,8 @@ public class ViewItemController {
 		model.put("isWritable", isWritable);
 		model.put("reviewList", reviewList);
 		
-		return "Item";
+//		return "Item";
+		return "tiles/Item";
 	}
 	
 	@RequestMapping("/shop/itemDelete.do")

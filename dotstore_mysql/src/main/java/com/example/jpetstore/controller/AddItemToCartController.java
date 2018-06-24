@@ -43,16 +43,18 @@ public class AddItemToCartController {
 	@RequestMapping("/shop/addCart.do")
 	public String addCart(@RequestParam("workingItemId") String workingItemId,
 			@RequestParam("price") int price, RedirectAttributes redirectAttributes,
+			@RequestParam(value="type", defaultValue="item") String type, 
 			HttpServletRequest request) throws Exception {
 		
 		//장바구니 중복 체크
 		String itemId = newCartMapper.checkNewItemInCart(workingItemId, getUserName(request));
-		System.out.println("cart : " + itemId);
 		if (itemId != null) {
-			System.out.println("장바구니 중복상품");
 			redirectAttributes.addAttribute("itemId", workingItemId);
 			redirectAttributes.addAttribute("message", "중복된 상품입니다.");
-			return "redirect:/shop/viewItem.do";
+			if (type.equals("auction")) //경매 상품일때
+				return "redirect:/shop/auctionDetail.do";
+			else //C2P, P2P 상품일때 
+				return "redirect:/shop/viewItem.do";
 		} else {
 			NewCart cart = new NewCart(workingItemId, getUserName(request), price);
 			newCartMapper.addCart(cart);

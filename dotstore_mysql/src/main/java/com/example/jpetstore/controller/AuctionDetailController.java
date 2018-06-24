@@ -45,9 +45,11 @@ public class AuctionDetailController {
 
 	@RequestMapping(value="/shop/auctionDetail.do", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam("itemId") String itemId,
+			@RequestParam(value="message", defaultValue="d") String message,
 			HttpServletRequest request, HttpSession session) throws Exception {
 
 		ModelAndView mv = new ModelAndView("tiles/auctionDetail");
+		mv.addObject("message", message);
 
 		AuctionItem item = auctionMapper.getAuctionItem(itemId);
 		mv.addObject("item", item);
@@ -62,8 +64,6 @@ public class AuctionDetailController {
 		map.put("itemId", itemId);
 		map.put("username", getUserName(request));
 		HashMap<String, String> myBidStatus = auctionMapper.selectBuyerByitemIdAndUsername(map);
-
-		//System.out.println("myBidStatus : " + myBidStatus);
 
 		int isBest = 0; //내가 최고 입찰자인가 확인
 		if (myBidStatus != null) {

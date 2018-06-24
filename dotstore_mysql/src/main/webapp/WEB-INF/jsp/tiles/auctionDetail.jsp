@@ -126,6 +126,7 @@
 	
 				<a class="cart-logo"
 							href='<c:url value="/shop/addCart.do">
+							<c:param name="type" value="auction" />
 	            			<c:param name="workingItemId" value="${item.itemId}"/>
 	            			<c:param name="price" value="${item.listprice}"/></c:url>'>
 								<i class="fas fa-cart-plus"></i>
@@ -143,6 +144,13 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/Javascript">
+
+window.onload=function(){
+    // 페이지가 로딩된 후 실행
+    var message="${message}";
+    if(message=="중복된 상품입니다.")
+	    alert(message);
+}
 
 var ddaytimer = setInterval (dayGap, 1000)
 function dayGap () {
