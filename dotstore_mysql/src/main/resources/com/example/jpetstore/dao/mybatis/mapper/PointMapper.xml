@@ -7,7 +7,7 @@
 
 	<insert id="addPoint" parameterType="Point">
 		INSERT INTO POINT (user_id, point, content, create_at)
-	    VALUES(#{userId}, #{point}, #{content}, NOW())
+	    VALUES(#{userId}, #{point}, #{content}, NOW() + INTERVAL 9 HOUR)
   	</insert>
   
   	<select id="getPointByUserId" resultType="long">
