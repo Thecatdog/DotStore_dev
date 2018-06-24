@@ -14,7 +14,6 @@
 	 	select IFNULL(sum(point), 0) 
 		from POINT
 		WHERE user_id = #{userId}
-		group by user_id;
   	</select>
   	
   	<select id="listByUserId" parameterType="com.example.jpetstore.vo.PagingVo" resultType="Point">
