@@ -45,9 +45,11 @@
     </tr>
     <tr>
       <td>
-        <a href='<c:url value="/shop/addItemToCart.do">
-          <c:param name="workingItemId" value="${item.itemId}"/></c:url>'>
-          <img border="0" src="../images/button_add_to_cart.gif" alt="" /></a>
+        <a class="cart-logo" href='<c:url value="/shop/addCart.do">
+       			<c:param name="workingItemId" value="${item.itemId}"/>
+       			<c:param name="price" value="${item.listprice}"/>
+       			</c:url>'> 장바구니
+		</a>
           <c:if test="${item.supplier eq userSession.account.firstName}">
           	${form_type }
           	<c:if test="${form_type eq 'c2p'}">
@@ -80,6 +82,13 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript">
+	window.onload=function(){
+	    // 페이지가 로딩된 후 실행
+	    var message="${message}";
+	    if(message=="중복된 상품입니다.")
+		    alert(message);
+	}
+
 	$(document).ready(function(){
 		/* localStorage */
 		var out = localStorage.getItem('list');

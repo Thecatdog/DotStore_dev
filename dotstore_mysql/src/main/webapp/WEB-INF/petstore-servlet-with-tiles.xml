@@ -71,6 +71,7 @@
         	<mvc:mapping path="/shop/auctionDetail.do"/>
         	<mvc:mapping path="/shop/addCart.do"/>
         	<mvc:mapping path="/shop/viewCartList.do"/>
+        	<mvc:mapping path="/shop/viewItem.do"/>
         	
         	<bean class="com.example.jpetstore.controller.SignonInterceptor" />
     	</mvc:interceptor>

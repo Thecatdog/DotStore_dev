@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,13 +42,22 @@ public class AddItemToCartController {
 	
 	@RequestMapping("/shop/addCart.do")
 	public String addCart(@RequestParam("workingItemId") String workingItemId,
-			@RequestParam("price") int price,
+			@RequestParam("price") int price, RedirectAttributes redirectAttributes,
 			HttpServletRequest request) throws Exception {
 		
-		NewCart cart = new NewCart(workingItemId, getUserName(request), price);
-		newCartMapper.addCart(cart);
-		
-		return "redirect:/shop/viewCartList.do";
+		//장바구니 중복 체크
+		String itemId = newCartMapper.checkNewItemInCart(workingItemId, getUserName(request));
+		System.out.println("cart : " + itemId);
+		if (itemId != null) {
+			System.out.println("장바구니 중복상품");
+			redirectAttributes.addAttribute("itemId", workingItemId);
+			redirectAttributes.addAttribute("message", "중복된 상품입니다.");
+			return "redirect:/shop/viewItem.do";
+		} else {
+			NewCart cart = new NewCart(workingItemId, getUserName(request), price);
+			newCartMapper.addCart(cart);
+			return "redirect:/shop/viewCartList.do";
+		}
 	}
 	
 	@RequestMapping("/shop/viewCartList.do")
@@ -116,7 +126,6 @@ public class AddItemToCartController {
 		point.setContent("상품 구매 포인트 차감");
 		pointMapper.addPoint(point);
 		
-//		model.addAttribute("totalPrice", totalPrice-usePoint);
 		redirectAttributes.addAttribute("usePoint", usePoint);
 		return "redirect:/shop/viewCartList.do";
 	}

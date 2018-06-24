@@ -55,15 +55,16 @@
 				<tr>
 					<td style="float: right"><fmt:formatNumber value="${item.listprice}"
             		pattern="#,###" />원&nbsp;&nbsp; 
-            		<c:if test="${type ne 'auction'}"> <!-- 장바구니 이동 -->
-	            		<a class="cart-logo"
-							href='<c:url value="/shop/addCart.do">
-	            			<c:param name="workingItemId" value="${item.itemId}"/>
-	            			<c:param name="price" value="${item.listprice}"/>
-	            			</c:url>'>
-								<i class="fas fa-cart-plus"></i>
-						</a>
-					</c:if>
+<%--             		<c:if test="${type ne 'auction'}"> <!-- 장바구니 이동 --> --%>
+<!-- 	            		<a class="cart-logo" -->
+<%-- 							href='<c:url value="/shop/addCart.do"> --%>
+<%-- 	            			<c:param name="workingItemId" value="${item.itemId}"/> --%>
+<%-- 	            			<c:param name="price" value="${item.listprice}"/> --%>
+<%-- 	            			<c:param name="productId" value="${product.productId}"/> --%>
+<%-- 	            			</c:url>'> --%>
+<!-- 								<i class="fas fa-cart-plus"></i> -->
+<!-- 						</a> -->
+<%-- 					</c:if> --%>
 					<c:if test="${type eq 'auction'}">
 						<c:if test="${item.finish eq 'open'}">
 							<p>경매중</p>
