@@ -2,10 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/cart.css?ver=8"/>
 
-<div align="center">
-<h2>Shopping Cart</h2>
-<table border="1">
+<div class="container checkout-container" align="center">
+<h2><i class="fas fa-list-alt cart-icon"></i></h2>
+<table class="table table-hover div-body">
 	<tr>
 		<td><b>Item ID</b></td>
 		<td><b>Product ID</b></td>
@@ -21,7 +22,7 @@
 			<td><fmt:formatNumber value="${item.listPrice}" pattern="#,###" />원</td>
 			<td><a href='<c:url value="/shop/removeCart.do">
 				<c:param name="itemId" value="${item.itemId}"/>
-				</c:url>' class="btn btn-gradient">삭제하기</a>
+				</c:url>' class="btn btn-gradient"><i class="fas fa-trash-alt"></i></a>
 			</td>
 		</tr>
 	</c:forEach>
