@@ -116,8 +116,6 @@
 		</c:if>
 		<!-- 최고 입찰자인 구매자에게만 보여지는 부분 (여기까지) -->
 
-		<hr>
-
 		<!-- 경매 마감 시 -->
 		<c:if test="${item.finish eq 'close' && myBidStatus eq 1}">
 			<div style="color:white; font-size:0.9rem">
@@ -140,6 +138,8 @@
 			</div>
 		</c:if>
 		<!-- 경매 마감 시 (여기까지) -->
+		
+		<hr>
 	</div>
 </body>
 

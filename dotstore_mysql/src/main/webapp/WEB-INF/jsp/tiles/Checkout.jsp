@@ -20,10 +20,6 @@
 			<td>${item.productId}</td>
 			<td>${item.description}</td>
 			<td><fmt:formatNumber value="${item.listPrice}" pattern="#,###" />원</td>
-			<td><a href='<c:url value="/shop/removeCart.do">
-				<c:param name="itemId" value="${item.itemId}"/>
-				</c:url>' class="btn btn-gradient"><i class="fas fa-trash-alt"></i></a>
-			</td>
 		</tr>
 	</c:forEach>
 	<tr>

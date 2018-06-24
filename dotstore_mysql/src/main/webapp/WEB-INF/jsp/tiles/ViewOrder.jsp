@@ -21,7 +21,7 @@
   <table class="table table-hover">
     <tr>
       <td align="center" colspan="2"><font size="4">
-        <b>Order #<c:out value="${order.orderId}" /></b></font> <br />
+        <b>Order</b></font> <br />
         <font size="3"><b>
           <fmt:formatDate value="${order.orderDate}" pattern="yyyy/MM/dd hh:mm:ss" /></b>
         </font></td>
@@ -116,34 +116,30 @@
       <td>Courier:</td>
       <td><c:out value="${order.courier}" /></td>
     </tr>
-    <tr>
-      <td colspan="2"><b><font color="white" size="4">Status:</font> 
-        <c:out value="${order.status}" /></b></td>
-    </tr>
     </table>
     
-        <table class="table table-hover" style="width:100%">
-	          <tr>
-	          	<td><b>Item ID</b></td>
-				<td><b>Product ID</b></td>
-				<td><b>Description</b></td>
-				<td><b>Price</b></td>
-	            <td><b>Total Cost</b></td>
-	          </tr>
-          <c:forEach var="item" items="${order.cartList}">
-            <tr>
-              <td>
-                <b><a href='<c:url value="/shop/${item.itemId}/findItem.do" />'>
-                    <font color="white">${item.itemId}</font>
-                </a></b></td>
-			  <td>${item.productId}</td>
-			  <td>${item.description}</td>
-			  <td><fmt:formatNumber value="${item.listPrice}" pattern="#,###" />원</td>
-            </tr>
-          </c:forEach>
-          <tr>
-            <td colspan="5" align="right"><b>Total: <fmt:formatNumber
-                value="${order.totalPrice}" pattern="#,###" /></b></td>
-          </tr>
-        </table>
+	<table class="table table-hover" style="width:100%">
+		<tr>
+	       	<td><b>Item ID</b></td>
+			<td><b>Product ID</b></td>
+			<td><b>Description</b></td>
+			<td><b>Price</b></td>
+		</tr>
+		<c:forEach var="item" items="${order.cartList}">
+			<tr>
+			  <td>
+			    <b><a href='<c:url value="/shop/${item.itemId}/findItem.do" />'>
+			<font color="white">${item.itemId}</font>
+			           </a></b></td>
+			<td>${item.productId}</td>
+			<td>${item.description}</td>
+			<td><fmt:formatNumber value="${item.listPrice}" pattern="#,###" />원</td>
+			</tr>
+		</c:forEach>
+		<tr>
+	  		<td colspan="5" align="right">
+	  			<b>Total: <fmt:formatNumber value="${order.totalPrice}" pattern="#,###" /></b>
+	  	 	</td>
+		</tr>
+	</table>
 </div>

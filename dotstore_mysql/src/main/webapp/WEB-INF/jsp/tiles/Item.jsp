@@ -6,11 +6,11 @@
 
 <!-- 림아왈 : id값 건들지 말아줄것 -->
 	<table id="main-menu">
-	  <tr><td>
-	    <a href='<c:url value="/shop/viewProduct.do">
-        <c:param name="productId" value="${product.productId}"/></c:url>' style="text-decoration:none;">
-	      <b><font color="white" size="3"><i class="fas fa-arrow-circle-left"></i><c:out value="${product.name}" /></font></b></a>
-	  </td></tr>
+<!-- 	  <tr><td> -->
+<%-- 	    <a href='<c:url value="/shop/viewProduct.do"> --%>
+<%--         <c:param name="productId" value="${product.productId}"/></c:url>' style="text-decoration:none;"> --%>
+<%-- 	      <b><font color="white" size="3"><i class="fas fa-arrow-circle-left"></i><c:out value="${product.name}" /></font></b></a> --%>
+<!-- 	  </td></tr> -->
 	</table>
 
 		<div class="item-container">
