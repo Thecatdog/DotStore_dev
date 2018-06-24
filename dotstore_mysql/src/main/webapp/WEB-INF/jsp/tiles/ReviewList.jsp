@@ -32,7 +32,7 @@
 		                <span class="txt_user" style="padding-top:5px">작성자 : ${r.userId} 
 		                	<span class="txt_date"><fmt:formatDate value="${r.createAt}" pattern="yyyy-MM-dd" /></span>
 		                </span>
-		                
+		                <br/>
 		                <!-- 유저가 수정, 삭제 권한이 있을 경우 버튼 보여주기 -->
 		                <c:if test="${userSession.account.username == r.userId}">
 			                <span class="link_del" >

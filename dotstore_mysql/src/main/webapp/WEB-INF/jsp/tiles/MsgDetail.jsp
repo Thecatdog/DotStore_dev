@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link type="text/css" rel="stylesheet"
-	href="/dotstore_mysql/style/msgDetail.css?ver=5" />
+	href="/dotstore_mysql/style/msgDetail.css?ver=6" />
 <div class="container msg-container">
 	<nav class="nav nav-pills flex-column flex-sm-row">
 		<a
@@ -18,18 +18,20 @@
 		<table class="table table-hover div-body">
 			<tbody>
 				<tr>
-					<th scope="row">제목</th>
-					<td colspan="3">${message.title}</td>
+					<td scope="row">제목</td>
+					<td colspan="5">${message.title}</td>
 				</tr>
-				<tr>
+				<tr class="title-header">
 					<th scope="row">보낸 사람</th>
 					<td>${message.senderId}</td>
+					<th scope="row">받는 사람</th>
+					<td>${message.receiverId }</td>
 					<th scope="row">받은 시간</th>
 					<td><fmt:formatDate value="${message.createAt}"
 							pattern="yyyy-MM-dd" /></td>
 				</tr>
 				<tr>
-					<td class="textviewer" colspan="4">
+					<td class="textviewer" colspan="6">
 						<p>${message.context}
 						<p>
 					</td>
