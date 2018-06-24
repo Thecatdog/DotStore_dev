@@ -91,7 +91,9 @@
 			</table>
 		</div>
 
-
+	<input type="hidden" id="itemName" value="${item.itemId}">
+	<input type="hidden" id="cate" value="${item.categoryId}">
+	<input type="hidden" id="price" value="${item.listprice}">
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -101,22 +103,24 @@
 	    var message="${message}";
 	    if(message=="중복된 상품입니다.")
 		    alert(message);
-	}
+	} 
 
 	$(document).ready(function(){
-		/* localStorage */
+		
 		var out = localStorage.getItem('list');
 		var list = JSON.parse(out);
 		if ( list == null) list = [];
 		
-		var id = $('#itemName').html();
-		var category = $('#cate').html();
-		var price = $('#price').html();
+		var id = $('#itemName').val();
+		/* var category = $('#cate').html(); */
+		var category = $('#cate').val();
+		var price = $('#price').val();
 		var str = id+'|'+category+'|'+price;
 		
 		if(id != null) {
 	 		list.unshift(str);
 			localStorage.setItem('list', JSON.stringify(list));
 		}
+		
 	});
 </script>
