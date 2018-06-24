@@ -13,7 +13,7 @@
 			</div>
 			<form class="go-sign-form">
 				<c:if test="${!empty userSession.account}">
-					<span class="welcome-msg">환영합니다, <b id="userId">${userSession.account.firstName}</b> <a class="fas fa-user icon" href="<c:url value="/shop/myAuctionList.do"/>"></a>
+					<span class="welcome-msg">환영합니다, <b id="userId">${userSession.account.username}</b> <a class="fas fa-user icon" href="<c:url value="/shop/myAuctionList.do"/>"></a>
 						님!
 					</span><br/>
 					<span class="point-msg">가용포인트 : <span id="pointVal"></span></span><br/>
