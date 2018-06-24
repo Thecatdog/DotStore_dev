@@ -85,9 +85,15 @@ public class MessageController implements Serializable{
 	
 	// Message Detail
 	@RequestMapping("/msg/detail.do")
-	public ModelAndView detail(@RequestParam("id") int messageId) {
+	public ModelAndView detail(@RequestParam("id") int messageId, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("tiles/MsgDetail");
 		Message msg = messageMapper.getMessageById(messageId);
+		String userId = getUserName(request);
+		String msgUserId = msg.getSenderId();
+		boolean isShowable = true;
+		if(userId.equals(msgUserId)) isShowable = false;
+		
+		mv.addObject("isShowable", isShowable);
 		mv.addObject("message", msg);
 		return mv;
 	}

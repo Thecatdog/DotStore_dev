@@ -46,12 +46,14 @@
 				onclick="location.href='<c:url value="/msg.do?id=${message.id}"/>' ">
 				<i class="fas fa-trash-alt"></i>
 			</button>
-			<button class="btn-gradient btn-msg-send" type="button"
-				onclick="location.href='<c:url value="/msg/send.do">
-							<c:param name="messageId" value="${message.id}"/>
-							</c:url>'">
-				<i class="fas fa-share-square"></i>
-			</button>
+			<c:if test="${isShowable}">
+				<button class="btn-gradient btn-msg-send" type="button"
+					onclick="location.href='<c:url value="/msg/send.do">
+								<c:param name="messageId" value="${message.id}"/>
+								</c:url>'">
+					<i class="fas fa-share-square"></i>
+				</button>
+			</c:if>
 			<button class="btn-gradient btn-msg-send" onclick="goBack()">
 				<i class="fas fa-list-ul"></i>
 			</button>
