@@ -73,11 +73,22 @@ public class ViewItemController {
 		
 		List<Review> reviewList = reviewMapper.getListByItemId(itemId);
 		final UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		final Boolean isWritable = (userSession != null) && orderMapper.countByUserIdAndItemId(userSession.getAccount().getUsername(), itemId) > 0;
+		
+		Boolean isWritable = (userSession != null) && orderMapper.countByUserIdAndItemId(userSession.getAccount().getUsername(), itemId) > 0;
+		if(isWritable) {
+			for (Review review : reviewList) {
+				if(review.getUserId().equals(userSession.getAccount().getUsername())) {
+					isWritable = false;
+					break;
+				}
+			}
+		}
+		
 		model.put("isWritable", isWritable);
 		model.put("reviewList", reviewList);
 		
-		return "Item";
+//		return "Item";
+		return "tiles/Item";
 	}
 	
 	@RequestMapping("/shop/itemDelete.do")

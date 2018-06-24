@@ -56,14 +56,14 @@
           		<a href='<c:url value="/shop/editC2PForm.do">
 							<c:param name="itemId" value="${item.itemId}"/>
 						</c:url>'
-					class="btn btn-gradient">경매 수정
+					class="btn btn-gradient">수정
 				</a>
           	</c:if>
           	<c:if test="${form_type eq 'p2p'}">
           		<a href='<c:url value="/shop/editP2PForm.do">
 							<c:param name="itemId" value="${item.itemId}"/>
 						</c:url>'
-					class="btn btn-gradient">경매 수정
+					class="btn btn-gradient">수정
 				</a>
           	</c:if>
 			<a href='<c:url value="/shop/itemDelete.do">
