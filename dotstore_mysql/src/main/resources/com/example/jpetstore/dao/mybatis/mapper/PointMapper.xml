@@ -7,14 +7,13 @@
 
 	<insert id="addPoint" parameterType="Point">
 		INSERT INTO POINT (user_id, point, content, create_at)
-	    VALUES(#{userId}, #{point}, #{content}, NOW())
+	    VALUES(#{userId}, #{point}, #{content}, NOW() + INTERVAL 9 HOUR)
   	</insert>
   
   	<select id="getPointByUserId" resultType="long">
-	 	select sum(point) 
+	 	select IFNULL(sum(point), 0) 
 		from POINT
 		WHERE user_id = #{userId}
-		group by user_id;
   	</select>
   	
   	<select id="listByUserId" parameterType="com.example.jpetstore.vo.PagingVo" resultType="Point">

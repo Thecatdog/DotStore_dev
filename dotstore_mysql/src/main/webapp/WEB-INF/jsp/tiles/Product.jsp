@@ -55,7 +55,7 @@
 				<tr>
 					<td style="float: right"><fmt:formatNumber value="${item.listprice}"
             		pattern="#,###" />원&nbsp;&nbsp; 
-            		<c:if test="${type ne 'auction'}">
+            		<c:if test="${type ne 'auction'}"> <!-- 장바구니 이동 -->
 	            		<a class="cart-logo"
 							href='<c:url value="/shop/addCart.do">
 	            			<c:param name="workingItemId" value="${item.itemId}"/>

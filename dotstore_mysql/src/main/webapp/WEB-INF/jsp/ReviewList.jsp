@@ -7,6 +7,7 @@
   	
 <c:if test="${!empty userSession.account}">
 	<div id="reviewInput">
+	<c:if test="${isWritable}">
 		<form method="POST" action="<c:url value="/shop/${item.itemId}/review.do"/>">
 		   	<div class="input-group">
 		      <textarea class="form-control" name="content" rows="3"></textarea>
@@ -15,6 +16,7 @@
 		      </span>
 			 </div>
 	    </form>   
+	</c:if>
 	</div>       
 </c:if>
 

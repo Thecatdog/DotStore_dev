@@ -16,6 +16,14 @@
   	WHERE userid = #{userId}
   </select>
   
+  <select id="countByUserIdAndItemId" resultType="long">
+	SELECT COUNT(*)
+	FROM ORDERS o
+	INNER JOIN ORDERITEM oi ON o.orderid = oi.orderid 
+	WHERE o.userid = #{param1}
+	AND oi.itemid = #{param2}
+  </select>
+  
   <select id="getOrderByOrderId" resultType="Order">
   	SELECT BILLADDR1 AS billAddress1,
       BILLADDR2 AS billAddress2,

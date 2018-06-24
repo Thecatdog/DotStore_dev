@@ -38,4 +38,6 @@ public interface OrderMapper {
   void insertOrderStatus(Order order);
 
   int msSqlServerInsertOrder(Order order);
+  
+  Long countByUserIdAndItemId(String userId, String itemId);
 }
