@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/shoppingHistory.css?ver=7"/>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/shoppingHistory.css?ver=8"/>
 
 <%--
     display: none , id 건들지 말것 
@@ -10,22 +10,12 @@
 		<br/><br/>
 		<div class="slider_container">
 			<div class="frame">
-				<!-- <ul class="noti" style="display:none;"> -->
-				<table id="noti" align="center" style="width:10vw">
-				
+				<table align="center" style="width:50vw">
+					<tr id="noti">
+					</tr>
 					<strong id="none_noti" style="display:none;">
 						<span>저장된 히스토리가 없습니다.</span>
 					</strong>
-					
-					<!-- <tr>
-						<td align="center" class="history-item">
-							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
-							<b>금붕어</b><br/>
-							<small>FISH</small><br/>
-							<p>가격</p>
-						</td>
-					</tr> -->
-					
 				</table>
 
 			</div>
@@ -57,13 +47,13 @@
 				for (i = 0; i < 5; i++) {
 					var strArray = list[i].split('|');
 					var tag = 
-						'<tr><td align="center" class="history-item"> <img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/> <b>' 
+						'<td align="center" class="history-item"> <img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/> <b>' 
 						+ strArray[0] 
 						+ '</b><br/><small>' 
 						+ strArray[1] 
 						+ '</small><br/><p>' 
 						+ strArray[2] 
-						+ '</p></td></tr>';
+						+ '</p></td>';
 						
 					tagList += tag;
 				}

@@ -30,16 +30,7 @@
 			<tiles:insertAttribute name="banner" />
 		</c:if>
 		<tiles:insertAttribute name="footer" />
-	</div>
-	<%-- <tiles:insertAttribute name="header" />
-	<tiles:insertAttribute name="body"/>
-	<tiles:insertAttribute name="banner" />
-	<tiles:insertAttribute name="footer" /> --%>
-	
-	<!-- 얘는 충돌이 나서 없애자 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script> -->
-		
+	</div>		
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
