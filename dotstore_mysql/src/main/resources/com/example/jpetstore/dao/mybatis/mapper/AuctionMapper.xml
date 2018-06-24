@@ -104,4 +104,10 @@
   	SET finish = 'close'
   	WHERE itemId = #{itemId}
   </update>
+  
+  <delete id="deleteBidWhenAuctionDelete" parameterType="java.lang.String">
+  	DELETE 
+  	FROM BUYER
+  	WHERE itemId = #{itemId}
+  </delete>
 </mapper>

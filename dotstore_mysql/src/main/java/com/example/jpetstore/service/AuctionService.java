@@ -22,6 +22,12 @@ public class AuctionService {
 	}
 	
 	@Transactional
+	public void deleteAuction(String itemId) {
+		auctionMapper.deleteAuctionByItemId(itemId);
+		auctionMapper.deleteBidWhenAuctionDelete(itemId);
+	}
+	
+	@Transactional
 	public void insertBuyer(Buyer buyer) {
 		auctionMapper.insertBuyer(buyer);
 		auctionMapper.updateAuctionBuyer(buyer);

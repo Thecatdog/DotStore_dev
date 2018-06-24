@@ -136,7 +136,7 @@ public class AuctionDetailController {
 			@RequestParam("productId") String productId,
 			RedirectAttributes redirectAttributes) throws Exception {
 
-		auctionMapper.deleteAuctionByItemId(itemId);
+		auctionService.deleteAuction(itemId);
 		redirectAttributes.addAttribute("productId", productId);
 		return "redirect:/shop/auction/viewProduct.do";
 	}
