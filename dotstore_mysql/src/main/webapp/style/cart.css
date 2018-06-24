@@ -29,7 +29,6 @@ body {
 }
 .cart-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 105vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;
@@ -42,7 +41,6 @@ body {
 }
 .checkout-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 90vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;

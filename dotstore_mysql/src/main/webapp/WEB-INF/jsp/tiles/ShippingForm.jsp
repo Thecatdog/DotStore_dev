@@ -1,17 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/newOrder.css?ver=6"/>
 
 <c:set var="targetUrl"><c:url value="/shop/newOrderSubmitted.do" /></c:set>
 
-<div align="center">
+<div class="container ship-container" align="center">
 <form:form commandName="orderForm" action="${targetUrl}" method="post">
   <form:errors cssClass="error" /><br><br>
 
-  <table class="n13">
+  <table class="table table-hover">
     <tr>
       <td colspan="2">
-        <font color="GREEN" size="4"><b>Shipping Address</b></font></td>
+        <font color="white" size="6"><b>Shipping Address</b></font></td>
     </tr>
     <tr>
       <td>First name:</td>
@@ -55,7 +56,7 @@
     </tr>
   </table>
   <p>
-    <input type="image" src="../images/button_submit.gif">
+  <button class="btn btn-gradient" type="submit">Submit</button>
   </p>
 </form:form>
 </div>
