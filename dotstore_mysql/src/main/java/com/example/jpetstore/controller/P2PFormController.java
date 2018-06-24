@@ -86,7 +86,7 @@ public class P2PFormController {
 		String price = p2pItemVo.getListprice();
 		p2pItem.setListprice(Integer.parseInt(price));
 		p2pItem.setSupplier(getUserName(request));
-		p2pItem.setStatus(p2pItemVo.getStatus());
+		p2pItem.setStatus("1");
 		p2pItem.setAttr1(p2pItemVo.getAttr1());
 		p2pItem.setAttr2(p2pItemVo.getAttr2());
 		p2pItem.setAttr3(p2pItemVo.getAttr3());
@@ -125,7 +125,7 @@ public class P2PFormController {
 		String price = p2pItemVo.getListprice();
 		p2pItem.setListprice(Integer.parseInt(price));
 		p2pItem.setSupplier(getUserName(request));
-		p2pItem.setStatus(p2pItemVo.getStatus());
+		p2pItem.setStatus("1");
 		p2pItem.setAttr1(p2pItemVo.getAttr1());
 		p2pItem.setAttr2(p2pItemVo.getAttr2());
 		p2pItem.setAttr3(p2pItemVo.getAttr3());

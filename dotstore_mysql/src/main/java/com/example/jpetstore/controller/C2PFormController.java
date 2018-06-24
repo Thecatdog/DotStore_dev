@@ -86,7 +86,7 @@ public class C2PFormController {
 		String price = c2pItemVo.getListprice();
 		c2pItem.setListprice(Integer.parseInt(price));
 		c2pItem.setSupplier(getUserName(request));
-		c2pItem.setStatus(c2pItemVo.getStatus());
+		c2pItem.setStatus("1");
 		c2pItem.setAttr1(c2pItemVo.getAttr1());
 		c2pItem.setAttr2(c2pItemVo.getAttr2());
 		c2pItem.setAttr3(c2pItemVo.getAttr3());
@@ -124,7 +124,7 @@ public class C2PFormController {
 		String price = c2pItemVo.getListprice();
 		c2pItem.setListprice(Integer.parseInt(price));
 		c2pItem.setSupplier(getUserName(request));
-		c2pItem.setStatus(c2pItemVo.getStatus());
+		c2pItem.setStatus("1");
 		c2pItem.setAttr1(c2pItemVo.getAttr1());
 		c2pItem.setAttr2(c2pItemVo.getAttr2());
 		c2pItem.setAttr3(c2pItemVo.getAttr3());
