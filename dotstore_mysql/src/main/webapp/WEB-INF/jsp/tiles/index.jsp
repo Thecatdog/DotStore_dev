@@ -1,50 +1,73 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/index.css?ver=5" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/index.css?ver=12" />
 <div class="main-background "></div>
 	<div class="body-container ">
 		<div class="best-seller">
-			<h1>C2P BEST SELLER</h1>
-			<table>
-				<c:forEach var="c" items="${c2pItem}">
-					<tr>
-						<td>
-							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
-							<b>${c.itemId}</b><br/>
-							<small>${c.productId}</small><br/>
-							<p>${c.listprice}</p>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-			
-			<h1>P2P BEST SELLER</h1>
-			<table>
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+		  <div class="carousel-inner">		 
+		    <div class="carousel-item active">
+					<c:forEach var="c" items="${c2pItem}">
+					<div style='display:inline;'>
+						<div class="card" style="width: 13rem; display:inline; float:left;">
+						  <img class="card-img-top history-logo" src="/dotstore_mysql/images/archive-black-box.png" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">${c.itemId}</h5>
+						    <small class="card-text">${c.productId}</small>
+						    <p class="card-text">${c.listprice}</p>
+						  </div>
+						</div>
+					</div>
+					</c:forEach>
+				<div class="carousel-caption d-none d-md-block">
+				    <h5>asdasdasd</h5>
+				    <p>asdfsadf..</p>
+				  </div>
+		    </div>
+		    <div class="carousel-item">
 				<c:forEach var="p" items="${p2pItem}">
-					<tr>
-						<td>
-							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
-							<b>${p.itemId}</b><br/>
-							<small>${p.productId}</small><br/>
-							<p>${p.listprice}</p>
-						</td>
-					</tr>
+					<div style='display:inline;'>
+						<div class="card" style="width: 13rem; display:inline; float:left;">
+						  <img class="card-img-top history-logo" src="/dotstore_mysql/images/archive-black-box.png" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">${p.itemId}</h5>
+						    <small class="card-text">${p.productId}</small>
+						    <p class="card-text">${p.listprice}</p>
+						  </div>
+						</div>
+					</div>
 				</c:forEach>
-			</table> 
-			
-			<h1>AUCTION BEST SELLER</h1>
-			<table>
+				  <div class="carousel-caption d-none d-md-block">
+				    <h5>...</h5>
+				    <p>...</p>
+				  </div>				
+		    </div>
+		    <div class="carousel-item">
 				<c:forEach var="a" items="${auctionBestSellers}">
-					<tr>
-						<td>
-							<img class="history-logo" border="0" src="/dotstore_mysql/images/archive-black-box.png" /><br/><br/>
-							<b>${a.itemId}</b><br/>
-							<small>${a.productId}</small><br/>
-							<p>${a.listprice}</p>
-						</td>
-					</tr>
+					<div style='display:inline;'>
+						<div class="card" style="width: 13rem; display:inline; float:left;">
+						  <img class="card-img-top history-logo" src="/dotstore_mysql/images/archive-black-box.png" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">${a.itemId}</h5>
+						    <small class="card-text">${a.productId}</small>
+						    <p class="card-text">${a.listprice}</p>
+						  </div>
+						</div>
+					</div>
 				</c:forEach>
-			</table>
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+
+			
 			
 		</div>
 	</div>
