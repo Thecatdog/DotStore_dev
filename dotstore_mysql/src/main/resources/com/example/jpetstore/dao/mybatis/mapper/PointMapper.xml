@@ -11,7 +11,7 @@
   	</insert>
   
   	<select id="getPointByUserId" resultType="long">
-	 	select sum(point) 
+	 	select IFNULL(sum(point), 0) 
 		from POINT
 		WHERE user_id = #{userId}
 		group by user_id;
