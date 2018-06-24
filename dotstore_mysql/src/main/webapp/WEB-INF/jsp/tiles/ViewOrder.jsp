@@ -2,22 +2,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/newOrder.css?ver=6"/>
 
-<table id="main-menu">
-  <tr>
-    <td><a href='<c:url value="/shop/index.do"/>'>
-      <b><font color="black" size="2">&lt;&lt; Main Menu</font></b></a>
-    </td>
-  </tr>  
-</table>
 
-<div align="center">
+<div class="container viewOrder-container" align="center">
+	<table id="main-menu">
+	  <tr><td>
+	    <a href='<c:url value="/shop/index.do"/>'>
+	      <b><font color="white" size="5"><i class="fas fa-arrow-circle-left"></i></font></b></a>
+	  </td></tr>
+	</table>
+
   <c:if test="${!empty message}">
-    <b><c:out value="${message}" /></b>
+    <b style="color:#fff"><c:out value="${message}" /></b>
   </c:if>
   
   <p></p>
-  <table class="n13">
+  <table class="table table-hover">
     <tr>
       <td align="center" colspan="2"><font size="4">
         <b>Order #<c:out value="${order.orderId}" /></b></font> <br />
@@ -26,7 +27,7 @@
         </font></td>
     </tr>
     <tr>
-      <td colspan="2"><font color="green" size="4"><b>Payment Details</b></font></td>
+      <td colspan="2"><font color="white" size="4"><b>Payment Details</b></font></td>
     </tr>
     <tr>
       <td>Card Type:</td>
@@ -42,7 +43,7 @@
       <td><c:out value="${order.expiryDate}" /></td>
     </tr>
     <tr>
-      <td colspan="2"><font color="green" size="4"><b>Billing Address</b></font></td>
+      <td colspan="2"><font color="white" size="4"><b>Billing Address</b></font></td>
     </tr>
     <tr>
       <td>First name:</td>
@@ -77,7 +78,7 @@
       <td><c:out value="${order.billCountry}" /></td>
     </tr>
     <tr>
-      <td colspan="2"><font color="green" size="4"><b>Shipping Address</b></font></td>
+      <td colspan="2"><font color="white" size="4"><b>Shipping Address</b></font></td>
     </tr>
     <tr>
       <td>First name:</td>
@@ -116,24 +117,24 @@
       <td><c:out value="${order.courier}" /></td>
     </tr>
     <tr>
-      <td colspan="2"><b><font color="green" size="4">Status:</font> 
+      <td colspan="2"><b><font color="white" size="4">Status:</font> 
         <c:out value="${order.status}" /></b></td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <table class="n23" style="width:100%">
-          <tr style="background-color:#CCCCCC;">
-          	<td><b>Item ID</b></td>
-			<td><b>Product ID</b></td>
-			<td><b>Description</b></td>
-			<td><b>Price</b></td>
-            <td><b>Total Cost</b></td>
-          </tr>
+    </table>
+    
+        <table class="table table-hover" style="width:100%">
+	          <tr>
+	          	<td><b>Item ID</b></td>
+				<td><b>Product ID</b></td>
+				<td><b>Description</b></td>
+				<td><b>Price</b></td>
+	            <td><b>Total Cost</b></td>
+	          </tr>
           <c:forEach var="item" items="${order.cartList}">
             <tr>
               <td>
                 <b><a href='<c:url value="/shop/${item.itemId}/findItem.do" />'>
-                    <font color="black">${item.itemId}</font>
+                    <font color="white">${item.itemId}</font>
                 </a></b></td>
 			  <td>${item.productId}</td>
 			  <td>${item.description}</td>
@@ -145,7 +146,4 @@
                 value="${order.totalPrice}" pattern="#,###" /></b></td>
           </tr>
         </table>
-      </td>
-    </tr>
-  </table>
 </div>

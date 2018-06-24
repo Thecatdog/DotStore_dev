@@ -1,17 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/newOrder.css?ver=2"/>
 
 <c:set var="targetUrl"><c:url value="/shop/newOrderSubmitted.do" /></c:set>
 
-<div align="center">
+<div class="container newOrder-container" align="center">
 <form:form commandName="orderForm" action="${targetUrl}" method="post">
   <form:errors cssClass="error" /> <br><br>
   
-  <table class="n13">
+  <table class="table table-hover n13">
     <tr>
       <td colspan="2">
-        <font color="green" size="4"><b>Payment Details</b></font></td>
+        <font color="white" size="4"><b>Payment Details</b></font></td>
     </tr>
     <tr>
       <td>Card Type:</td>
@@ -21,7 +22,7 @@
     <tr>
       <td>Card Number:</td>
       <td><form:input path="order.creditCard" /> 
-        <font color="red" size="2">* Use a fake number!</font>
+       <br/> <font color="red" size="2">* Use a fake number!</font>
         <form:errors path="order.creditCard" /></td>
     </tr>
     <tr>
@@ -31,7 +32,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <font color="green" size="4"><b>Billing Address</b></font></td>
+        <font color="white" size="4"><b>Billing Address</b></font></td>
     </tr>
     <tr>
     	<td>Username</td>
@@ -84,7 +85,7 @@
     </tr>
   </table>
   <p>
-    <input type="image" src="../images/button_submit.gif">
+    <input class="btn btn-gradient" type="submit" value="Continue">
   </p>
 </form:form>
 </div>
