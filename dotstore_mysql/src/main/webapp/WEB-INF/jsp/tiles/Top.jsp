@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/top.css?ver=12" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/top.css?ver=14" />
 <div class="top-container">
 	<nav class="navbar navbar-expand-lg top-nav-color">
 		<a class="navbar-brand" href="<c:url value="/shop/index.do"/>"> <img
@@ -13,20 +13,20 @@
 			</div>
 			<form class="go-sign-form">
 				<c:if test="${!empty userSession.account}">
-					<span class="welcome-msg">환영합니다, <b id="userId">${userSession.account.firstName}</b>
-						님!<p id="pointVal"></p>
-					</span>
-					<a class="fas fa-user icon" href="#"></a>
-					<a class="fas fa-envelope icon"
-						href="<c:url value="/msg/recv/list.do" />"></a>
-					<a href="<c:url value="/shop/viewCartList.do"/>"
-						class="fas fa-shopping-cart icon"></a>
-					<a href="<c:url value="/shop/signoff.do"/>"
-						class="btn btn-gradient">LOGOUT</a>
+					<span class="welcome-msg">환영합니다, <b id="userId">${userSession.account.firstName}</b> <a class="fas fa-user icon" href="<c:url value="/shop/myAuctionList.do"/>"></a>
+						님!
+					</span><br/>
+					<span class="point-msg">가용포인트 : <span id="pointVal"></span></span><br/>
+					<div class="icons-small">
+						<a class="fas fa-envelope icon"
+							href="<c:url value="/msg/recv/list.do" />"></a>
+						<a href="<c:url value="/shop/viewCartList.do"/>"
+							class="fas fa-shopping-cart icon"></a>
 						<a href="<c:url value="/daily.do"/>"
-						class="btn btn-gradient">출석체크</a>
-					<a href="<c:url value="/shop/myAuctionList.do"/>"
-						class="btn btn-gradient">MyAuctionList</a>
+							class="fas fa-calendar-alt icon"></a></br>
+						<a href="<c:url value="/shop/signoff.do"/>"
+							class="btn btn-gradient">LOGOUT</a>	
+					</div>
 				</c:if>
 				<c:if test="${empty userSession.account}">
 					<a href="<c:url value="/shop/signonForm.do"/>"

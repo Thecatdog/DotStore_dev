@@ -23,7 +23,10 @@ body {
 	color: #bcbbbd;
 	text-decoration: none;
 }
-
+.icons-small {
+	padding-left: 2rem;
+	padding-right: 1rem;
+}
 .welcome-msg {
 	color: #fff;
 	font-size: 0.8rem;
@@ -31,7 +34,13 @@ body {
 	padding-left: 2rem;
 	padding-right: 1rem;
 }
-
+.point-msg {
+	color: #fff;
+	font-size: 0.7rem;
+	font-family: 'Nanum Gothic';
+	padding-left: 2rem;
+	padding-right: 1rem;
+}
 .category-item {
 	color: #fff;
 	text-transform: uppercase;
@@ -70,7 +79,7 @@ body {
 }
 
 .top-category {
-	width: 65vw;
+	width: 80vw;
 }
 
 .category-item {
@@ -92,8 +101,8 @@ body {
 
 .sign-form {
 	background-color: #fafaf8;
-	width: 94vw;
-	height: 3rem;
+/* 	width: 94vw;
+ */	height: 3rem;
 	display: inline-block;
 }
 
