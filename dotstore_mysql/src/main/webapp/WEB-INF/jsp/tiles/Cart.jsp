@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/cart.css?ver=5"/>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/cart.css?ver=8"/>
 
 <div class="container cart-container" align="center">
-<h2>Shopping Cart</h2>
+<h2><i class="fas fa-shopping-cart cart-icon"></i></h2>
 <table class="table table-hover div-body">
 	<tr>
 		<td><b>Item ID</b></td>
@@ -27,6 +27,9 @@
 		</tr>
 	</c:forEach>
 	<tr>
+		<td colspan="5"><hr></td>
+	</tr>
+	<tr>
 		<td colspan="5">
 			<h1>총 가격 : <fmt:formatNumber value="${totalPrice}" pattern="#,###" />원</h1>
 			<p>나의 포인트 : ${myPoint}</p>
@@ -35,7 +38,7 @@
 			<c:if test="${not empty cartList}"> 
 				<form method="post" action='<c:url value="/shop/usePoint.do" />'>
 					<p>포인트 사용하기 : <input id="point" type="number" min="1" max="${myPoint}" name="point" required />
-					<button type="submit">사용</button>
+					<button class="btn btn-gradient" type="submit">사용</button>
 				</form>
 			</c:if>
 		</td>
