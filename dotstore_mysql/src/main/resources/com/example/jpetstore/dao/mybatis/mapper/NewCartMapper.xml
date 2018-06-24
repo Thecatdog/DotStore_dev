@@ -29,4 +29,11 @@
   	FROM NEWCART
   	WHERE username = #{username}
   </delete>
+  
+  <select id="checkNewItemInCart" parameterType="java.lang.String" resultType="java.lang.String">
+  	SELECT itemId
+  	FROM NEWCART
+  	WHERE itemId = #{param1}
+  	AND username = #{param2}
+  </select>
 </mapper>

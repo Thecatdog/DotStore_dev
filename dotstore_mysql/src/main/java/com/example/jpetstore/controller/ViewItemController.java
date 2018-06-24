@@ -45,10 +45,11 @@ public class ViewItemController {
 	}
 
 	@RequestMapping("/shop/viewItem.do")
-	public String handleRequest(
+	public String handleRequest(@RequestParam(value="message", defaultValue="d") String message,
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
 
+		model.put("message", message);
 		
 		Item item = this.petStore.getItem(itemId);
 		Product product = productMapper.getProduct(item.getProductId());
