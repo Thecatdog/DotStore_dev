@@ -43,6 +43,22 @@ $(document).ready(function(){
 	                	$(".fc-custom2-button").prop('disabled', true);
 	                	$(".fc-custom2-button").html('출석완료');
 	                	
+	                	$.ajax({
+	        	            url: "/dotstore_mysql/top.do",
+	        	            type: "POST",
+	        	            data : {userId: userId},
+	        	            dataType: "text",
+	        	            success: function (data) {
+	        	            	console.log("성공?!" + data);
+	        	            	sessionStorage.removeItem('point');
+	        	            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
+	        	            	$('#pointVal').html(data + "P");
+	        	            },
+	        	            error : function(e1, e2){
+	        	                console.log("error!");
+	        	            }
+	        	        });
+	                	
 	                	 var dateStr = moment(date);
 	                	 $('#calendar').fullCalendar('renderEvent', {
 	                        title: '출석',
@@ -57,6 +73,8 @@ $(document).ready(function(){
 	                    console.log("error!");
 	                }
 	            });
+	        	
+	        	
 	          }
 	        }
             </c:if>
