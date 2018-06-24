@@ -50,9 +50,9 @@ public class SignonController {
 			userSession.setMyList(myList);
 			model.addAttribute("userSession", userSession);
 			if (forwardAction != null) 
-				return new ModelAndView("redirect:" + forwardAction);
+				return new ModelAndView("redirect:/shop/index.do");
 			else 
-				return new ModelAndView("tiles/index");
+				return new ModelAndView("redirect:/shop/index.do");
 		}
 	}
 }
