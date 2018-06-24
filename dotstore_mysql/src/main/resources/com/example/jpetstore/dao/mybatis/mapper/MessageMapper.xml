@@ -35,6 +35,7 @@
    <if test='param2.equals("search")'>
 	    WHERE title=#{param3}
    </if>
+   ORDER BY create_at DESC;
   </select>
   
   <select id="getMessageById" resultType="Message">
