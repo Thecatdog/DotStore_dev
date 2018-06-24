@@ -1,12 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/index.css?ver=12" />
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/index.css?ver=13" />
 <div class="main-background "></div>
 	<div class="body-container ">
 		<div class="best-seller">
 		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 		  <div class="carousel-inner">		 
 		    <div class="carousel-item active">
+		    	<h2>C2P Best Seller</h2>
 					<c:forEach var="c" items="${c2pItem}">
 					<div style='display:inline;'>
 						<div class="card" style="width: 13rem; display:inline; float:left;">
@@ -19,12 +20,9 @@
 						</div>
 					</div>
 					</c:forEach>
-				<div class="carousel-caption d-none d-md-block">
-				    <h5>asdasdasd</h5>
-				    <p>asdfsadf..</p>
-				  </div>
 		    </div>
 		    <div class="carousel-item">
+		    	<h2>P2P Best Seller</h2>
 				<c:forEach var="p" items="${p2pItem}">
 					<div style='display:inline;'>
 						<div class="card" style="width: 13rem; display:inline; float:left;">
@@ -43,6 +41,7 @@
 				  </div>				
 		    </div>
 		    <div class="carousel-item">
+		    	<h2>AUCTION Best Seller</h2>
 				<c:forEach var="a" items="${auctionBestSellers}">
 					<div style='display:inline;'>
 						<div class="card" style="width: 13rem; display:inline; float:left;">
