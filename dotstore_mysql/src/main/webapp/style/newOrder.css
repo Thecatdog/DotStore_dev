@@ -23,7 +23,6 @@ body {
 
 .confirmOrder-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 122vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;
@@ -33,7 +32,6 @@ body {
 }
 .newOrder-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 110vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;
@@ -44,7 +42,6 @@ body {
 }
 .viewOrder-container {
 	background-color: rgb(0, 0, 0, 40%);
-	height: 170vh;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 3rem;

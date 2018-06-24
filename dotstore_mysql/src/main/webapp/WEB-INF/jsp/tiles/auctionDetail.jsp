@@ -2,12 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/auctionDetail.css?ver=9"/>
 
 <title>경매 상품 상세 보기</title>
 
 <body id="">
-	<div align="center">
-		<table border="1">
+	<div class="container aucDetail-container"align="center">
+		<table class="table table-hover">
 			<tr>
 				<td>카테고리</td>
 				<td>${item.categoryId}</td>
@@ -66,17 +67,17 @@
 			</div>
 		</c:if>
 		<!-- 경매 등록한 사람(판매자)에게만 보여짐 (여기까지) -->
-
+		<br/>
 		<a href='<c:url value="/shop/auction/viewProduct.do">
 					<c:param name="productId" value="${item.productId}"/>
-				</c:url>'>목록보기
+				</c:url>'>목록<i class="fas fa-list-ul"></i>
 		</a>
-
+		<br/>
 		<hr>
 
 		<!-- 최고 입찰자가 아닌 구매자에게만 보여짐 -->
 		<c:if test="${item.finish eq 'open' && currentUser ne item.supplier}">
-			<div class="">
+			<div style="color:white; font-size:0.9rem">
 				<c:if test="${myBidStatus eq 0}">
 					<p>${currentUser} 님은 현재 최고 입찰자가 아닙니다.</p>
 				
@@ -87,9 +88,9 @@
 	 					<c:param name="itemId" value="${item.itemId}"/></c:url>'>
 	 					<table border="0"> 
 	 						<tr> 
-	 							<td>입찰 금액 : </td>
+	 							<td style="color:white">입찰 금액 : </td>
 	 							<td><input id="listprice" type="number" min="${item.listprice+1}" class="" name="listprice" required></td> 
-	 							<td><button type="submit">입찰</button></td>
+	 							<td><button type="submit" class="btn btn-gradient">입찰</button></td>
 	 						</tr> 
 	 					</table>
 	 				</form> 
@@ -100,7 +101,7 @@
 		
 		<!-- 최고 입찰자인 구매자에게만 보여지는 부분 -->
 		<c:if test="${item.finish eq 'open' && myBidStatus eq 1}">
-			<div class="">
+			<div style="color:white; font-size:0.9rem">
 				<p>
 					${currentUser} 님이 현재 최고 입찰자입니다.<br> 입찰 취소 버튼을 누르면 입찰이 취소됩니다.<br> 입찰을
 					취소하시겠습니까?
@@ -119,7 +120,7 @@
 
 		<!-- 경매 마감 시 -->
 		<c:if test="${item.finish eq 'close' && myBidStatus eq 1}">
-			<div class="">
+			<div style="color:white; font-size:0.9rem">
 				<p>경매가 마감되었습니다.</p>
 				<p>${currentUser} 님이 현재 최고 입찰자입니다.</p>
 				<p>상품을 구매하려면 카트를, 입찰을 취소하려면 입찰 취소 버튼을 눌러주세요.</p>

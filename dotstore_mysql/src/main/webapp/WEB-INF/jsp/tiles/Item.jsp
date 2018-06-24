@@ -2,83 +2,97 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/item.css?ver=3" />
 
 <!-- 림아왈 : id값 건들지 말아줄것 -->
-<table id="main-menu">
-  <tr>
-    <td>
-      <a href='<c:url value="/shop/viewProduct.do">
-        <c:param name="productId" value="${product.productId}"/></c:url>'>
-        <b><font color="black" size="2">
-          &lt;&lt; <c:out value="${product.name}" /></font></b></a>
-    </td>
-  </tr>
-</table>
-<p>
-<div align="center">
-  <table id="item">
-    <tr>
-      <td bgcolor="#FFFFFF">
-        <c:out value="${product.description}" escapeXml="false" /></td>
-    </tr>
-    <tr>
-      <td id="itemName" width="100%" bgcolor="#CCCCCC"><c:out value="${item.itemId}" /></td>
-    </tr>
-  	<tr>
-  		<td>
-  			<c:out value="${item.supplier}"/>
-  		</td>
-  	</tr>
-    <tr>
-      <td><b><font size="4"> 
-        <c:out value="${item.attr1}" />
-        <c:out value="${item.attr2}" /> 
-        <c:out value="${item.attr3}" />
-        <c:out value="${item.attr4}" /> 
-        <c:out value="${item.attr5}" />
-        <c:out value="${item.description}" />
-        </font></b></td>
-    </tr>
-    <tr>
-      <td id="cate">${product.name}</td>
-    </tr>
-    <tr>
-      <td id="price"> ${item.listprice} 원</td>
-    </tr>
-    <tr>
-      <td>
-        <a class="cart-logo" href='<c:url value="/shop/addCart.do">
-       			<c:param name="workingItemId" value="${item.itemId}"/>
-       			<c:param name="price" value="${item.listprice}"/>
-       			</c:url>'> 장바구니
-		</a>
-          <c:if test="${item.supplier eq userSession.account.firstName}">
-          	${form_type }
-          	<c:if test="${form_type eq 'c2p'}">
-          		<a href='<c:url value="/shop/editC2PForm.do">
-							<c:param name="itemId" value="${item.itemId}"/>
-						</c:url>'
-					class="btn btn-gradient">수정
-				</a>
-          	</c:if>
-          	<c:if test="${form_type eq 'p2p'}">
-          		<a href='<c:url value="/shop/editP2PForm.do">
-							<c:param name="itemId" value="${item.itemId}"/>
-						</c:url>'
-					class="btn btn-gradient">수정
-				</a>
-          	</c:if>
-			<a href='<c:url value="/shop/itemDelete.do">
-	          <c:param name="itemId" value="${item.itemId}"/>
-	          <c:param name="supplier_cate" value="${item.supplier_cate}"/>
-	          </c:url>'>
-	        삭제</a>
-		  </c:if>
-	  </td>
-    </tr>
-  </table>
-	
-</div>
+	<table id="main-menu">
+	  <tr><td>
+	    <a href='<c:url value="/shop/viewProduct.do">
+        <c:param name="productId" value="${product.productId}"/></c:url>' style="text-decoration:none;">
+	      <b><font color="white" size="3"><i class="fas fa-arrow-circle-left"></i><c:out value="${product.name}" /></font></b></a>
+	  </td></tr>
+	</table>
+
+		<div class="item-container">
+			<table class="item-table">
+				<tr>
+					<td>
+						<h5>
+							<b><c:if test="${type eq 'auction'}">
+								<a class="itemid-a" href='<c:url value="/shop/auctionDetail.do">
+				    				<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+				    				<p>${item.itemId}</p>
+				    			</a>
+								</c:if> 
+								<c:if test="${type ne 'auction'}">
+									<a class="itemid-a" href='<c:url value="/shop/viewItem.do">
+				            			<c:param name="itemId" value="${item.itemId}"/></c:url>'>
+										<p>${item.itemId}</p>
+									</a>
+								</c:if>
+							</b>
+						</h5> 
+						<p class="description-text">
+							<c:if test="${type eq 'auction'}">
+								<small>${item.description}</small>
+							</c:if>
+							<c:if test="${type ne 'auction'}">
+								<small>${item.description}</small>
+							</c:if>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="description-text">
+						<c:out value="${item.attr1}" />
+						<c:out value="${item.attr2}" /> 
+						<c:out value="${item.attr3}" />
+						<c:out value="${item.attr4}" /> 
+						<c:out value="${item.attr5}" />
+					</td>
+				</tr>
+				<tr>
+					<td style="float: right"><fmt:formatNumber value="${item.listprice}"
+            		pattern="#,###" />원
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="btn-group d-flex" role="group" style="float:right">
+							<a href='<c:url value="/shop/addCart.do">
+					       		<c:param name="workingItemId" value="${item.itemId}"/>
+						       	<c:param name="price" value="${item.listprice}"/>
+						        </c:url>' class="btn btn-gradient" style="margin-right:-2px"> <i class="fas fa-cart-plus"></i>
+							</a>
+							<c:if test="${item.supplier eq userSession.account.username}">
+				          	<c:if test="${form_type eq 'c2p'}">
+				          		<a href='<c:url value="/shop/editC2PForm.do">
+											<c:param name="itemId" value="${item.itemId}"/>
+										</c:url>'
+									class="btn btn-gradient" style="margin-right:-2px">수정
+								</a>
+				          	</c:if>
+				          	<c:if test="${form_type eq 'p2p'}">
+				          		<a href='<c:url value="/shop/editP2PForm.do">
+											<c:param name="itemId" value="${item.itemId}"/>
+										</c:url>'
+									class="btn btn-gradient" style="margin-right:-2px">수정
+								</a>
+				          	</c:if>
+							<a href='<c:url value="/shop/itemDelete.do">
+					          <c:param name="itemId" value="${item.itemId}"/>
+					          <c:param name="supplier_cate" value="${item.supplier_cate}"/>
+					          </c:url>' class="btn btn-gradient" style="margin-right:-10px">
+					        삭제</a>
+						  </c:if>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript">

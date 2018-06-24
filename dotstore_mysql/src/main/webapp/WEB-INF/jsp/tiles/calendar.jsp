@@ -2,6 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/calendar.css?ver=8"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
@@ -12,8 +13,10 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css' rel='stylesheet' media='print'/>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
 <!-- calendar를 위한 라이브러리들 지우면 안됨 -->
+<div class="container calendar-container">
+	<div id="calendar" style="max-width:900px; margin:40px auto;"></div>
+</div>
 
-<div id="calendar" style="max-width:900px; margin:40px auto;"></div>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -27,7 +30,7 @@ $(document).ready(function(){
 	    customButtons: {
             <c:if test="${isCheck}">
 	        custom2: {
-	          text: '출석체크하기!',
+	          text: '출석체크하기',
 	          id: 'check',
 	          click: function() {	         	            
 	            var userId = $('#userId').html();
