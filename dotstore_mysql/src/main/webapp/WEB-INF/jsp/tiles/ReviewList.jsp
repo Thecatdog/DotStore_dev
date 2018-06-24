@@ -2,6 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/reviewList.css?ver=9"/>
 
 <hr />
   	
@@ -20,28 +21,29 @@
 	</div>       
 </c:if>
 
- <div>
+ <div class="container review-container">
 	<ul id="reviewList" class="list_review">
 		<c:forEach var="r" items="${reviewList}" varStatus="i">                
 		    <li>
 		    <!--  id 값 바꾸면 안됌 -->
 		        <div id="review_content">
-		            <p class="contentTag" id="contentTag">${r.content}</p>
+		            <p class="contentTag" id="contentTag">상품평 : ${r.content}</p>
 		            <div class="info_review" style="overflow:visible">
-		                <span class="txt_user" style="padding-top:5px">${r.userId} 
+		                <span class="txt_user" style="padding-top:5px">작성자 : ${r.userId} 
 		                	<span class="txt_date"><fmt:formatDate value="${r.createAt}" pattern="yyyy-MM-dd" /></span>
 		                </span>
 		                
 		                <!-- 유저가 수정, 삭제 권한이 있을 경우 버튼 보여주기 -->
 		                <c:if test="${userSession.account.username == r.userId}">
 			                <span class="link_del" >
-			                	<a class="remove" href='<c:url value="/review.do">
+			                	<a class="remove btn btn-gradient" href='<c:url value="/review.do">
 			                	<c:param name="reviewId" value="${r.reviewId}"/>
 			                	<c:param name="itemId" value="${r.itemId}"/>
 			                	</c:url>'>삭제</a>
 							</span>
-							<span class="link_edit" ><a class="edit" href="javascript:edit('${i.index}', '${r.content}')">수정</a></span>
+							<span class="link_edit" ><a class="edit btn btn-gradient" href="javascript:edit('${i.index}', '${r.content}')">수정</a></span>
 						</c:if>
+						 <c:if test="${!i.last }"><hr> </c:if>
 						
 					</div>
 				</div>
@@ -52,7 +54,7 @@
 						<span class="input-group">
 					      <textarea class="editContent" id="editContent" name="content" rows="3" ></textarea>
 					      <span class="input-group-btn">
-					      <input class="btn btn-info" id="replyBtn" type="button" value="수정" onclick="updateReview('${i.index}', '${r.reviewId}')">
+					      <input class="btn btn-gradient" id="replyBtn" type="button" value="수정" onclick="updateReview('${i.index}', '${r.reviewId}')">
 					    </span>
 	                </div>
 				</div>

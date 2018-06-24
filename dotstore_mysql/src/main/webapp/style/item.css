@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body {
+	background: linear-gradient(to right, #346cbf, #b941ae);
+	text-align: center;
+}
+.item-container {
+	width:30vw;
+	display: inline-block;
+	margin: 0 auto;
+	background-color : rgb(255, 255, 255, 70%);
+	padding : 1rem 3rem 1rem 3rem;
+	margin-top:1rem;
+	transition:0.4s;
+}
+.item-container:hover{
+	background-color: rgb(255,255,255,82%);
+}
+.itemid-a {
+	color:#000;
+    text-decoration: none !important;
+	transition:0.4s;
+}
+.itemid-a:hover {
+	color:#919191;
+}
+.cart-logo {
+	color:#000;
+	text-decoration: none !important;
+	transition:0.4s;
+	
+}
+.cart-logo:hover {
+	color:#919191;
+}
+.item-table {
+	width:100%;
+}

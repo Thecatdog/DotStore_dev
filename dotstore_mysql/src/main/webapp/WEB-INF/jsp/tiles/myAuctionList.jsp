@@ -2,24 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt"%>
-<style>
-    div {
-        border: 1px solid #bcbcbc;
-    }
-    .rima-table-row {
-        display: table-row;
-    }
-    .rima-table-cell {
-        display: table-cell;
-        padding: 0px 20px;
-    }
-</style>
-<title>나의 경매 목록 보기</title>
-    <div id="" align="center">
-        <div class="">
-            <p>내가 등록한 경매</p>
+<link type="text/css" rel="stylesheet"
+	href="/dotstore_mysql/style/myAuctionList.css?ver=1" />
 
-            <table border="1">
+<title>나의 경매 목록 보기</title>
+    <div class="container myList-container" align="center">
+        <div class="">
+            <p><font size="4"><b>내가 등록한 경매</b></font></p>
+
+            <table class="table table-hover">
                 <thead>
                     <th>CATEGORY</th>
                     <th>상품 이름</th>
@@ -47,9 +38,9 @@
         <hr>
 
         <div class="">
-            <p>내가 입찰한 경매</p>
+            <p><font size="4"><b>내가 입찰한 경매</b></font></p>
 
-            <table border="1">
+            <table class="table table-hover">
                 <thead>
                     <th>CATEGORY</th>
                     <th>상품 이름</th>
@@ -75,35 +66,37 @@
                 </tbody>
             </table>
         </div>
-
+		<hr>
         <div id="pointContainer">
-            <p>나의 포인트 사용 내역</p>
+            <p><font size="4"><b>나의 포인트 사용 내역</b></font></p>
             <span>총 포인트 : ${point}</span>
+            <br/>
             <div id="pointList" class="rima-table-row">
                 <div class="rima-table-row">
-                    <div class="rima-table-cell" style="background: #ffc107">
-                        포인트 사용 내역
+                    <div class="rima-table-cell" >
+                        <b>포인트 사용 내역</b>
                     </div>
-                    <div class="rima-table-cell" style="background: #ffc107">
-                        사용 날짜
+                    <div class="rima-table-cell" >
+                       	<b>사용 내역</b>
                     </div>
                 </div>
             </div>
-            <button onclick="getPointListPlus()" class="btn btn-warning">더보기</button>
+            <br>
+            <button onclick="getPointListPlus()" class="btn btn-gradient">더보기</button>
         </div>
-        
+        <hr>
         <div align="center">
 		 <p><font size="4"><b>My Orders</b></font></p>
-		 <table class="n23">
-		   <tr bgcolor="#CCCCCC">
+		 <table class="table table-hover">
+		   <tr>
 		     <td><b>Order ID</b></td> <td><b>Date</b></td> <td><b>Total Price</b></td>
 		   </tr>
 		   <c:forEach var="order" items="${orderList}">
-		     <tr bgcolor="#FFFF88">
+		     <tr>
 		       <td>
 		         <b><a href='<c:url value="/shop/viewOrder.do">
 		             <c:param name="orderId" value="${order.orderId}"/></c:url>'>
-		             <font color="black"><c:out value="${order.orderId}" /></font>
+		             <font color="white"><c:out value="${order.orderId}" /></font>
 		           </a></b></td>
 		       <td><fmt:formatDate value="${order.orderDate}" pattern="yyyy/MM/dd" /></td>
 		       <td><fmt:formatNumber value="${order.totalPrice}" pattern="#,###" />원</td>
