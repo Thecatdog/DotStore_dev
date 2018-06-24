@@ -6,10 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
@@ -21,7 +19,6 @@ import com.example.jpetstore.domain.Item;
 import com.example.jpetstore.domain.Order;
 
 @Controller
-@SessionAttributes("userSession")
 public class ViewOrderController {
 
 	@Autowired OrderMapper orderMapper;
@@ -30,10 +27,7 @@ public class ViewOrderController {
 	@Autowired ItemMapper itemMapper;
 
 	@RequestMapping("/shop/viewOrder.do")
-	public ModelAndView handleRequest(
-			@ModelAttribute("userSession") UserSession userSession,
-			@RequestParam("orderId") int orderId
-			) throws Exception {
+	public ModelAndView handleRequest(@RequestParam("orderId") int orderId) throws Exception {
 		
 		ModelAndView mv = new ModelAndView("tiles/ViewOrder");
 		

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 
 import com.example.jpetstore.dao.mybatis.mapper.AuctionMapper;
+import com.example.jpetstore.dao.mybatis.mapper.OrderMapper;
 import com.example.jpetstore.dao.mybatis.mapper.PointMapper;
 import com.example.jpetstore.domain.AuctionItem;
 import com.example.jpetstore.domain.Buyer;
@@ -39,6 +40,8 @@ public class AuctionDetailController {
 	private AuctionService auctionService;
 	@Autowired
 	private PointMapper pointMapper;
+	@Autowired
+	private OrderMapper orderMapper;
 
 	@RequestMapping(value="/shop/auctionDetail.do", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam("itemId") String itemId,
@@ -122,7 +125,8 @@ public class AuctionDetailController {
 		List<HashMap<String, String>> myBiddingList = auctionMapper.myBidList(getUserName(request));
 		mv.addObject("myBiddingList", myBiddingList);
 		mv.addObject("point", pointMapper.getPointByUserId(getUserName(request)));
-
+		mv.addObject("orderList", orderMapper.orderList(getUserName(request)));
+		
 		return mv;
 	}
 
