@@ -79,7 +79,7 @@ public class C2PFormController {
 
 		c2pItem.setCategoryId(c2pItemVo.getCategoryId());
 
-		String productId = productMapper.getProductIdListByCategory(c2pItemVo.getProductId());
+		String productId = productMapper.getProductIdListByCategory(c2pItemVo.getProductId().trim());
 		c2pItem.setProductId(productId);
 
 		c2pItem.setItemId(c2pItemVo.getItemId());

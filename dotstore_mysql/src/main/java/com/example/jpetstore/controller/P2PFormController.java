@@ -79,7 +79,7 @@ public class P2PFormController {
 
 		p2pItem.setCategoryId(p2pItemVo.getCategoryId());
 
-		String productId = productMapper.getProductIdListByCategory(p2pItemVo.getProductId());
+		String productId = productMapper.getProductIdListByCategory(p2pItemVo.getProductId().trim());
 		p2pItem.setProductId(productId);
 
 		p2pItem.setItemId(p2pItemVo.getItemId());
