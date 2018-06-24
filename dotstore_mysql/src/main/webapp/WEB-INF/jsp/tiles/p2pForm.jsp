@@ -58,10 +58,6 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="status">STATUS</label></td>
-					<td><input type="text" name="status" class="form-control" /></td>
-				</tr>
-				<tr>
 					<td><label for="attr1">ATTR1</label></td>
 					<td><input type="text" name="attr1" class="form-control" /></td>
 				</tr>
