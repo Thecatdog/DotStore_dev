@@ -25,6 +25,7 @@ public interface AuctionMapper {
 	
 	List<AuctionItem> myAuctionItemList(String username);
 	List<HashMap<String, String>> myBidList(String username);
+	void deleteBidWhenAuctionDelete(String itemId);
 	
 	HashMap<String, String> selectBuyerByitemIdAndUsername(HashMap<String, String> buyer);
 	
