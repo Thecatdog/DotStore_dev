@@ -49,13 +49,14 @@
 					<td><label for="companySupplier">공급자(회사/회원 아이디)</label></td>
 					<td>
 						<input type="radio" name="companySupplier" value="member" checked="checked" /> 회원
-		            	<input type="radio" name="companySupplier" value="company" /> 회사
+		            	<input type="radio" name="companySupplier" value="company" onclick="return false" /> 회사
 					</td>
 				</tr>
-				<tr>
-					<td><label for="status">STATUS</label></td>
-					<td><input type="text" name="status" class="form-control" /></td>
-				</tr>
+<!-- 				<tr> -->
+<!-- 					<td><label for="status">STATUS</label></td> -->
+<!-- 					<td><input type="text" name="status" class="form-control" /></td> -->
+<!-- 				</tr> -->
+				<input type="hidden" name="status" value="0" />
 				<tr>
 					<td><label for="attr1">ATTR1</label></td>
 					<td><input type="text" name="attr1" class="form-control" /></td>

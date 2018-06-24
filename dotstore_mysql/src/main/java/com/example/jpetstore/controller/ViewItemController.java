@@ -52,7 +52,8 @@ public class ViewItemController {
 	}
 
 	@RequestMapping("/shop/viewItem.do")
-	public String handleRequest(@RequestParam(value="message", defaultValue="d") String message,
+	public String handleRequest(HttpServletRequest request,
+			@RequestParam(value="message", defaultValue="d") String message,
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
 
