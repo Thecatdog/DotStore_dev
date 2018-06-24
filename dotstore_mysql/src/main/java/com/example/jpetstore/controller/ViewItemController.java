@@ -2,12 +2,16 @@ package com.example.jpetstore.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.util.WebUtils;
 
+import com.example.jpetstore.dao.mybatis.mapper.OrderMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ProductMapper;
 import com.example.jpetstore.dao.mybatis.mapper.ReviewMapper;
 import com.example.jpetstore.domain.Item;
@@ -32,6 +36,9 @@ public class ViewItemController {
 
 	@Autowired
 	private ReviewMapper reviewMapper;
+	
+	@Autowired
+	private OrderMapper orderMapper;
 	
 	@Autowired
 	C2PService c2pService;
@@ -64,7 +71,9 @@ public class ViewItemController {
 		}
 		
 		List<Review> reviewList = reviewMapper.getListByItemId(itemId);
-		
+		final UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		final Boolean isWritable = (userSession != null) && orderMapper.countByUserIdAndItemId(userSession.getAccount().getUsername(), itemId) > 0;
+		model.put("isWritable", isWritable);
 		model.put("reviewList", reviewList);
 		
 		return "Item";

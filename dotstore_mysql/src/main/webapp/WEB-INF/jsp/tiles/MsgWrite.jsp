@@ -25,17 +25,32 @@
 					<tbody>
 						<tr>
 							<th scope="row"><label for="wrtTitle">제목</label></th>
-							<td><input id="" type="text" class="" name="title"
-								maxlength="256" value=""></td>
+							<td><input id="" type="text" class="" name="title" maxlength="256" value="" required></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="recevPerson">받는사람</label></th>
 							<td><input id="" type="text" class="" name="receiverId"
-								maxlength="256" value=""></td>
+								maxlength="256" value="${msg.senderId}"></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="wrtContent">내용</label></th>
-							<td class=""><textarea id="" name="context" class=""></textarea></td>
+							<td class="">
+								<c:choose>
+								<c:when test="${!empty msg}">
+									<textarea id="" name="context" class="">
+		------------------------------------------
+		받은 메시지 전문 
+		제목   ${msg.title}
+		보낸이  ${msg.senderId}
+		내용 
+			${msg.context}
+									</textarea>
+								</c:when>
+								<c:otherwise>
+									<textarea id="" name="context" class="" ></textarea>
+								</c:otherwise>
+								</c:choose>
+							</td>
 						</tr>
 					</tbody>
 				</table>
