@@ -25,17 +25,15 @@
 					<tbody>
 						<tr>
 							<th scope="row"><label for="wrtTitle">제목</label></th>
-							<td><input id="" type="text" class="" name="title"
-								maxlength="256" value=""></td>
+							<td><input id="" type="text" class="" name="title" maxlength="256" value="" required></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="recevPerson">받는사람</label></th>
-							<td><input id="" type="text" class="" name="receiverId"
-								maxlength="256" value=""></td>
+							<td><input id="" type="text" class="" name="receiverId" maxlength="256" value="" required></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="wrtContent">내용</label></th>
-							<td class=""><textarea id="" name="context" class=""></textarea></td>
+							<td class=""><textarea id="" name="context" class="" required></textarea></td>
 						</tr>
 					</tbody>
 				</table>
