@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link type="text/css" rel="stylesheet"
-	href="/dotstore_mysql/style/msgDetail.css?ver=6" />
+	href="/dotstore_mysql/style/msgDetail.css?ver=7" />
 <div class="container msg-container">
 	<nav class="nav nav-pills flex-column flex-sm-row">
 		<a
