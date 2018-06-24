@@ -39,10 +39,11 @@
 					<td><label for="companySupplier">공급자(회사/회원 아이디)</label></td>
 					<td><input type="text" name="companySupplier" class="form-control" value="${item.companySupplier}" readonly /></td>
 				</tr>
-				<tr>
-					<td><label for="status">STATUS</label></td>
-					<td><input type="text" name="status" class="form-control" value="${item.status}" /></td>
-				</tr>
+<!-- 				<tr> -->
+<!-- 					<td><label for="status">STATUS</label></td> -->
+<%-- 					<td><input type="text" name="status" class="form-control" value="${item.status}" /></td> --%>
+<!-- 				</tr> -->
+				<input type="hidden" name="status" value="${item.status}" />
 				<tr>
 					<td><label for="attr1">ATTR1</label></td>
 					<td><input type="text" name="attr1" class="form-control" value="${item.attr1}" /></td>

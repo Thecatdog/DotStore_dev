@@ -92,9 +92,25 @@
             <button onclick="getPointListPlus()" class="btn btn-warning">더보기</button>
         </div>
         
-        <div>
-       		<h3><b><a href='<c:url value="/shop/listOrders.do"/>'>주문내역</a></b></h3>
-        </div>
+        <div align="center">
+		 <p><font size="4"><b>My Orders</b></font></p>
+		 <table class="n23">
+		   <tr bgcolor="#CCCCCC">
+		     <td><b>Order ID</b></td> <td><b>Date</b></td> <td><b>Total Price</b></td>
+		   </tr>
+		   <c:forEach var="order" items="${orderList}">
+		     <tr bgcolor="#FFFF88">
+		       <td>
+		         <b><a href='<c:url value="/shop/viewOrder.do">
+		             <c:param name="orderId" value="${order.orderId}"/></c:url>'>
+		             <font color="black"><c:out value="${order.orderId}" /></font>
+		           </a></b></td>
+		       <td><fmt:formatDate value="${order.orderDate}" pattern="yyyy/MM/dd" /></td>
+		       <td><fmt:formatNumber value="${order.totalPrice}" pattern="#,###" />원</td>
+		     </tr>
+		   </c:forEach>
+		  </table>
+		</div>
 
     </div>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
