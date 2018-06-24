@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/cart.css?ver=8"/>
+<link type="text/css" rel="stylesheet" href="/dotstore_mysql/style/cart.css?ver=9"/>
 
 <div class="container checkout-container" align="center">
 <h2><i class="fas fa-list-alt cart-icon"></i></h2>
