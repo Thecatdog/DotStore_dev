@@ -18,4 +18,5 @@ public interface PointMapper {
 	void addCalendar(String userId) throws DataAccessException;
 	List<Calendar> getCalendarList(String userId) throws DataAccessException;
 	List<Calendar> getCalendarListByDate(DateVo vo) throws DataAccessException;
+	Calendar getCalendarByDate(String userId) throws DataAccessException;
 }

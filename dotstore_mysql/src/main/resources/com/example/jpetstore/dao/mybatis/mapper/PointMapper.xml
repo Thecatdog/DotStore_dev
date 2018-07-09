@@ -54,6 +54,16 @@
 		AND create_at < #{endDate}
 		]]>
 	</select>
+	
+	<select id="getCalendarByDate" resultType="CALENDAR">
+		select
+		cldr_id AS cldrId,
+		user_id AS userId,
+		create_at AS createAt
+		from CALENDAR
+		WHERE user_id = #{userId}
+		ORDER BY create_at DESC limit 1
+	</select>
   	
   	
 

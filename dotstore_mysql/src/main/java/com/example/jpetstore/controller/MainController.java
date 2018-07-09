@@ -73,7 +73,11 @@ public class MainController implements Serializable{
 	public ModelAndView calendar(HttpServletRequest request) {
 		String userId = MessageController.getUserName(request);
 		ModelAndView mv = new ModelAndView("tiles/calendar");
-		mv.addObject("isCheck", pointMapper.getCalendarListByDate(new DateVo(userId)).size() < 1);
+		Calendar cal = pointMapper.getCalendarByDate(userId);
+		boolean isCheck = cal.getCreateAt() != Timestamp.valueOf(LocalDateTime.now()) ? true : false;
+		mv.addObject("isCheck", isCheck);
+		
+		//mv.addObject("isCheck", pointMapper.getCalendarListByDate(new DateVo(userId)).size() < 1);
 		return mv;
 	}
 	
