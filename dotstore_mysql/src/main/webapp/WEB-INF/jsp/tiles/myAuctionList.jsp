@@ -82,7 +82,7 @@
                 </div>
             </div>
             <br>
-            <button onclick="getPointListPlus()" class="btn btn-gradient">더보기</button>
+            <button id="moreBtn" onclick="getPointListPlus()" class="btn btn-gradient">더보기</button>
         </div>
         <hr>
         <div align="center">
@@ -138,8 +138,9 @@
                     console.log(value.createAtStr);
                     $("#pointList").append(pointTemplate.replace("@content", value.content).replace("@date", value.createAtStr));
                 })
-                if(data.length == 0 && isPageable) {
+                if(data.length < 5 && isPageable) {
                     isPageable = false;
+                    $('#moreBtn').hide();
                     $("#pointContainer").append("<span style='color: red;'>더 이상 내역이 없습니다.</span>")
                 }
             },

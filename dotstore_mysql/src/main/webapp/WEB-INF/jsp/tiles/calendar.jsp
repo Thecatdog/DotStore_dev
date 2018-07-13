@@ -34,32 +34,26 @@ $(document).ready(function(){
 	          id: 'check',
 	          click: function() {	         	            
 	            var userId = $('#userId').html();
+	            var data = {
+	            		userId: userId,
+	            		point: sessionStorage.getItem('point')
+	            }
+	            
 	        	$.ajax({
 	                url: "/dotstore_mysql/daily/check.do",
 	                type: "POST",
-	                data : {userId: userId},
-	                dataType: "text",
-	                success: function (date) {
+	                data : JSON.stringify(data),
+	                contentType: "application/json",
+	                dataType: "JSON",
+	                success: function (pointAndDate) {
 	                	$(".fc-custom2-button").prop('disabled', true);
 	                	$(".fc-custom2-button").html('출석완료');
 	                	
-	                	$.ajax({
-	        	            url: "/dotstore_mysql/top.do",
-	        	            type: "POST",
-	        	            data : {userId: userId},
-	        	            dataType: "text",
-	        	            success: function (data) {
-	        	            	console.log("성공?!" + data);
-	        	            	sessionStorage.removeItem('point');
-	        	            	sessionStorage.setItem('point', data); // 가져왔으면 sessionstroage에 넣기
-	        	            	$('#pointVal').html(data + "P");
-	        	            },
-	        	            error : function(e1, e2){
-	        	                console.log("error!");
-	        	            }
-	        	        });
+	                	sessionStorage.removeItem('point');
+    	            	sessionStorage.setItem('point', pointAndDate.point); // 가져왔으면 sessionstroage에 넣기
+    	            	$('#pointVal').html(pointAndDate.point + "P");
 	                	
-	                	 var dateStr = moment(date);
+	                	 var dateStr = moment(pointAndDate.date);
 	                	 $('#calendar').fullCalendar('renderEvent', {
 	                        title: '출석',
 	                        start: dateStr,
@@ -72,9 +66,8 @@ $(document).ready(function(){
 	                error : function(e1, e2){
 	                    console.log("error!");
 	                }
-	            });
-	        	
-	        	
+	            }); // ajax 끝 
+	            
 	          }
 	        }
             </c:if>

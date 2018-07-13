@@ -6,8 +6,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,6 +32,7 @@ import com.example.jpetstore.domain.Point;
 import com.example.jpetstore.service.PointService;
 import com.example.jpetstore.vo.DateVo;
 import com.example.jpetstore.vo.EventVo;
+import com.example.jpetstore.vo.PointVo;
 
 @Controller
 public class MainController implements Serializable{
@@ -73,11 +76,7 @@ public class MainController implements Serializable{
 	public ModelAndView calendar(HttpServletRequest request) {
 		String userId = MessageController.getUserName(request);
 		ModelAndView mv = new ModelAndView("tiles/calendar");
-		Calendar cal = pointMapper.getCalendarByDate(userId);
-		boolean isCheck = cal.getCreateAt() != Timestamp.valueOf(LocalDateTime.now()) ? true : false;
-		mv.addObject("isCheck", isCheck);
-		
-		//mv.addObject("isCheck", pointMapper.getCalendarListByDate(new DateVo(userId)).size() < 1);
+		mv.addObject("isCheck", pointMapper.getCalendarListByDate(new DateVo(userId)).size() < 1);
 		return mv;
 	}
 	
@@ -98,8 +97,12 @@ public class MainController implements Serializable{
 	
 	@RequestMapping(value = "/daily/check.do")
 	@ResponseBody
-	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) {
+	public PointVo clickCalendar(@RequestBody PointVo pointVo) throws Exception {
 
+		
+		String userId = pointVo.getUserId();
+		int userPoint = pointVo.getPoint();
+		
 		Point point = new Point();
 		point.setUserId(userId);
 		point.setPoint(+5);
@@ -107,7 +110,11 @@ public class MainController implements Serializable{
 		
 		// Date에 저장 & point 적립
 		pointService.insertCalendar(userId, point);
-		return new SimpleDateFormat("yyyy-MM-dd").format(Timestamp.valueOf(LocalDate.now().atStartOfDay()));
+		PointVo sendVo = new PointVo();
+		sendVo.setPoint(userPoint+5);
+		sendVo.setDate(new SimpleDateFormat("yyyy-MM-dd").format(Timestamp.valueOf(LocalDate.now().atStartOfDay())));
+
+		return sendVo;
 	}
 
 }
